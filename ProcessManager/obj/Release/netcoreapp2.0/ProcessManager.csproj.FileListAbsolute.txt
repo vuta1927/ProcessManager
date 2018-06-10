@@ -1,0 +1,11 @@
+D:\Projects\ProcessManager\ProcessManager\bin\Release\netcoreapp2.0\ProcessManager.deps.json
+D:\Projects\ProcessManager\ProcessManager\bin\Release\netcoreapp2.0\ProcessManager.runtimeconfig.json
+D:\Projects\ProcessManager\ProcessManager\bin\Release\netcoreapp2.0\ProcessManager.runtimeconfig.dev.json
+D:\Projects\ProcessManager\ProcessManager\bin\Release\netcoreapp2.0\ProcessManager.dll
+D:\Projects\ProcessManager\ProcessManager\bin\Release\netcoreapp2.0\ProcessManager.pdb
+D:\Projects\ProcessManager\ProcessManager\obj\Release\netcoreapp2.0\ProcessManager.csprojAssemblyReference.cache
+D:\Projects\ProcessManager\ProcessManager\obj\Release\netcoreapp2.0\ProcessManager.csproj.CoreCompileInputs.cache
+D:\Projects\ProcessManager\ProcessManager\obj\Release\netcoreapp2.0\ProcessManager.AssemblyInfoInputs.cache
+D:\Projects\ProcessManager\ProcessManager\obj\Release\netcoreapp2.0\ProcessManager.AssemblyInfo.cs
+D:\Projects\ProcessManager\ProcessManager\obj\Release\netcoreapp2.0\ProcessManager.dll
+D:\Projects\ProcessManager\ProcessManager\obj\Release\netcoreapp2.0\ProcessManager.pdb

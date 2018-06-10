@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  processmanager:
+    image: processmanager
+    build:
+      context: .
+      dockerfile: ProcessManager/Dockerfile
