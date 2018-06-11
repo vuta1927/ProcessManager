@@ -9,7 +9,7 @@ services:
       - DOTNET_USE_POLLING_FILE_WATCHER=1
       #- NUGET_FALLBACK_PACKAGES=$container_paths_to_fallback_packages_processmanager$
     volumes:
-      - D:\Projects\ProcessManager\ProcessManager:/app
+      - C:\Users\Admin\Documents\GitHub\ProcessManager\ProcessManager:/app
       - C:\Users\Admin\vsdbg\vs2017u5:/remote_debugger:ro
 #$nuget_volume_mapping_processmanager$
     entrypoint: tail -f /dev/null

@@ -1,20 +1,26 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
+using ProcessManager.Models;
 
 namespace ProcessManager
 {
     public static class LogHelper
     {
-        public static object locker;
+        private static readonly object Locker = new object();
+        private static ReaderWriterLockSlim _readWriteLock = new ReaderWriterLockSlim();
         public static void WriteTo(string filename, string data)
         {
-            lock (locker)
+            lock (Locker)
             {
                 var rootPath = Directory.GetCurrentDirectory();
-                var filePath = rootPath + "/logs" + filename + ".txt";
+                var filePath = rootPath + "/logs/" + filename + ".log";
                 if (!Directory.Exists(rootPath + "/logs"))
                 {
                     Directory.CreateDirectory(rootPath + "/logs");
@@ -25,28 +31,42 @@ namespace ProcessManager
                     File.CreateText(filePath).Close();
                 }
 
-                using (var f = new StreamWriter(filePath))
+                var jsonData = File.ReadAllText(filePath);
+                var ps = JsonConvert.DeserializeObject<List<Report>>(jsonData) ?? new List<Report>();
+                var newReport = new Report()
                 {
-                    f.WriteLine(data);
-                }
+                    Time = DateTime.Now,
+                    Message = data
+                };
+                ps.Add(newReport);
+                jsonData = JsonConvert.SerializeObject(ps);
+                File.WriteAllText(filePath, jsonData);
             }
+
         }
 
-        public static string[] GetLog(string filename)
+        public static List<Report> GetLog(string filename)
         {
-            lock (locker)
+            lock (Locker)
             {
+                var result = new List<Report>();
                 var rootPath = Directory.GetCurrentDirectory();
-                var filePath = rootPath + "/logs" + filename + ".txt";
+                var filePath = rootPath + "/logs/" + filename + ".log";
                 if (!Directory.Exists(rootPath + "/logs"))
                 {
                     return null;
                 }
 
-                string[] lines = File.ReadAllLines(filePath);
-                return lines;
+                if (!File.Exists(filePath))
+                {
+                    return null;
+                }
+
+                var jsonData = File.ReadAllText(filePath);
+                result = JsonConvert.DeserializeObject<List<Report>>(jsonData) ?? new List<Report>();
+                return result;
             }
-            
+
         }
     }
 }

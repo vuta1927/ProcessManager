@@ -2,7 +2,7 @@ FROM microsoft/aspnetcore:2.0
 
 EXPOSE 80 22
 
-RUN apt-get update && apt-get install -y openssh-server supervisor wget iputils-ping net-tools nano
+RUN apt-get update && apt-get install -y openssh-server supervisor wget iputils-ping net-tools nano ffmpeg
 RUN mkdir /var/run/sshd && mkdir -p logs
 RUN useradd vuta && echo 'vuta:Echo@1927' | chpasswd
 RUN echo adduser vuta sudo

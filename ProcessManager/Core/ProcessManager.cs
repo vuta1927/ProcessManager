@@ -3,25 +3,43 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 using ProcessManager;
-using ProcessManager;
+using ProcessManager.Models;
+using Process = System.Diagnostics.Process;
 
 namespace ProcessManager.Core
 {
     public class ProcessManager
     {
-        private static List<Models.Process> _processes = new List<Models.Process>();
+        private static List<Models.Process> _processes;
         private static string filePath;
         public ProcessManager(string fileName)
         {
+
             var rootPath = Directory.GetCurrentDirectory();
             filePath = rootPath + "/" + fileName;
 
             if (!File.Exists(filePath))
             {
                 File.CreateText(filePath).Close();
+            }
+
+            if (_processes == null)
+            {
+                _processes = new List<Models.Process>();
+            };
+
+            using (var f = new StreamReader(filePath))
+            {
+                var json = f.ReadToEnd();
+                _processes = JsonConvert.DeserializeObject<List<Models.Process>>(json);
+                foreach (var p in _processes)
+                {
+                    p.IsRunning = false;
+                }
             }
         }
 
@@ -31,16 +49,13 @@ namespace ProcessManager.Core
         }
         public void RunAll()
         {
-            using (var f = new StreamReader(filePath))
-            {
-                var json = f.ReadToEnd();
-                _processes = JsonConvert.DeserializeObject<List<Models.Process>>(json);
-            }
-
             if (_processes == null || !_processes.Any()) return;
 
+            int count = 0;
             foreach (var p in _processes)
             {
+                if (p.IsRunning) continue;
+
                 p.OrginProcess = new Process()
                 {
                     StartInfo = new ProcessStartInfo
@@ -48,62 +63,105 @@ namespace ProcessManager.Core
                         FileName = p.Application,
                         Arguments = String.Format(p.Arguments),
                         RedirectStandardOutput = true,
+                        RedirectStandardError = true,
                         UseShellExecute = false,
                         CreateNoWindow = true,
                     }
                 };
-                try
-                {
-                    p.OrginProcess.Start();
-                    p.OrginProcess.OutputDataReceived += ((sender, e) =>
-                    {
-                        // Prepend line numbers to each line of the output.
-                        if (!String.IsNullOrEmpty(e.Data))
-                        {
-                            LogHelper.WriteTo(p.Id +".output", "\n" + e.Data);
-                        }
-                    });
-                    p.OrginProcess.ErrorDataReceived += ((sender, e) =>
-                    {
-                        // Prepend line numbers to each line of the output.
-                        if (!String.IsNullOrEmpty(e.Data))
-                        {
-                            LogHelper.WriteTo(p.Id +".error", "\n" + e.Data);
-                        }
-                    });
-                    p.OrginProcess.BeginOutputReadLine();
-                    p.OrginProcess.BeginErrorReadLine();
-                    p.OrginProcess.WaitForExit();
-                }
-                catch (Exception e)
-                {
-                    Console.WriteLine(e);
-                }
+                p.Id = count;
+                var t = Task.Run(() => { ProcessStart(p.Id); });
+                count++;
             }
         }
         public void Run(int id)
         {
             foreach (var p in _processes)
             {
-                if (p.Id == id)
+                if (p.Id == id && !p.IsRunning)
                 {
-                    try
-                    {
-                        p.OrginProcess.Start();
-                        p.OrginProcess.OutputDataReceived +=  OutputHandler;
-                        p.OrginProcess.ErrorDataReceived += ErrortHandler;
-                        p.OrginProcess.BeginOutputReadLine();
-                        p.OrginProcess.BeginErrorReadLine();
-                        p.OrginProcess.WaitForExit();
-                    }
-                    catch (Exception e)
-                    {
-                        Console.WriteLine(e);
-                        throw;
-                    }
+                    var t = Task.Run(() => { ProcessStart(p.Id); });
+                    return;
                 }
             }
         }
+
+        private void ProcessStart(int id)
+        {
+            try
+            {
+                var p = _processes.Find(x => x.Id == id);
+                if (p == null) return;
+
+                p.OrginProcess = new Process()
+                {
+                    StartInfo = new ProcessStartInfo
+                    {
+                        FileName = p.Application,
+                        Arguments = String.Format(p.Arguments),
+                        RedirectStandardOutput = true,
+                        RedirectStandardError = true,
+                        UseShellExecute = false,
+                        CreateNoWindow = true,
+                    }
+                };
+
+                p.IsRunning = p.OrginProcess.Start();
+                p.OrginProcess.OutputDataReceived += ((sender, e) =>
+                {
+                    // Prepend line numbers to each line of the output.
+                    if (!String.IsNullOrEmpty(e.Data))
+                    {
+                        LogHelper.WriteTo(p.Id + ".out", e.Data);
+                    }
+                });
+                p.OrginProcess.ErrorDataReceived += ((sender, e) =>
+                {
+                    // Prepend line numbers to each line of the output.
+                    if (!String.IsNullOrEmpty(e.Data))
+                    {
+                        LogHelper.WriteTo(p.Id + ".error", e.Data);
+                    }
+                });
+                p.OrginProcess.BeginOutputReadLine();
+                p.OrginProcess.BeginErrorReadLine();
+                p.OrginProcess.WaitForExit();
+
+                Task.Run(() =>
+                {
+                    while (p.OrginProcess != null && !p.OrginProcess.HasExited)
+                    {
+                        Thread.Sleep(500);
+                    }
+
+                    p.IsRunning = false;
+                });
+
+                if(p.AutoRestart) Task.Run(() => { SetAutoRestart(p.Id); });
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                LogHelper.WriteTo(id + ".error", e.ToString());
+            }
+        }
+
+        public void SetAutoRestart(int id)
+        {
+            var p = _processes.SingleOrDefault(x => x.Id == id);
+            if (p == null) return;
+
+            while (p.AutoRestart)
+            {
+                if (p.IsRunning)
+                {
+                    Thread.Sleep(1000);
+                    continue;
+                }
+                Task.Run(() => { ProcessStart(p.Id); });
+                break;
+            }
+        }
+
         public void EndAll()
         {
             if (_processes.Any())
@@ -113,23 +171,31 @@ namespace ProcessManager.Core
                     try
                     {
                         p.OrginProcess.Kill();
+                        p.IsRunning = false;
+                        p.OrginProcess = null;
                     }
                     catch (Exception e)
                     {
                         Console.WriteLine(e);
+                        LogHelper.WriteTo(p.Id + ".error", e.ToString());
                     }
                 }
             }
         }
-        public int Add(string fileName, string arguments)
+        public int Add(string application, string arguments, bool autoRestart)
         {
+            if (_processes == null)
+            {
+                _processes = new List<Models.Process>();
+            }
             var process = new Process()
             {
                 StartInfo = new ProcessStartInfo
                 {
-                    FileName = fileName,//"/bin/bash",
-                    Arguments = String.Format(arguments),//$"-c \"{escapedArgs}\"",
+                    FileName = application,
+                    Arguments = String.Format(arguments),
                     RedirectStandardOutput = true,
+                    RedirectStandardError = true,
                     UseShellExecute = false,
                     CreateNoWindow = true,
                 }
@@ -137,21 +203,36 @@ namespace ProcessManager.Core
 
             var newProcess = new Models.Process()
             {
-                Id = _processes.Count + 1,
+                Id = _processes.Count,
                 Arguments = arguments,
-                OrginProcess = process
+                OrginProcess = process,
+                Application = application,
+                IsRunning = false,
+                AutoRestart = autoRestart
             };
 
             _processes.Add(newProcess);
 
-            using (StreamWriter file = File.CreateText(filePath))
-            {
-                JsonSerializer serializer = new JsonSerializer();
-                //serialize object directly into file stream
-                serializer.Serialize(file, _processes);
-            }
+            StoreProcess(newProcess);
 
             return newProcess.Id;
+        }
+
+        private List<ProcessModels.ProcessForAdd> Clone()
+        {
+            var result = new List<Models.ProcessModels.ProcessForAdd>();
+            foreach (var p in _processes)
+            {
+                var newP = new Models.ProcessModels.ProcessForAdd()
+                {
+                    Application = p.Application,
+                    Arguments = p.Arguments,
+                    IsRunning = p.IsRunning
+                };
+                result.Add(newP);
+            }
+
+            return result;
         }
 
         public bool Stop(int id)
@@ -163,11 +244,14 @@ namespace ProcessManager.Core
                     try
                     {
                         p.OrginProcess.Kill();
+                        p.OrginProcess = null;
+                        p.IsRunning = false;
                         return true;
                     }
                     catch (Exception e)
                     {
                         Console.WriteLine(e);
+                        LogHelper.WriteTo(p.Id + ".error", e.ToString());
                         return false;
                     }
                 }
@@ -183,21 +267,18 @@ namespace ProcessManager.Core
                 {
                     try
                     {
+                        p.AutoRestart = false;
                         p.OrginProcess.Kill();
                         _processes.Remove(p);
                     }
                     catch (Exception e)
                     {
                         Console.WriteLine(e);
+                        LogHelper.WriteTo(p.Id + ".error", e.ToString());
                         return false;
                     }
 
-                    using (StreamWriter file = File.CreateText(filePath))
-                    {
-                        JsonSerializer serializer = new JsonSerializer();
-                        //serialize object directly into file stream
-                        serializer.Serialize(file, _processes);
-                    }
+                    StoreProcess(p);
 
                     return true;
                 }
@@ -206,21 +287,23 @@ namespace ProcessManager.Core
             return false;
         }
 
-        private static void OutputHandler(object sendingProcess,
-            DataReceivedEventArgs outLine)
+        private void StoreProcess(Models.Process p)
         {
-            if (!String.IsNullOrEmpty(outLine.Data))
+            var l = new List<ProcessModels.ProcessForAddToFile>
             {
-                Console.WriteLine(outLine.Data);
-            }
-        }
+                new ProcessModels.ProcessForAddToFile()
+                {
+                    Application = p.Application,
+                    Arguments = p.Arguments,
+                    AutoRestart = p.AutoRestart
+                }
+            };
 
-        private static void ErrortHandler(object sendingProcess,
-            DataReceivedEventArgs outLine)
-        {
-            if (!String.IsNullOrEmpty(outLine.Data))
+            using (var file = File.CreateText(filePath))
             {
-                Console.WriteLine(outLine.Data);
+                var serializer = new JsonSerializer();
+                //serialize object directly into file stream
+                serializer.Serialize(file, l);
             }
         }
     }

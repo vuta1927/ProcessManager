@@ -1,7 +1,7 @@
 services:
   processmanager:
     build:
-      context: D:\Projects\ProcessManager
+      context: C:\Users\Admin\Documents\GitHub\ProcessManager
       dockerfile: ProcessManager/Dockerfile
     environment:
       ASPNETCORE_ENVIRONMENT: Development

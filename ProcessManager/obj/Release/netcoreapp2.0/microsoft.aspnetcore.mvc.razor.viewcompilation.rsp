@@ -1,5 +1,5 @@
-D:\Projects\ProcessManager\ProcessManager
+C:\Users\Admin\Documents\GitHub\ProcessManager\ProcessManager
 --output-path=obj\Release\netcoreapp2.0\
 --application-name=ProcessManager
---content-root=D:\Projects\ProcessManager\ProcessManager
+--content-root=C:\Users\Admin\Documents\GitHub\ProcessManager\ProcessManager
 --file=
