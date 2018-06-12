@@ -9,6 +9,7 @@ namespace ProcessManager.Models
     {
         public class ProcessForAddToFile
         {
+            public int Id { get; set; }
             public string Application { get; set; }
             public string Arguments { get; set; }
             public bool AutoRestart { get; set; }

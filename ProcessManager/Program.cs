@@ -16,7 +16,7 @@ namespace ProcessManager
         public static void Main(string[] args)
         {
             PManager = new Core.ProcessManager("process.json");
-            PManager.RunAll();
+            PManager.Run(1);
             BuildWebHost(args).Run();
         }
 

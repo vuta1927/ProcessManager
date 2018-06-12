@@ -55,21 +55,11 @@ namespace ProcessManager.Core
             foreach (var p in _processes)
             {
                 if (p.IsRunning) continue;
-
-                p.OrginProcess = new Process()
-                {
-                    StartInfo = new ProcessStartInfo
-                    {
-                        FileName = p.Application,
-                        Arguments = String.Format(p.Arguments),
-                        RedirectStandardOutput = true,
-                        RedirectStandardError = true,
-                        UseShellExecute = false,
-                        CreateNoWindow = true,
-                    }
-                };
                 p.Id = count;
-                var t = Task.Run(() => { ProcessStart(p.Id); });
+                Task.Run(()=>
+                {
+                    p.Start();
+                });
                 count++;
             }
         }
@@ -79,69 +69,9 @@ namespace ProcessManager.Core
             {
                 if (p.Id == id && !p.IsRunning)
                 {
-                    var t = Task.Run(() => { ProcessStart(p.Id); });
+                    p.Start();
                     return;
                 }
-            }
-        }
-
-        private void ProcessStart(int id)
-        {
-            try
-            {
-                var p = _processes.Find(x => x.Id == id);
-                if (p == null) return;
-
-                p.OrginProcess = new Process()
-                {
-                    StartInfo = new ProcessStartInfo
-                    {
-                        FileName = p.Application,
-                        Arguments = String.Format(p.Arguments),
-                        RedirectStandardOutput = true,
-                        RedirectStandardError = true,
-                        UseShellExecute = false,
-                        CreateNoWindow = true,
-                    }
-                };
-
-                p.IsRunning = p.OrginProcess.Start();
-                p.OrginProcess.OutputDataReceived += ((sender, e) =>
-                {
-                    // Prepend line numbers to each line of the output.
-                    if (!String.IsNullOrEmpty(e.Data))
-                    {
-                        LogHelper.WriteTo(p.Id + ".out", e.Data);
-                    }
-                });
-                p.OrginProcess.ErrorDataReceived += ((sender, e) =>
-                {
-                    // Prepend line numbers to each line of the output.
-                    if (!String.IsNullOrEmpty(e.Data))
-                    {
-                        LogHelper.WriteTo(p.Id + ".error", e.Data);
-                    }
-                });
-                p.OrginProcess.BeginOutputReadLine();
-                p.OrginProcess.BeginErrorReadLine();
-                p.OrginProcess.WaitForExit();
-
-                Task.Run(() =>
-                {
-                    while (p.OrginProcess != null && !p.OrginProcess.HasExited)
-                    {
-                        Thread.Sleep(500);
-                    }
-
-                    p.IsRunning = false;
-                });
-
-                if(p.AutoRestart) Task.Run(() => { SetAutoRestart(p.Id); });
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e);
-                LogHelper.WriteTo(id + ".error", e.ToString());
             }
         }
 
@@ -149,17 +79,7 @@ namespace ProcessManager.Core
         {
             var p = _processes.SingleOrDefault(x => x.Id == id);
             if (p == null) return;
-
-            while (p.AutoRestart)
-            {
-                if (p.IsRunning)
-                {
-                    Thread.Sleep(1000);
-                    continue;
-                }
-                Task.Run(() => { ProcessStart(p.Id); });
-                break;
-            }
+            p.AutoRestart = true;
         }
 
         public void EndAll()
@@ -170,9 +90,7 @@ namespace ProcessManager.Core
                 {
                     try
                     {
-                        p.OrginProcess.Kill();
-                        p.IsRunning = false;
-                        p.OrginProcess = null;
+                        p.Stop();
                     }
                     catch (Exception e)
                     {
@@ -218,23 +136,6 @@ namespace ProcessManager.Core
             return newProcess.Id;
         }
 
-        private List<ProcessModels.ProcessForAdd> Clone()
-        {
-            var result = new List<Models.ProcessModels.ProcessForAdd>();
-            foreach (var p in _processes)
-            {
-                var newP = new Models.ProcessModels.ProcessForAdd()
-                {
-                    Application = p.Application,
-                    Arguments = p.Arguments,
-                    IsRunning = p.IsRunning
-                };
-                result.Add(newP);
-            }
-
-            return result;
-        }
-
         public bool Stop(int id)
         {
             foreach (var p in _processes)
@@ -243,9 +144,7 @@ namespace ProcessManager.Core
                 {
                     try
                     {
-                        p.OrginProcess.Kill();
-                        p.OrginProcess = null;
-                        p.IsRunning = false;
+                        p.Stop();
                         return true;
                     }
                     catch (Exception e)
@@ -268,7 +167,7 @@ namespace ProcessManager.Core
                     try
                     {
                         p.AutoRestart = false;
-                        p.OrginProcess.Kill();
+                        p.Stop();
                         _processes.Remove(p);
                     }
                     catch (Exception e)
@@ -277,13 +176,11 @@ namespace ProcessManager.Core
                         LogHelper.WriteTo(p.Id + ".error", e.ToString());
                         return false;
                     }
-
+                    //rewrite database
                     StoreProcess(p);
-
                     return true;
                 }
             }
-
             return false;
         }
 
@@ -293,6 +190,7 @@ namespace ProcessManager.Core
             {
                 new ProcessModels.ProcessForAddToFile()
                 {
+                    Id = p.Id,
                     Application = p.Application,
                     Arguments = p.Arguments,
                     AutoRestart = p.AutoRestart

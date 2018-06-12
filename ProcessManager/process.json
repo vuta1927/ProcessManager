@@ -1,15 +1,18 @@
 [
   {
+    "Id": "0", 
     "Application": "ping",
     "AutoRestart": "false",
     "Arguments": "-t 8.8.8.8"
   },
   {
+    "Id": "1",
     "Application": "ping",
     "AutoRestart": "true",
     "Arguments": "192.168.100.1"
   },
   {
+    "Id": "2",
     "Application": "ffmpeg",
     "AutoRestart": "false",
     "Arguments": "-i 'rtsp://192.168.100.185/user=admin&password=&channel=1&stream=0.sdp?real_stream' -f lavfi -i anullsrc=channel_layout=stereo:sample_rate=44100 -c:a libmp3lame -ab 128k -ar 44100 -c:v copy -threads 2 -f flv rtmp://192.168.100.5:55935/cam1/live"
