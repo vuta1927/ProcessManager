@@ -3,7 +3,6 @@ C:\Users\Admin\Documents\GitHub\ProcessManager\ProcessManager\bin\Debug\netcorea
 C:\Users\Admin\Documents\GitHub\ProcessManager\ProcessManager\bin\Debug\netcoreapp2.0\ProcessManager.runtimeconfig.dev.json
 C:\Users\Admin\Documents\GitHub\ProcessManager\ProcessManager\bin\Debug\netcoreapp2.0\ProcessManager.dll
 C:\Users\Admin\Documents\GitHub\ProcessManager\ProcessManager\bin\Debug\netcoreapp2.0\ProcessManager.pdb
-C:\Users\Admin\Documents\GitHub\ProcessManager\ProcessManager\obj\Debug\netcoreapp2.0\ProcessManager.csprojAssemblyReference.cache
 C:\Users\Admin\Documents\GitHub\ProcessManager\ProcessManager\obj\Debug\netcoreapp2.0\ProcessManager.csproj.CoreCompileInputs.cache
 C:\Users\Admin\Documents\GitHub\ProcessManager\ProcessManager\obj\Debug\netcoreapp2.0\ProcessManager.AssemblyInfoInputs.cache
 C:\Users\Admin\Documents\GitHub\ProcessManager\ProcessManager\obj\Debug\netcoreapp2.0\ProcessManager.AssemblyInfo.cs

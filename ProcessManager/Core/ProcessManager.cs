@@ -50,17 +50,14 @@ namespace ProcessManager.Core
         public void RunAll()
         {
             if (_processes == null || !_processes.Any()) return;
-
-            int count = 0;
+            
             foreach (var p in _processes)
             {
-                if (p.IsRunning) continue;
-                p.Id = count;
+                if (p.IsRunning || p.AutoRestart) continue;
                 Task.Run(()=>
                 {
                     p.Start();
                 });
-                count++;
             }
         }
         public void Run(int id)

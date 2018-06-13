@@ -18,36 +18,19 @@ namespace ProcessManager.Models
             set
             {
                 _isRunning = value;
-                if(!_isRunning) OrginProcess = null;
+                if (!_isRunning)
+                {
+                    OrginProcess = null;
+                    if (AutoRestart)
+                    {
+                        Task.Run(()=>Start());
+                    }
+                }
                 OnStop?.Invoke(this, new EventArgs());
             }
         }
 
-        private bool _autoRestart;
-
-        public bool AutoRestart
-        {
-            get => _autoRestart;
-            set
-            {
-                _autoRestart = value;
-                while (AutoRestart)
-                {
-                    if (IsRunning)
-                    {
-                        Thread.Sleep(1000);
-                        continue;
-                    }
-                    Task.Run(() =>
-                    {
-                        Start();
-                        OnStart?.Invoke(this, new EventArgs());
-                    });
-                    break;
-                }
-
-            }
-        }
+        public bool AutoRestart { get; set; }
         public string Application { get; set; }
         public string Arguments { get; set; }
         public System.Diagnostics.Process OrginProcess { get; set; }
