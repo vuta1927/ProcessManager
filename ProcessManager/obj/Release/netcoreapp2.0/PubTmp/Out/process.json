@@ -1,0 +1,8 @@
+[
+  {
+    "Id": "0", 
+    "Application": "ping",
+    "AutoRestart": "false",
+    "Arguments": "8.8.8.8"
+  }
+]

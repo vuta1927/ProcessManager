@@ -14,7 +14,38 @@ namespace ProcessManager
     public static class LogHelper
     {
         private static readonly object Locker = new object();
-        private static ReaderWriterLockSlim _readWriteLock = new ReaderWriterLockSlim();
+        private static BlockingCollection<LogMessage> _logMessages = new BlockingCollection<LogMessage>();
+
+        public static void Start()
+        {
+            foreach (var msg in _logMessages.GetConsumingEnumerable())
+            {
+                // of course you'll want your exception handling in here
+                var rootPath = Directory.GetCurrentDirectory();
+                var filePath = rootPath + "/logs/" + msg.FileName + ".log";
+                if (!Directory.Exists(rootPath + "/logs"))
+                {
+                    Directory.CreateDirectory(rootPath + "/logs");
+                }
+
+                if (!File.Exists(filePath))
+                {
+                    File.CreateText(filePath).Close();
+                }
+
+                var n = new string[] {"[" + DateTime.Now + "]:" + msg.Message};
+                File.AppendAllLines(filePath, n);
+            }
+        }
+
+        public static void Stop()
+        {
+            _logMessages.CompleteAdding();
+        }
+        public static void Add(LogMessage m)
+        {
+            _logMessages.Add(m);
+        }
         public static void WriteTo(string filename, string data)
         {
             lock (Locker)
@@ -45,11 +76,11 @@ namespace ProcessManager
 
         }
 
-        public static List<Report> GetLog(string filename)
+        public static string[] GetLog(string filename)
         {
             lock (Locker)
             {
-                var result = new List<Report>();
+                //var result = new List<Report>();
                 var rootPath = Directory.GetCurrentDirectory();
                 var filePath = rootPath + "/logs/" + filename + ".log";
                 if (!Directory.Exists(rootPath + "/logs"))
@@ -62,8 +93,9 @@ namespace ProcessManager
                     return null;
                 }
 
-                var jsonData = File.ReadAllText(filePath);
-                result = JsonConvert.DeserializeObject<List<Report>>(jsonData) ?? new List<Report>();
+                //var jsonData = File.ReadAllText(filePath);
+                //result = JsonConvert.DeserializeObject<List<Report>>(jsonData) ?? new List<Report>();
+                var result = File.ReadAllLines(filePath);
                 return result;
             }
 

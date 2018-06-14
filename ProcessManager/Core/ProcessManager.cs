@@ -20,27 +20,28 @@ namespace ProcessManager.Core
         {
 
             var rootPath = Directory.GetCurrentDirectory();
-            filePath = rootPath + "/" + fileName;
+            filePath = rootPath + "\\" + fileName;
 
             if (!File.Exists(filePath))
             {
                 File.CreateText(filePath).Close();
             }
-
-            if (_processes == null)
-            {
-                _processes = new List<Models.Process>();
-            };
-
             using (var f = new StreamReader(filePath))
             {
                 var json = f.ReadToEnd();
                 _processes = JsonConvert.DeserializeObject<List<Models.Process>>(json);
+                if (_processes == null)
+                {
+                    _processes = new List<Models.Process>();
+                };
                 foreach (var p in _processes)
                 {
                     p.IsRunning = false;
                 }
             }
+
+            Task.Run(() => LogHelper.Start());
+
         }
 
         public List<Models.Process> GetAll()
@@ -92,7 +93,7 @@ namespace ProcessManager.Core
                     catch (Exception e)
                     {
                         Console.WriteLine(e);
-                        LogHelper.WriteTo(p.Id + ".error", e.ToString());
+                        LogHelper.Add(new LogMessage() { FileName = p.Id + ".error", Message = e.ToString() });
                     }
                 }
             }
@@ -108,7 +109,7 @@ namespace ProcessManager.Core
                 StartInfo = new ProcessStartInfo
                 {
                     FileName = application,
-                    Arguments = String.Format(arguments),
+                    Arguments = arguments,
                     RedirectStandardOutput = true,
                     RedirectStandardError = true,
                     UseShellExecute = false,
@@ -147,7 +148,7 @@ namespace ProcessManager.Core
                     catch (Exception e)
                     {
                         Console.WriteLine(e);
-                        LogHelper.WriteTo(p.Id + ".error", e.ToString());
+                        LogHelper.Add(new LogMessage() { FileName = p.Id + ".error", Message = e.ToString() });
                         return false;
                     }
                 }
@@ -163,6 +164,7 @@ namespace ProcessManager.Core
                 {
                     try
                     {
+                        LogHelper.Stop();
                         p.AutoRestart = false;
                         p.Stop();
                         _processes.Remove(p);
@@ -170,7 +172,7 @@ namespace ProcessManager.Core
                     catch (Exception e)
                     {
                         Console.WriteLine(e);
-                        LogHelper.WriteTo(p.Id + ".error", e.ToString());
+                        LogHelper.Add(new LogMessage(){ FileName = p.Id+".out", Message = e.ToString()});
                         return false;
                     }
                     //rewrite database

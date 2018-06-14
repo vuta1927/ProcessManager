@@ -46,27 +46,27 @@ namespace ProcessManager.Models
         public void Stop()
         {
             OrginProcess.Kill();
-            IsRunning = false;
-            OrginProcess = null;
-            OnStop?.Invoke(this, new EventArgs());
         }
 
         public void Start()
         {
             try
             {
-                OrginProcess = new System.Diagnostics.Process()
+                if (OrginProcess == null)
                 {
-                    StartInfo = new ProcessStartInfo
+                    OrginProcess = new System.Diagnostics.Process()
                     {
-                        FileName = Application,
-                        Arguments = String.Format(Arguments),
-                        RedirectStandardOutput = true,
-                        RedirectStandardError = true,
-                        UseShellExecute = false,
-                        CreateNoWindow = true,
-                    }
-                };
+                        StartInfo = new ProcessStartInfo
+                        {
+                            FileName = Application,
+                            Arguments = String.Format(Arguments),
+                            RedirectStandardOutput = true,
+                            RedirectStandardError = true,
+                            UseShellExecute = false,
+                            CreateNoWindow = true,
+                        }
+                    };
+                }
 
                 IsRunning = OrginProcess.Start();
                 if (IsRunning)
@@ -79,7 +79,7 @@ namespace ProcessManager.Models
                     // Prepend line numbers to each line of the output.
                     if (!String.IsNullOrEmpty(e.Data))
                     {
-                        LogHelper.WriteTo(Id + ".out", e.Data);
+                        LogHelper.Add(new LogMessage(){ FileName = Id+".out", Message = e.Data});
                     }
                 });
                 OrginProcess.ErrorDataReceived += ((sender, e) =>
@@ -87,28 +87,28 @@ namespace ProcessManager.Models
                     // Prepend line numbers to each line of the output.
                     if (!String.IsNullOrEmpty(e.Data))
                     {
-                        LogHelper.WriteTo(Id + ".error", e.Data);
+                        LogHelper.Add(new LogMessage(){ FileName = Id+".out", Message = e.Data});
                     }
                 });
                 OrginProcess.BeginOutputReadLine();
                 OrginProcess.BeginErrorReadLine();
-                OrginProcess.WaitForExit();
-
-                Task.Run(() =>
-                {
-                    while (OrginProcess != null && !OrginProcess.HasExited && OrginProcess.Responding)
-                    {
-                        Thread.Sleep(500);
-                    }
-                    IsRunning = false;
-                });
+                OrginProcess.EnableRaisingEvents = true;
+                //OrginProcess.WaitForExit();
+                OrginProcess.Exited += OrginProcessOnExited;
 
             }
             catch (Exception e)
             {
                 Console.WriteLine(e);
-                LogHelper.WriteTo(Id + ".error", e.ToString());
+                LogHelper.Add(new LogMessage() { FileName = Id + ".error", Message = e.ToString() });
             }
+        }
+
+        private void OrginProcessOnExited(object sender, EventArgs e)
+        {
+            IsRunning = false;
+            OrginProcess = null;
+            OnStop?.Invoke(this, new EventArgs());
         }
     }
 }

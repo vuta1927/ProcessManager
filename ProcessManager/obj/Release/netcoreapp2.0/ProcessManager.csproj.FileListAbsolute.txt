@@ -20,3 +20,4 @@ C:\Users\Admin\Documents\GitHub\ProcessManager\ProcessManager\obj\Release\netcor
 C:\Users\Admin\Documents\GitHub\ProcessManager\ProcessManager\obj\Release\netcoreapp2.0\ProcessManager.AssemblyInfo.cs
 C:\Users\Admin\Documents\GitHub\ProcessManager\ProcessManager\obj\Release\netcoreapp2.0\ProcessManager.dll
 C:\Users\Admin\Documents\GitHub\ProcessManager\ProcessManager\obj\Release\netcoreapp2.0\ProcessManager.pdb
+C:\Users\Admin\Documents\GitHub\ProcessManager\ProcessManager\bin\Release\netcoreapp2.0\process.json

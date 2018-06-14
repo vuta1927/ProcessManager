@@ -3,7 +3,7 @@
   <PropertyGroup Label="Globals">
     <ProjectVersion>2.1</ProjectVersion>
     <DockerTargetOS>Linux</DockerTargetOS>
-    <ProjectGuid>b28e4df6-e0be-4298-bfd1-5531cc3baa19</ProjectGuid>
+    <ProjectGuid>e445c95f-5fe5-4d2c-906d-ec632954b8bf</ProjectGuid>
     <DockerLaunchAction>LaunchBrowser</DockerLaunchAction>
     <DockerServiceUrl>{Scheme}://localhost:{ServicePort}/api/values</DockerServiceUrl>
     <DockerServiceName>processmanager</DockerServiceName>
