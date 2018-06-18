@@ -3,14 +3,12 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
-using ProcessManager;
-using ProcessManager.Models;
+using ProcessManagerCore.Models;
 using Process = System.Diagnostics.Process;
 
-namespace ProcessManager.Core
+namespace ProcessManagerCore.Core
 {
     public class ProcessManager
     {

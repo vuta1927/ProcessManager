@@ -25,3 +25,39 @@
 [6/14/2018 4:31:07 PM]:    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
 [6/14/2018 4:31:07 PM]:Approximate round trip times in milli-seconds:
 [6/14/2018 4:31:07 PM]:    Minimum = 38ms, Maximum = 38ms, Average = 38ms
+[6/18/2018 2:24:51 PM]:Pinging 8.8.8.8 with 32 bytes of data:
+[6/18/2018 2:24:51 PM]:Reply from 8.8.8.8: bytes=32 time=39ms TTL=46
+[6/18/2018 2:24:55 PM]:Reply from 8.8.8.8: bytes=32 time=38ms TTL=46
+[6/18/2018 2:24:55 PM]:Reply from 8.8.8.8: bytes=32 time=39ms TTL=46
+[6/18/2018 2:24:55 PM]:Reply from 8.8.8.8: bytes=32 time=39ms TTL=46
+[6/18/2018 2:24:55 PM]:Ping statistics for 8.8.8.8:
+[6/18/2018 2:24:55 PM]:    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+[6/18/2018 2:24:55 PM]:Approximate round trip times in milli-seconds:
+[6/18/2018 2:24:55 PM]:    Minimum = 38ms, Maximum = 39ms, Average = 38ms
+[6/18/2018 2:28:20 PM]:Pinging 8.8.8.8 with 32 bytes of data:
+[6/18/2018 2:28:20 PM]:Reply from 8.8.8.8: bytes=32 time=38ms TTL=46
+[6/18/2018 2:28:24 PM]:Reply from 8.8.8.8: bytes=32 time=38ms TTL=46
+[6/18/2018 2:28:24 PM]:Reply from 8.8.8.8: bytes=32 time=38ms TTL=46
+[6/18/2018 2:28:24 PM]:Reply from 8.8.8.8: bytes=32 time=38ms TTL=46
+[6/18/2018 2:28:24 PM]:Ping statistics for 8.8.8.8:
+[6/18/2018 2:28:24 PM]:    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+[6/18/2018 2:28:25 PM]:Approximate round trip times in milli-seconds:
+[6/18/2018 2:28:25 PM]:    Minimum = 38ms, Maximum = 38ms, Average = 38ms
+[6/18/2018 2:30:18 PM]:Pinging 8.8.8.8 with 32 bytes of data:
+[6/18/2018 2:30:18 PM]:Reply from 8.8.8.8: bytes=32 time=39ms TTL=46
+[6/18/2018 2:30:21 PM]:Reply from 8.8.8.8: bytes=32 time=38ms TTL=46
+[6/18/2018 2:30:21 PM]:Reply from 8.8.8.8: bytes=32 time=38ms TTL=46
+[6/18/2018 2:30:21 PM]:Reply from 8.8.8.8: bytes=32 time=38ms TTL=46
+[6/18/2018 2:30:21 PM]:Ping statistics for 8.8.8.8:
+[6/18/2018 2:30:21 PM]:    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+[6/18/2018 2:30:21 PM]:Approximate round trip times in milli-seconds:
+[6/18/2018 2:30:21 PM]:    Minimum = 38ms, Maximum = 39ms, Average = 38ms
+[6/18/2018 2:31:05 PM]:Pinging 8.8.8.8 with 32 bytes of data:
+[6/18/2018 2:31:05 PM]:Reply from 8.8.8.8: bytes=32 time=39ms TTL=46
+[6/18/2018 2:31:09 PM]:Reply from 8.8.8.8: bytes=32 time=38ms TTL=46
+[6/18/2018 2:31:09 PM]:Reply from 8.8.8.8: bytes=32 time=38ms TTL=46
+[6/18/2018 2:31:09 PM]:Reply from 8.8.8.8: bytes=32 time=38ms TTL=46
+[6/18/2018 2:31:09 PM]:Ping statistics for 8.8.8.8:
+[6/18/2018 2:31:09 PM]:    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+[6/18/2018 2:31:09 PM]:Approximate round trip times in milli-seconds:
+[6/18/2018 2:31:09 PM]:    Minimum = 38ms, Maximum = 39ms, Average = 38ms

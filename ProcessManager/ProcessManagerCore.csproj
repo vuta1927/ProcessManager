@@ -8,7 +8,6 @@
   <ItemGroup>
     <Folder Include="Docker\publish\" />
     <Folder Include="logs\" />
-    <Folder Include="wwwroot\" />
   </ItemGroup>
 
   <ItemGroup>

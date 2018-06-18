@@ -1,0 +1,11 @@
+C:\Users\Admin\Documents\GitHub\ProcessManager\ProcessManager\bin\Debug\netcoreapp2.0\process.json
+C:\Users\Admin\Documents\GitHub\ProcessManager\ProcessManager\bin\Debug\netcoreapp2.0\ProcessManagerCore.deps.json
+C:\Users\Admin\Documents\GitHub\ProcessManager\ProcessManager\bin\Debug\netcoreapp2.0\ProcessManagerCore.runtimeconfig.json
+C:\Users\Admin\Documents\GitHub\ProcessManager\ProcessManager\bin\Debug\netcoreapp2.0\ProcessManagerCore.runtimeconfig.dev.json
+C:\Users\Admin\Documents\GitHub\ProcessManager\ProcessManager\bin\Debug\netcoreapp2.0\ProcessManagerCore.dll
+C:\Users\Admin\Documents\GitHub\ProcessManager\ProcessManager\bin\Debug\netcoreapp2.0\ProcessManagerCore.pdb
+C:\Users\Admin\Documents\GitHub\ProcessManager\ProcessManager\obj\Debug\netcoreapp2.0\ProcessManagerCore.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Documents\GitHub\ProcessManager\ProcessManager\obj\Debug\netcoreapp2.0\ProcessManagerCore.AssemblyInfoInputs.cache
+C:\Users\Admin\Documents\GitHub\ProcessManager\ProcessManager\obj\Debug\netcoreapp2.0\ProcessManagerCore.AssemblyInfo.cs
+C:\Users\Admin\Documents\GitHub\ProcessManager\ProcessManager\obj\Debug\netcoreapp2.0\ProcessManagerCore.dll
+C:\Users\Admin\Documents\GitHub\ProcessManager\ProcessManager\obj\Debug\netcoreapp2.0\ProcessManagerCore.pdb

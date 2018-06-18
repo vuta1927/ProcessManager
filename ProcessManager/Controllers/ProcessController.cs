@@ -1,13 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using ProcessManager.Models;
+using ProcessManagerCore.Models;
 
-namespace ProcessManager.Controllers
+namespace ProcessManagerCore.Controllers
 {
+    [Authorize]
     [Produces("application/json")]
     public class ProcessController : Controller
     {
