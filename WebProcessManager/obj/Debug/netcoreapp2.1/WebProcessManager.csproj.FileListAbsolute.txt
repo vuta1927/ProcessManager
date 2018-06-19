@@ -32,3 +32,15 @@ C:\Users\Admin\Documents\GitHub\ProcessManager\WebProcessManager\obj\Debug\netco
 C:\Users\Admin\Documents\GitHub\ProcessManager\WebProcessManager\obj\Debug\netcoreapp2.1\WebProcessManager.dll
 C:\Users\Admin\Documents\GitHub\ProcessManager\WebProcessManager\obj\Debug\netcoreapp2.1\WebProcessManager.pdb
 C:\Users\Admin\Documents\GitHub\ProcessManager\WebProcessManager\obj\Debug\netcoreapp2.1\WebProcessManager.csproj.CopyComplete
+C:\Users\Admin\Documents\GitHub\ProcessManager\WebProcessManager\obj\Debug\netcoreapp2.1\WebProcessManager.csprojAssemblyReference.cache
+C:\Users\Admin\Documents\GitHub\ProcessManager\WebProcessManager\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_HeaderPartial.g.cshtml.cs
+C:\Users\Admin\Documents\GitHub\ProcessManager\WebProcessManager\obj\Debug\netcoreapp2.1\Razor\Views\Containers\Create.g.cshtml.cs
+C:\Users\Admin\Documents\GitHub\ProcessManager\WebProcessManager\obj\Debug\netcoreapp2.1\Razor\Views\Containers\Delete.g.cshtml.cs
+C:\Users\Admin\Documents\GitHub\ProcessManager\WebProcessManager\obj\Debug\netcoreapp2.1\Razor\Views\Containers\Details.g.cshtml.cs
+C:\Users\Admin\Documents\GitHub\ProcessManager\WebProcessManager\obj\Debug\netcoreapp2.1\Razor\Views\Containers\Edit.g.cshtml.cs
+C:\Users\Admin\Documents\GitHub\ProcessManager\WebProcessManager\obj\Debug\netcoreapp2.1\Razor\Views\Containers\Index.g.cshtml.cs
+C:\Users\Admin\Documents\GitHub\ProcessManager\WebProcessManager\obj\Debug\netcoreapp2.1\Razor\Views\Processes\Create.g.cshtml.cs
+C:\Users\Admin\Documents\GitHub\ProcessManager\WebProcessManager\obj\Debug\netcoreapp2.1\Razor\Views\Processes\Delete.g.cshtml.cs
+C:\Users\Admin\Documents\GitHub\ProcessManager\WebProcessManager\obj\Debug\netcoreapp2.1\Razor\Views\Processes\Details.g.cshtml.cs
+C:\Users\Admin\Documents\GitHub\ProcessManager\WebProcessManager\obj\Debug\netcoreapp2.1\Razor\Views\Processes\Edit.g.cshtml.cs
+C:\Users\Admin\Documents\GitHub\ProcessManager\WebProcessManager\obj\Debug\netcoreapp2.1\Razor\Views\Processes\Index.g.cshtml.cs

@@ -12,6 +12,8 @@ using Microsoft.EntityFrameworkCore;
 using WebProcessManager.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
+using WebProcessManager.Core;
 
 namespace WebProcessManager
 {
@@ -40,12 +42,14 @@ namespace WebProcessManager
             services.AddDefaultIdentity<IdentityUser>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
+            services.AddTransient<IContainerComunicate, ContainerComunicate>();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
+            loggerFactory.AddConsole();
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -61,14 +65,23 @@ namespace WebProcessManager
             app.UseStaticFiles();
             app.UseCookiePolicy();
 
-            app.UseAuthentication();
+            //if (dbContext.Containers.Any())
+            //{
+            //    foreach (var c in dbContext.Containers)
+            //    {
+            //        containerComunicate.GetTokenFromContainer(c);
+            //    }
+            //}
 
+            app.UseAuthentication();
+            
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
+
         }
     }
 }

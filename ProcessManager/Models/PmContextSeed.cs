@@ -24,8 +24,8 @@ namespace ProcessManagerCore.Models
             {
                 var user = new IdentityUser
                 {
-                    UserName = "admin",
-                    Email = "admin",
+                    UserName = "admin@localhost",
+                    Email = "admin@localhost",
                     NormalizedEmail = "admin".ToUpper()
                 };
 

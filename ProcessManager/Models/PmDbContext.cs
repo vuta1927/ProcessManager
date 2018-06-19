@@ -13,7 +13,5 @@ namespace ProcessManagerCore.Models
             : base(options)
         {
         }
-
-        public DbSet<Process> Processes { get; set; }
     }
 }
