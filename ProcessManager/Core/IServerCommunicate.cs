@@ -6,5 +6,6 @@ namespace ProcessManagerCore.Core
     public interface IServerCommunicate
     {
         void GetTokenFromServer();
+        void ProcessStopHandler();
     }
 }

@@ -59,16 +59,17 @@ namespace ProcessManagerCore.Core
                 });
             }
         }
-        public void Run(int id)
+        public AppResponse Run(int id)
         {
             foreach (var p in _processes)
             {
                 if (p.Id == id && !p.IsRunning)
                 {
-                    p.Start();
-                    return;
+                    return p.Start();
                 }
             }
+
+            return new AppResponse(true, "process not found");
         }
 
         public void SetAutoRestart(int id)
@@ -96,7 +97,7 @@ namespace ProcessManagerCore.Core
                 }
             }
         }
-        public int Add(string application, string arguments, bool autoRestart)
+        public AppResponse Add(int id, string application, string arguments, bool autoRestart)
         {
             if (_processes == null)
             {
@@ -117,7 +118,7 @@ namespace ProcessManagerCore.Core
 
             var newProcess = new Models.Process()
             {
-                Id = _processes.Count,
+                Id = id,
                 Arguments = arguments,
                 OrginProcess = process,
                 Application = application,
@@ -129,7 +130,7 @@ namespace ProcessManagerCore.Core
 
             StoreProcess(newProcess);
 
-            return newProcess.Id;
+            return new AppResponse(false, "code: 200");
         }
 
         public bool Stop(int id)

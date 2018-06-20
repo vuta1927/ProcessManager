@@ -10,3 +10,15 @@ C:\Users\Admin\Documents\GitHub\ProcessManager\ProcessManager\obj\Debug\netcorea
 C:\Users\Admin\Documents\GitHub\ProcessManager\ProcessManager\obj\Debug\netcoreapp2.0\ProcessManagerCore.dll
 C:\Users\Admin\Documents\GitHub\ProcessManager\ProcessManager\obj\Debug\netcoreapp2.0\ProcessManagerCore.pdb
 C:\Users\Admin\Documents\GitHub\ProcessManager\ProcessManager\obj\Debug\netcoreapp2.0\ProcessManagerCore.csprojAssemblyReference.cache
+D:\Projects\ProcessManager\ProcessManager\bin\Debug\netcoreapp2.0\process.json
+D:\Projects\ProcessManager\ProcessManager\bin\Debug\netcoreapp2.0\ProcessManagerCore.deps.json
+D:\Projects\ProcessManager\ProcessManager\bin\Debug\netcoreapp2.0\ProcessManagerCore.runtimeconfig.json
+D:\Projects\ProcessManager\ProcessManager\bin\Debug\netcoreapp2.0\ProcessManagerCore.runtimeconfig.dev.json
+D:\Projects\ProcessManager\ProcessManager\bin\Debug\netcoreapp2.0\ProcessManagerCore.dll
+D:\Projects\ProcessManager\ProcessManager\bin\Debug\netcoreapp2.0\ProcessManagerCore.pdb
+D:\Projects\ProcessManager\ProcessManager\obj\Debug\netcoreapp2.0\ProcessManagerCore.csprojAssemblyReference.cache
+D:\Projects\ProcessManager\ProcessManager\obj\Debug\netcoreapp2.0\ProcessManagerCore.csproj.CoreCompileInputs.cache
+D:\Projects\ProcessManager\ProcessManager\obj\Debug\netcoreapp2.0\ProcessManagerCore.AssemblyInfoInputs.cache
+D:\Projects\ProcessManager\ProcessManager\obj\Debug\netcoreapp2.0\ProcessManagerCore.AssemblyInfo.cs
+D:\Projects\ProcessManager\ProcessManager\obj\Debug\netcoreapp2.0\ProcessManagerCore.dll
+D:\Projects\ProcessManager\ProcessManager\obj\Debug\netcoreapp2.0\ProcessManagerCore.pdb

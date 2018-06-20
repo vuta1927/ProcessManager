@@ -23,7 +23,7 @@ namespace WebProcessManager.Core
         {
             using (var client = new HttpClient())
             {
-                var httpContent = new StringContent("{'UserName':'admin@localhost', 'Password':'Echo@1927'}",Encoding.UTF8, "application/json");
+                var httpContent = new StringContent("{'UserName':'admin@localhost', 'Password':'Echo@1927'}", Encoding.UTF8, "application/json");
                 try
                 {
                     var response = client.PostAsync(cont.Address + "/RequestToken", httpContent).Result;
@@ -81,13 +81,13 @@ namespace WebProcessManager.Core
             return TokenRepository.AccessTokens[conntainerId];
         }
 
-        public async Task<bool> StartAsync(Process process)
+        public async Task<AppResponse> StartAsync(Process process)
         {
             using (var client = new HttpClient())
             {
                 if (!TokenRepository.AccessTokens.ContainsKey(process.ContainerId))
                 {
-                    return false;
+                    return new AppResponse(true, "Code: 401");
                 }
 
                 var token = TokenRepository.AccessTokens[process.ContainerId];
@@ -98,58 +98,105 @@ namespace WebProcessManager.Core
                     if (result.IsSuccessStatusCode)
                     {
                         var content = result.Content.ReadAsStringAsync().Result;
-                        return true;
+                        return new AppResponse(false, content);
                     }
-                    return false;
+                    return new AppResponse(true, "Code: " + result.StatusCode);
                 }
                 catch (Exception e)
                 {
-                    Console.WriteLine(e);
-                    return false;
+                    return new AppResponse(true, e.ToString());
                 }
-                
+
             }
         }
 
-        public async Task<bool> StopAsync(Process process)
+        public async Task<AppResponse> CreateProcess(Process process)
         {
             using (var client = new HttpClient())
             {
                 if (!TokenRepository.AccessTokens.ContainsKey(process.ContainerId))
                 {
-                    return false;
+                    return new AppResponse(true, "Code: 401");
                 }
 
                 var token = TokenRepository.AccessTokens[process.ContainerId];
-                var httpContent = new StringContent(JsonConvert.SerializeObject("{'Authorization': 'Bearer "+ token + "'}"),Encoding.UTF8, "application/json");
+                client.DefaultRequestHeaders.Add("Authorization", "Bearer " + token);
+                try
+                {
+                    var p = new ProcessModels.ProcessForAdd()
+                    {
+                        Id = process.Id,
+                        Application = process.Application,
+                        IsRunning = false,
+                        Arguments = process.Arguments,
+                        AutoRestart = process.AutoRestart
+                    };
+
+                    var httpContent = new StringContent(
+                        JsonConvert.SerializeObject(p),
+                        Encoding.UTF8,
+                        "application/json");
+
+                    var cont = _context.Containers.SingleOrDefault(x => x.Id == process.ContainerId);
+                    if (cont == null)
+                    {
+                        return new AppResponse(true, "Container not found!");
+                    }
+                    var result = await client.PostAsync(cont.Address + "/api/process", httpContent);
+                    if (result.IsSuccessStatusCode)
+                    {
+                        var content = result.Content.ReadAsStringAsync().Result;
+                        return new AppResponse(false, content);
+                    }
+                    return new AppResponse(true, "Code: " + result.StatusCode);
+                }
+                catch (Exception e)
+                {
+                    return new AppResponse(true, e.ToString());
+                }
+
+            }
+        }
+
+        public async Task<AppResponse> StopAsync(Process process)
+        {
+            using (var client = new HttpClient())
+            {
+                if (!TokenRepository.AccessTokens.ContainsKey(process.ContainerId))
+                {
+                    return new AppResponse(true, "Code: 401");
+                }
+
+                var token = TokenRepository.AccessTokens[process.ContainerId];
+                var httpContent = new StringContent(JsonConvert.SerializeObject("{'Authorization': 'Bearer " + token + "'}"), Encoding.UTF8, "application/json");
                 try
                 {
                     var result = await client.PostAsync(process.Container.Address + "/api/process/stop/" + process.Id, httpContent);
                     if (result.IsSuccessStatusCode)
                     {
-                        return true;
+                        var content = result.Content.ReadAsStringAsync().Result;
+                        return new AppResponse(false, content);
                     }
-                    return false;
+                    return new AppResponse(true, "Code: " + result.StatusCode);
                 }
                 catch (Exception e)
                 {
-                    Console.WriteLine(e);
-                    return false;
+                    return new AppResponse(true, e.ToString());
                 }
             }
         }
 
-        public Task SetAutoRestart(Process process)
+        public Task<AppResponse> SetAutoRestart(Process process)
         {
             throw new NotImplementedException();
         }
 
-        public Task StopAll(List<Process> procesList)
+        public Task<AppResponse> StopAll(List<Process> procesList)
         {
             throw new NotImplementedException();
         }
 
-        public Task RunAll(List<Process> procesList)
+        public Task<AppResponse> RunAll(List<Process> procesList)
         {
             throw new NotImplementedException();
         }

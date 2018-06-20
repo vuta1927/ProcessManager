@@ -11,6 +11,7 @@
         }
         public class ProcessForAdd
         {
+            public int Id { get; set; }
             public string Application { get; set; }
             public string Arguments { get; set; }
             public bool IsRunning { get; set; }

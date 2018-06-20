@@ -66,5 +66,28 @@ namespace ProcessManagerCore.Core
             Thread.Sleep(delay);
             GetTokenFromServer();
         }
+
+        public void ProcessStopHandler()
+        {
+            using (var client = new HttpClient())
+            {
+                client.DefaultRequestHeaders.Add("Authorization", "Bearer " + TokenRepository.token);
+                try
+                {
+                    var result = await client.PostAsync("/api/process/run/" + process.Id, null);
+                    if (result.IsSuccessStatusCode)
+                    {
+                        var content = result.Content.ReadAsStringAsync().Result;
+                        return new AppResponse(false, content);
+                    }
+                    return new AppResponse(true, "Code: " + result.StatusCode);
+                }
+                catch (Exception e)
+                {
+                    return new AppResponse(true, e.ToString());
+                }
+
+            }
+        }
     }
 }

@@ -8,10 +8,11 @@ namespace WebProcessManager.Core
     {
         void GetTokenFromContainer(Container conn);
         string GetToken(int conntainerId);
-        Task<bool> StartAsync(Process process);
-        Task<bool> StopAsync(Process process);
-        Task SetAutoRestart(Process process);
-        Task StopAll(List<Process> procesList);
-        Task RunAll(List<Process> procesList);
+        Task<AppResponse> CreateProcess(Process process);
+        Task<AppResponse> StartAsync(Process process);
+        Task<AppResponse> StopAsync(Process process);
+        Task<AppResponse> SetAutoRestart(Process process);
+        Task<AppResponse> StopAll(List<Process> procesList);
+        Task<AppResponse> RunAll(List<Process> procesList);
     }
 }

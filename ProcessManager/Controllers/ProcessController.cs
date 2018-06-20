@@ -2,6 +2,7 @@
 using System.Linq;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using ProcessManagerCore.Core;
 using ProcessManagerCore.Models;
 
 namespace ProcessManagerCore.Controllers
@@ -10,6 +11,11 @@ namespace ProcessManagerCore.Controllers
     [Produces("application/json")]
     public class ProcessController : Controller
     {
+        private IServerCommunicate _serverCommunicate;
+        public ProcessController(IServerCommunicate communicate)
+        {
+            _serverCommunicate = communicate;
+        }
         [HttpGet]
         [Route("api/process/")]
         public IActionResult GetAll()
@@ -48,15 +54,18 @@ namespace ProcessManagerCore.Controllers
         [Route("api/process/")]
         public IActionResult Add([FromBody] ProcessModels.ProcessForAdd p)
         {
-            var id = Program.PManager.Add(p.Application, p.Arguments, p.AutoRestart);
-            return Ok(id);
+            return Ok(Program.PManager.Add(p.Id, p.Application, p.Arguments, p.AutoRestart));
         }
 
         [HttpPost]
         [Route("api/process/run/{id}")]
         public IActionResult Run([FromRoute] int id)
         {
-            Program.PManager.Run(id);
+            var result = Program.PManager.Run(id);
+            if (!result.IsError)
+            {
+                _serverCommunicate.
+            }
             return Ok();
         }
         [HttpPost]
@@ -89,17 +98,6 @@ namespace ProcessManagerCore.Controllers
             p.AutoRestart = true;
             Program.PManager.SetAutoRestart(p.Id);
             return Ok();
-        }
-
-        [HttpPost]
-        [Route("api/process/addAndRun/")]
-        public IActionResult AddAndRun([FromBody] ProcessModels.ProcessForAdd p)
-        {
-            var id = Program.PManager.Add(p.Application, p.Arguments, p.AutoRestart);
-            if (id > 0)
-                Program.PManager.Run(id);
-
-            return Ok(id);
         }
 
         [HttpPost]

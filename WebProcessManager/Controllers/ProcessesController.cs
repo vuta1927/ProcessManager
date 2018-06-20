@@ -57,10 +57,18 @@ namespace WebProcessManager.Controllers
         public async Task<IActionResult> Start(int id)
         {
             var process = _context.Processes.Include(x => x.Container).SingleOrDefault(x => x.Id == id);
-            if (process == null) return NotFound();
+            if (process == null) ViewData["error"] = "Process not found!";
 
             var result = await _containerComunicate.StartAsync(process);
-            return RedirectToAction(nameof(Index));
+            if (result.IsError)
+            {
+                ViewData["error"] = result.Message;
+            }
+            else
+            {
+                process.IsRunning = true;
+            }
+            return View(nameof(Index));
         }
         public async Task<IActionResult> Stop(int id)
         {
@@ -68,7 +76,15 @@ namespace WebProcessManager.Controllers
             if (process == null) return NotFound();
 
             var result = await _containerComunicate.StopAsync(process);
-            return RedirectToAction(nameof(Index));
+            if (result.IsError)
+            {
+                ViewData["error"] = result.Message;
+            }
+            else
+            {
+                process.IsRunning = true;
+            }
+            return View(nameof(Index));
         }
 
         // POST: Processes/Create
@@ -83,7 +99,17 @@ namespace WebProcessManager.Controllers
                 process.IsRunning = false;
                 _context.Add(process);
                 await _context.SaveChangesAsync();
-                
+                var result = await _containerComunicate.CreateProcess(process);
+                if (result.IsError)
+                {
+                    ViewData["error"] = result.Message;
+                }
+                else
+                {
+                    process.IsRunning = true;
+                    await _context.SaveChangesAsync();
+                }
+
                 return RedirectToAction(nameof(Index));
             }
             ViewData["ContainerId"] = new SelectList(_context.Containers, "Id", "Id", process.ContainerId);
