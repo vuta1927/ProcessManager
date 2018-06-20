@@ -14,11 +14,11 @@ namespace WebProcessManager.Controllers
     public class ProcessesController : Controller
     {
         private readonly ApplicationDbContext _context;
-        //private readonly IContainerComunicate _containerComunicate;
-        public ProcessesController(ApplicationDbContext context)
+        private readonly IContainerComunicate _containerComunicate;
+        public ProcessesController(ApplicationDbContext context, IContainerComunicate containerComunicate)
         {
             _context = context;
-            //_containerComunicate = containerComunicate;
+            _containerComunicate = containerComunicate;
         }
 
         // GET: Processes
@@ -53,6 +53,23 @@ namespace WebProcessManager.Controllers
             ViewData["ContainerId"] = new SelectList(_context.Containers, "Id", "Id");
             return View();
         }
+        
+        public async Task<IActionResult> Start(int id)
+        {
+            var process = _context.Processes.Include(x => x.Container).SingleOrDefault(x => x.Id == id);
+            if (process == null) return NotFound();
+
+            var result = await _containerComunicate.StartAsync(process);
+            return RedirectToAction(nameof(Index));
+        }
+        public async Task<IActionResult> Stop(int id)
+        {
+            var process = _context.Processes.Include(x => x.Container).SingleOrDefault(x => x.Id == id);
+            if (process == null) return NotFound();
+
+            var result = await _containerComunicate.StopAsync(process);
+            return RedirectToAction(nameof(Index));
+        }
 
         // POST: Processes/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
@@ -66,6 +83,7 @@ namespace WebProcessManager.Controllers
                 process.IsRunning = false;
                 _context.Add(process);
                 await _context.SaveChangesAsync();
+                
                 return RedirectToAction(nameof(Index));
             }
             ViewData["ContainerId"] = new SelectList(_context.Containers, "Id", "Id", process.ContainerId);
@@ -158,28 +176,6 @@ namespace WebProcessManager.Controllers
         private bool ProcessExists(int id)
         {
             return _context.Processes.Any(e => e.Id == id);
-        }
-
-        [HttpPost, ActionName("Start")]
-        public async Task<IActionResult> Start(int id)
-        {
-            return Ok();
-            //var process = _context.Processes.Include(x => x.Container).SingleOrDefault(x => x.Id == id);
-            //if (process == null) return NotFound();
-
-            //var result = await _containerComunicate.StartAsync(process);
-            //return Ok(result);
-        }
-
-        [HttpPost, ActionName("Stop")]
-        public async Task<IActionResult> Stop(int id)
-        {
-            return Ok();
-            //var process = _context.Processes.Include(x => x.Container).SingleOrDefault(x => x.Id == id);
-            //if (process == null) return NotFound();
-
-            //var result = await _containerComunicate.StopAsync(process);
-            //return Ok(result);
         }
     }
 }

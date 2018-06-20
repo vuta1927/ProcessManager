@@ -2,6 +2,10 @@
   "iisSettings": {
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
+    "iis": {
+      "applicationUrl": "http://localhost/WebProcessManager",
+      "sslPort": 0
+    },
     "iisExpress": {
       "applicationUrl": "http://localhost:50001",
       "sslPort": 0
@@ -10,14 +14,15 @@
   "profiles": {
     "WebProcessManager": {
       "commandName": "Project",
-      "launchUrl": "http://localhost:5000",
+      "launchBrowser": true,
+      "launchUrl": "http://localhost:50001",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
       "applicationUrl": "http://localhost:50001"
     },
     "IIS": {
-      "commandName": "IISExpress",
+      "commandName": "Project",
       "launchBrowser": true,
       "launchUrl": "http://localhost:50001"
     }

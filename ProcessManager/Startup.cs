@@ -8,8 +8,10 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
 using ProcessManagerCore.Controllers;
+using ProcessManagerCore.Core;
 using ProcessManagerCore.Models;
 
 namespace ProcessManagerCore
@@ -57,22 +59,28 @@ namespace ProcessManagerCore
                         ValidIssuer = Configuration["JwtIssuer"],
                         ValidAudience = Configuration["JwtIssuer"],
                         RequireSignedTokens = true,
+                        RequireExpirationTime = true,
                         IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["JwtKey"])),
                         ClockSkew = TimeSpan.Zero // remove delay of token when expire
                     };
                 });
+
             services.AddTransient<ProcessController>();
+            services.AddTransient<IServerCommunicate, ServerCommunicate>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, PmDbContext dbContext, UserManager<IdentityUser> _userManager, RoleManager<IdentityRole> _roleManager)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory, PmDbContext dbContext, UserManager<IdentityUser> _userManager, RoleManager<IdentityRole> _roleManager, IServerCommunicate communicate)
         {
+            loggerFactory.AddConsole().AddDebug();
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
             }
 
             app.UseAuthentication();
+
+            communicate.GetTokenFromServer();
 
             app.UseMvc();
             

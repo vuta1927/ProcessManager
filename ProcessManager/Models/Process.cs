@@ -42,10 +42,19 @@ namespace ProcessManagerCore.Models
 
         public void Stop()
         {
-            OrginProcess.Kill();
+            try
+            {
+                OrginProcess.Kill();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
+            
         }
 
-        public void Start()
+        public AppResponse Start()
         {
             try
             {
@@ -92,12 +101,12 @@ namespace ProcessManagerCore.Models
                 OrginProcess.EnableRaisingEvents = true;
                 //OrginProcess.WaitForExit();
                 OrginProcess.Exited += OrginProcessOnExited;
-
+                return new AppResponse(false,Id.ToString());
             }
             catch (Exception e)
             {
-                Console.WriteLine(e);
                 LogHelper.Add(new LogMessage() { FileName = Id + ".error", Message = e.ToString() });
+                return new AppResponse(true, e.ToString());
             }
         }
 

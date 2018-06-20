@@ -6,44 +6,49 @@ using Microsoft.AspNetCore.Identity;
 
 namespace WebProcessManager.Data
 {
-    public class DataSeeder
+    public class DataSeeder : IDataSeeder
     {
-        public static void SeedData
-        (UserManager<IdentityUser> userManager,
+        private UserManager<IdentityUser> _userManager;
+        private RoleManager<IdentityRole> _roleManager;
+        
+        public DataSeeder(UserManager<IdentityUser> userManager,
             RoleManager<IdentityRole> roleManager)
         {
-            SeedRoles(roleManager);
-            SeedUsers(userManager);
+            _userManager = userManager;
+            _roleManager = roleManager;
+        }
+        public void SeedData()
+        {
+            SeedRoles();
+            SeedUsers();
         }
 
-        public static void SeedUsers
-            (UserManager<IdentityUser> userManager)
+        private void SeedUsers()
         {
-            if (userManager.FindByNameAsync
+            if (_userManager.FindByNameAsync
                     ("admin").Result == null)
             {
                 var user = new IdentityUser
                 {
-                    UserName = "admin",
-                    Email = "admin",
-                    NormalizedEmail = "admin".ToUpper()
+                    UserName = "admin@localhost",
+                    Email = "admin@localhost",
+                    NormalizedEmail = "admin@localhost".ToUpper()
                 };
 
-                var result = userManager.CreateAsync
+                var result = _userManager.CreateAsync
                     (user, "Echo@1927").Result;
 
                 if (result.Succeeded)
                 {
-                    userManager.AddToRoleAsync(user,
+                    _userManager.AddToRoleAsync(user,
                         "Administrator").Wait();
                 }
             }
         }
 
-        public static void SeedRoles
-            (RoleManager<IdentityRole> roleManager)
+        private void SeedRoles()
         {
-            if (!roleManager.RoleExistsAsync
+            if (!_roleManager.RoleExistsAsync
                 ("NormalUser").Result)
             {
                 var role = new IdentityRole()
@@ -51,12 +56,12 @@ namespace WebProcessManager.Data
                     Name = "NormalUser",
                     NormalizedName = "NormalUser".ToUpper()
                 };
-                var roleResult = roleManager.
+                var roleResult = _roleManager.
                     CreateAsync(role).Result;
             }
 
 
-            if (!roleManager.RoleExistsAsync
+            if (!_roleManager.RoleExistsAsync
                 ("Administrator").Result)
             {
                 var role = new IdentityRole()
@@ -64,7 +69,7 @@ namespace WebProcessManager.Data
                     Name = "Administrator",
                     NormalizedName = "Administrator".ToUpper()
                 };
-                var roleResult = roleManager.
+                var roleResult = _roleManager.
                     CreateAsync(role).Result;
             }
         }

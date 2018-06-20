@@ -6,7 +6,7 @@ namespace WebProcessManager.Core
 {
     public interface IContainerComunicate
     {
-        Task GetTokenFromContainer(Container conn);
+        void GetTokenFromContainer(Container conn);
         string GetToken(int conntainerId);
         Task<bool> StartAsync(Process process);
         Task<bool> StopAsync(Process process);
