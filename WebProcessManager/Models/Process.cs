@@ -3,6 +3,7 @@ using System;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 
 namespace WebProcessManager.Models
 {

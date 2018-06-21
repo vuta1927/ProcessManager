@@ -1,4 +1,5 @@
-﻿@model IEnumerable<WebProcessManager.Models.Process>
+﻿@using Newtonsoft.Json
+@model IEnumerable<WebProcessManager.Models.Process>
 
 @{
     ViewData["Title"] = "Index";
@@ -13,29 +14,32 @@
 <p style="color: red">
     @ViewData["error"]
 </p>
+
+<div id="gridContainer"></div>
+
 <table class="table">
     <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.IsRunning)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.AutoRestart)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Application)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Arguments)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Container)
-            </th>
-            <th></th>
-        </tr>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.IsRunning)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AutoRestart)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Application)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Arguments)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Container)
+        </th>
+        <th></th>
+    </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
+    @foreach (var item in Model) {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.IsRunning)
@@ -61,6 +65,15 @@
                 <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
             </td>
         </tr>
-}
+    }
     </tbody>
 </table>
+<script>
+    $(function() {
+        var processModel = '@JsonConvert.SerializeObject(Model)';
+        $("#gridContainer").dxDataGrid({
+            dataSource: processModel,
+            columns: ["Application", "Arguments", "IsRunning", "AutoRestart"]
+        });
+    });
+</script>

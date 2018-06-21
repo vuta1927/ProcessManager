@@ -24,7 +24,7 @@ namespace WebProcessManager.Controllers
         // GET: Processes
         public async Task<IActionResult> Index()
         {
-            var applicationDbContext = _context.Processes.Include(p => p.Container);
+            var applicationDbContext = _context.Processes;
             return View(await applicationDbContext.ToListAsync());
         }
 

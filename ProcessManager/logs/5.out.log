@@ -570,3 +570,29 @@
 [6/21/2018 4:51:56 PM]:Approximate round trip times in milli-seconds:
 [6/21/2018 4:51:56 PM]:    Minimum = 0ms, Maximum = 1ms, Average = 0ms
 [6/21/2018 4:52:02 PM]:process stopped!
+[6/21/2018 8:26:20 PM]:Pinging 192.168.100.1 with 32 bytes of data:
+[6/21/2018 8:26:24 PM]:Request timed out.
+[6/21/2018 8:26:29 PM]:Request timed out.
+[6/21/2018 8:26:34 PM]:Request timed out.
+[6/21/2018 8:26:39 PM]:Request timed out.
+[6/21/2018 8:26:39 PM]:Ping statistics for 192.168.100.1:
+[6/21/2018 8:26:39 PM]:    Packets: Sent = 4, Received = 0, Lost = 4 (100% loss),
+[6/21/2018 9:16:56 PM]:Pinging 192.168.100.1 with 32 bytes of data:
+[6/21/2018 9:17:00 PM]:Request timed out.
+[6/21/2018 9:17:05 PM]:Request timed out.
+[6/21/2018 9:17:10 PM]:Request timed out.
+[6/21/2018 9:17:15 PM]:Request timed out.
+[6/21/2018 9:17:15 PM]:Ping statistics for 192.168.100.1:
+[6/21/2018 9:17:15 PM]:    Packets: Sent = 4, Received = 0, Lost = 4 (100% loss),
+[6/21/2018 9:19:36 PM]:Pinging 192.168.100.1 with 32 bytes of data:
+[6/21/2018 9:19:39 PM]:Request timed out.
+[6/21/2018 9:19:44 PM]:Request timed out.
+[6/21/2018 9:20:53 PM]:Pinging 192.168.100.1 with 32 bytes of data:
+[6/21/2018 9:20:57 PM]:Request timed out.
+[6/21/2018 9:22:24 PM]:Pinging 192.168.100.1 with 32 bytes of data:
+[6/21/2018 9:22:27 PM]:Request timed out.
+[6/21/2018 9:22:32 PM]:Request timed out.
+[6/21/2018 9:22:37 PM]:Request timed out.
+[6/21/2018 9:22:42 PM]:Request timed out.
+[6/21/2018 9:22:42 PM]:Ping statistics for 192.168.100.1:
+[6/21/2018 9:22:42 PM]:    Packets: Sent = 4, Received = 0, Lost = 4 (100% loss),
