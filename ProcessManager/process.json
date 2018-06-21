@@ -1,0 +1,1 @@
+[{"Id":4,"Application":"ping","Arguments":"-t 8.8.8.8","AutoRestart":false},{"Id":5,"Application":"ping","Arguments":"192.168.100.1","AutoRestart":false},{"Id":6,"Application":"tracert","Arguments":"thehegeo.com","AutoRestart":false}]

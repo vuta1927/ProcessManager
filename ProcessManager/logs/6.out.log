@@ -1,108 +1,258 @@
-[6/20/2018 9:04:06 PM]:Pinging 8.8.8.8 with 32 bytes of data:
-[6/20/2018 9:04:06 PM]:Reply from 8.8.8.8: bytes=32 time=119ms TTL=48
-[6/20/2018 9:04:07 PM]:Reply from 8.8.8.8: bytes=32 time=113ms TTL=49
-[6/20/2018 9:04:08 PM]:Reply from 8.8.8.8: bytes=32 time=79ms TTL=49
-[6/20/2018 9:04:12 PM]:Request timed out.
-[6/20/2018 9:04:13 PM]:Reply from 8.8.8.8: bytes=32 time=98ms TTL=49
-[6/20/2018 9:04:14 PM]:Reply from 8.8.8.8: bytes=32 time=134ms TTL=49
-[6/20/2018 9:04:15 PM]:Reply from 8.8.8.8: bytes=32 time=95ms TTL=49
-[6/20/2018 9:04:16 PM]:Reply from 8.8.8.8: bytes=32 time=95ms TTL=49
-[6/20/2018 9:04:17 PM]:Reply from 8.8.8.8: bytes=32 time=162ms TTL=49
-[6/20/2018 9:04:18 PM]:Reply from 8.8.8.8: bytes=32 time=120ms TTL=49
-[6/20/2018 9:04:19 PM]:Reply from 8.8.8.8: bytes=32 time=102ms TTL=49
-[6/20/2018 9:04:20 PM]:Reply from 8.8.8.8: bytes=32 time=102ms TTL=49
-[6/20/2018 9:04:21 PM]:Reply from 8.8.8.8: bytes=32 time=149ms TTL=49
-[6/20/2018 9:04:22 PM]:Reply from 8.8.8.8: bytes=32 time=79ms TTL=49
-[6/20/2018 9:04:23 PM]:Reply from 8.8.8.8: bytes=32 time=84ms TTL=49
-[6/20/2018 9:04:24 PM]:Reply from 8.8.8.8: bytes=32 time=84ms TTL=49
-[6/20/2018 9:04:25 PM]:Reply from 8.8.8.8: bytes=32 time=96ms TTL=49
-[6/20/2018 9:04:26 PM]:Reply from 8.8.8.8: bytes=32 time=108ms TTL=49
-[6/20/2018 9:04:27 PM]:Reply from 8.8.8.8: bytes=32 time=128ms TTL=49
-[6/20/2018 9:04:28 PM]:Reply from 8.8.8.8: bytes=32 time=130ms TTL=49
-[6/20/2018 9:04:29 PM]:Reply from 8.8.8.8: bytes=32 time=104ms TTL=49
-[6/20/2018 9:04:30 PM]:Reply from 8.8.8.8: bytes=32 time=113ms TTL=49
-[6/20/2018 9:04:31 PM]:Reply from 8.8.8.8: bytes=32 time=121ms TTL=49
-[6/20/2018 9:04:32 PM]:Reply from 8.8.8.8: bytes=32 time=110ms TTL=49
-[6/20/2018 9:04:33 PM]:Reply from 8.8.8.8: bytes=32 time=118ms TTL=49
-[6/20/2018 9:04:34 PM]:Reply from 8.8.8.8: bytes=32 time=109ms TTL=49
-[6/20/2018 9:04:35 PM]:Reply from 8.8.8.8: bytes=32 time=107ms TTL=49
-[6/20/2018 9:04:37 PM]:Reply from 8.8.8.8: bytes=32 time=136ms TTL=49
-[6/20/2018 9:04:37 PM]:Reply from 8.8.8.8: bytes=32 time=117ms TTL=49
-[6/20/2018 9:04:39 PM]:Reply from 8.8.8.8: bytes=32 time=115ms TTL=49
-[6/20/2018 9:04:41 PM]:Reply from 8.8.8.8: bytes=32 time=111ms TTL=49
-[6/20/2018 9:04:41 PM]:Reply from 8.8.8.8: bytes=32 time=107ms TTL=49
-[6/20/2018 9:04:45 PM]:Reply from 8.8.8.8: bytes=32 time=136ms TTL=49
-[6/20/2018 9:04:58 PM]:Request timed out.
-[6/20/2018 9:04:58 PM]:Reply from 8.8.8.8: bytes=32 time=88ms TTL=49
-[6/20/2018 9:04:58 PM]:Reply from 8.8.8.8: bytes=32 time=125ms TTL=49
-[6/20/2018 9:04:58 PM]:Reply from 8.8.8.8: bytes=32 time=125ms TTL=49
-[6/20/2018 9:04:58 PM]:Reply from 8.8.8.8: bytes=32 time=97ms TTL=49
-[6/20/2018 9:04:58 PM]:Reply from 8.8.8.8: bytes=32 time=135ms TTL=49
-[6/20/2018 9:04:58 PM]:Reply from 8.8.8.8: bytes=32 time=105ms TTL=49
-[6/20/2018 9:04:58 PM]:Reply from 8.8.8.8: bytes=32 time=108ms TTL=49
-[6/20/2018 9:04:58 PM]:Reply from 8.8.8.8: bytes=32 time=141ms TTL=49
-[6/20/2018 9:04:58 PM]:Reply from 8.8.8.8: bytes=32 time=112ms TTL=49
-[6/20/2018 9:04:58 PM]:Reply from 8.8.8.8: bytes=32 time=81ms TTL=49
-[6/20/2018 9:04:58 PM]:Reply from 8.8.8.8: bytes=32 time=108ms TTL=49
-[6/20/2018 9:05:00 PM]:Reply from 8.8.8.8: bytes=32 time=111ms TTL=49
-[6/20/2018 9:05:00 PM]:Reply from 8.8.8.8: bytes=32 time=100ms TTL=49
-[6/20/2018 9:05:25 PM]:Reply from 8.8.8.8: bytes=32 time=93ms TTL=49
-[6/20/2018 9:05:25 PM]:Reply from 8.8.8.8: bytes=32 time=116ms TTL=49
-[6/20/2018 9:05:25 PM]:Reply from 8.8.8.8: bytes=32 time=100ms TTL=49
-[6/20/2018 9:05:25 PM]:Reply from 8.8.8.8: bytes=32 time=111ms TTL=49
-[6/20/2018 9:05:25 PM]:Reply from 8.8.8.8: bytes=32 time=113ms TTL=49
-[6/20/2018 9:05:25 PM]:Reply from 8.8.8.8: bytes=32 time=98ms TTL=49
-[6/20/2018 9:05:25 PM]:Reply from 8.8.8.8: bytes=32 time=110ms TTL=49
-[6/20/2018 9:05:25 PM]:Reply from 8.8.8.8: bytes=32 time=86ms TTL=49
-[6/20/2018 9:05:25 PM]:Reply from 8.8.8.8: bytes=32 time=110ms TTL=49
-[6/20/2018 9:05:25 PM]:Reply from 8.8.8.8: bytes=32 time=100ms TTL=49
-[6/20/2018 9:05:25 PM]:Reply from 8.8.8.8: bytes=32 time=86ms TTL=49
-[6/20/2018 9:05:25 PM]:Reply from 8.8.8.8: bytes=32 time=92ms TTL=49
-[6/20/2018 9:05:25 PM]:Reply from 8.8.8.8: bytes=32 time=109ms TTL=49
-[6/20/2018 9:05:25 PM]:Reply from 8.8.8.8: bytes=32 time=99ms TTL=49
-[6/20/2018 9:05:25 PM]:Reply from 8.8.8.8: bytes=32 time=122ms TTL=49
-[6/20/2018 9:05:25 PM]:Reply from 8.8.8.8: bytes=32 time=134ms TTL=49
-[6/20/2018 9:05:25 PM]:Reply from 8.8.8.8: bytes=32 time=146ms TTL=49
-[6/20/2018 9:05:25 PM]:Reply from 8.8.8.8: bytes=32 time=97ms TTL=49
-[6/20/2018 9:05:26 PM]:Reply from 8.8.8.8: bytes=32 time=156ms TTL=49
-[6/20/2018 9:05:26 PM]:Reply from 8.8.8.8: bytes=32 time=107ms TTL=49
-[6/20/2018 9:05:26 PM]:Reply from 8.8.8.8: bytes=32 time=161ms TTL=49
-[6/20/2018 9:05:26 PM]:Reply from 8.8.8.8: bytes=32 time=131ms TTL=49
-[6/20/2018 9:05:26 PM]:Reply from 8.8.8.8: bytes=32 time=136ms TTL=49
-[6/20/2018 9:05:26 PM]:Reply from 8.8.8.8: bytes=32 time=129ms TTL=49
-[6/20/2018 9:05:26 PM]:Reply from 8.8.8.8: bytes=32 time=109ms TTL=49
-[6/20/2018 9:05:26 PM]:Reply from 8.8.8.8: bytes=32 time=112ms TTL=49
-[6/20/2018 9:05:27 PM]:Reply from 8.8.8.8: bytes=32 time=165ms TTL=49
-[6/20/2018 9:05:28 PM]:Reply from 8.8.8.8: bytes=32 time=89ms TTL=49
-[6/20/2018 9:05:30 PM]:Reply from 8.8.8.8: bytes=32 time=115ms TTL=49
-[6/20/2018 9:05:30 PM]:Reply from 8.8.8.8: bytes=32 time=92ms TTL=49
-[6/20/2018 9:05:31 PM]:Reply from 8.8.8.8: bytes=32 time=152ms TTL=49
-[6/20/2018 9:05:34 PM]:Reply from 8.8.8.8: bytes=32 time=114ms TTL=49
-[6/20/2018 9:05:34 PM]:Reply from 8.8.8.8: bytes=32 time=99ms TTL=49
-[6/20/2018 9:05:34 PM]:Reply from 8.8.8.8: bytes=32 time=126ms TTL=49
-[6/20/2018 9:05:34 PM]:Reply from 8.8.8.8: bytes=32 time=106ms TTL=49
-[6/20/2018 9:05:35 PM]:Reply from 8.8.8.8: bytes=32 time=127ms TTL=49
-[6/20/2018 9:05:37 PM]:Reply from 8.8.8.8: bytes=32 time=164ms TTL=49
-[6/20/2018 9:05:37 PM]:Reply from 8.8.8.8: bytes=32 time=82ms TTL=49
-[6/20/2018 9:05:38 PM]:Reply from 8.8.8.8: bytes=32 time=108ms TTL=49
-[6/20/2018 9:05:39 PM]:Reply from 8.8.8.8: bytes=32 time=121ms TTL=49
-[6/20/2018 9:05:40 PM]:Reply from 8.8.8.8: bytes=32 time=82ms TTL=49
-[6/20/2018 9:05:42 PM]:Reply from 8.8.8.8: bytes=32 time=132ms TTL=49
-[6/20/2018 9:05:43 PM]:Reply from 8.8.8.8: bytes=32 time=131ms TTL=49
-[6/20/2018 9:05:43 PM]:Reply from 8.8.8.8: bytes=32 time=82ms TTL=49
-[6/20/2018 9:05:45 PM]:Reply from 8.8.8.8: bytes=32 time=117ms TTL=49
-[6/20/2018 9:05:45 PM]:Reply from 8.8.8.8: bytes=32 time=110ms TTL=49
-[6/20/2018 9:05:47 PM]:Reply from 8.8.8.8: bytes=32 time=125ms TTL=49
-[6/20/2018 9:05:48 PM]:Reply from 8.8.8.8: bytes=32 time=137ms TTL=49
-[6/20/2018 9:05:49 PM]:Reply from 8.8.8.8: bytes=32 time=150ms TTL=49
-[6/20/2018 9:05:49 PM]:Reply from 8.8.8.8: bytes=32 time=99ms TTL=49
-[6/20/2018 9:05:51 PM]:Reply from 8.8.8.8: bytes=32 time=130ms TTL=49
-[6/20/2018 9:05:52 PM]:Reply from 8.8.8.8: bytes=32 time=146ms TTL=49
-[6/20/2018 9:05:53 PM]:Reply from 8.8.8.8: bytes=32 time=110ms TTL=49
-[6/20/2018 9:05:54 PM]:Reply from 8.8.8.8: bytes=32 time=118ms TTL=49
-[6/20/2018 9:05:59 PM]:Request timed out.
-[6/20/2018 9:06:02 PM]:Reply from 8.8.8.8: bytes=32 time=127ms TTL=49
-[6/20/2018 9:06:02 PM]:Reply from 8.8.8.8: bytes=32 time=117ms TTL=49
-[6/20/2018 9:06:02 PM]:Reply from 8.8.8.8: bytes=32 time=108ms TTL=49
-[6/20/2018 9:06:03 PM]:Reply from 8.8.8.8: bytes=32 time=121ms TTL=49
-[6/20/2018 9:06:04 PM]:Reply from 8.8.8.8: bytes=32 time=117ms TTL=49
+[6/21/2018 1:38:59 PM]:process stopped!
+[6/21/2018 1:38:59 PM]:process started!
+[6/21/2018 1:38:59 PM]:Tracing route to thehegeo.com [42.117.6.234]
+[6/21/2018 1:38:59 PM]:over a maximum of 30 hops:
+[6/21/2018 1:39:03 PM]:  1    <1 ms    <1 ms    <1 ms  192.168.100.1 
+[6/21/2018 1:39:04 PM]:  2     5 ms     1 ms     2 ms  static.vnpt.vn [14.177.160.1] 
+[6/21/2018 1:39:13 PM]:  3     2 ms     *        *     static.vnpt-hanoi.com.vn [123.25.27.97] 
+[6/21/2018 1:39:13 PM]:  4     2 ms     2 ms     2 ms  static.vnpt.vn [123.29.5.85] 
+[6/21/2018 1:39:14 PM]:  5     3 ms     3 ms     2 ms  static.vnpt.vn [113.171.33.81] 
+[6/21/2018 1:39:15 PM]:  6     2 ms     2 ms     3 ms  static.vnpt.vn [113.171.5.10] 
+[6/21/2018 1:39:16 PM]:  7     3 ms     2 ms     2 ms  static.vnpt.vn [123.29.16.74] 
+[6/21/2018 1:39:29 PM]:  8     *        *        *     Request timed out.
+[6/21/2018 1:39:41 PM]:  9     *        *        *     Request timed out.
+[6/21/2018 1:39:46 PM]: 10    25 ms    24 ms    26 ms  118.69.253.215 
+[6/21/2018 1:39:57 PM]: 11     *     1136 ms  1078 ms  cache.google.com [42.119.253.170] 
+[6/21/2018 1:40:02 PM]: 12    24 ms    24 ms    24 ms  42.117.6.234 
+[6/21/2018 1:40:02 PM]:Trace complete.
+[6/21/2018 1:40:02 PM]:process stopped!
+[6/21/2018 1:40:02 PM]:process stopped!
+[6/21/2018 2:47:26 PM]:process stopped!
+[6/21/2018 2:47:26 PM]:process started!
+[6/21/2018 2:47:26 PM]:Tracing route to thehegeo.com [42.117.6.234]
+[6/21/2018 2:47:26 PM]:over a maximum of 30 hops:
+[6/21/2018 2:47:26 PM]:  1     2 ms     1 ms    <1 ms  192.168.100.1 
+[6/21/2018 2:47:26 PM]:  2     2 ms     3 ms     2 ms  static.vnpt.vn [14.177.160.1] 
+[6/21/2018 2:47:40 PM]:  3     *        *        2 ms  static.vnpt-hanoi.com.vn [123.25.27.97] 
+[6/21/2018 2:47:41 PM]:  4     3 ms     4 ms     3 ms  static.vnpt.vn [123.29.5.85] 
+[6/21/2018 2:47:47 PM]:  5    18 ms     3 ms     3 ms  static.vnpt.vn [113.171.33.81] 
+[6/21/2018 2:47:52 PM]:  6     6 ms     7 ms     2 ms  static.vnpt.vn [113.171.5.10] 
+[6/21/2018 2:47:53 PM]:  7    13 ms     3 ms     2 ms  static.vnpt.vn [123.29.16.74] 
+[6/21/2018 2:48:06 PM]:  8     *        *        *     Request timed out.
+[6/21/2018 2:48:18 PM]:  9     *        *        *     Request timed out.
+[6/21/2018 2:48:23 PM]: 10    25 ms    25 ms    25 ms  118.69.253.215 
+[6/21/2018 2:48:29 PM]: 11    24 ms    24 ms    24 ms  cache.google.com [42.119.253.170] 
+[6/21/2018 2:48:35 PM]: 12    24 ms    23 ms    23 ms  42.117.6.234 
+[6/21/2018 2:48:35 PM]:Trace complete.
+[6/21/2018 2:48:35 PM]:process stopped!
+[6/21/2018 2:48:35 PM]:process stopped!
+[6/21/2018 2:54:14 PM]:process stopped!
+[6/21/2018 2:54:14 PM]:process started!
+[6/21/2018 2:54:14 PM]:Tracing route to thehegeo.com [42.117.6.234]
+[6/21/2018 2:54:14 PM]:over a maximum of 30 hops:
+[6/21/2018 2:54:18 PM]:  1     1 ms     1 ms     1 ms  192.168.100.1 
+[6/21/2018 2:54:24 PM]:  2     2 ms     3 ms     2 ms  static.vnpt.vn [14.177.160.1] 
+[6/21/2018 2:54:28 PM]:  3     2 ms     2 ms     *     static.vnpt-hanoi.com.vn [123.25.27.97] 
+[6/21/2018 2:54:33 PM]:  4     3 ms     1 ms     2 ms  static.vnpt.vn [123.29.5.85] 
+[6/21/2018 2:54:39 PM]:  5     3 ms     3 ms     3 ms  static.vnpt.vn [113.171.33.81] 
+[6/21/2018 2:54:40 PM]:  6     3 ms     3 ms     3 ms  static.vnpt.vn [113.171.5.10] 
+[6/21/2018 2:54:45 PM]:  7     4 ms     2 ms     2 ms  static.vnpt.vn [123.29.16.74] 
+[6/21/2018 2:54:58 PM]:  8     *        *        *     Request timed out.
+[6/21/2018 2:55:13 PM]:  9     *        *        *     Request timed out.
+[6/21/2018 2:55:23 PM]: 10    25 ms    25 ms    24 ms  118.69.253.215 
+[6/21/2018 2:55:26 PM]: 11     *     1036 ms   464 ms  42.119.253.170 
+[6/21/2018 2:55:31 PM]: 12    24 ms    24 ms    24 ms  42.117.6.234 
+[6/21/2018 2:55:31 PM]:Trace complete.
+[6/21/2018 2:55:32 PM]:process stopped!
+[6/21/2018 2:55:32 PM]:process stopped!
+[6/21/2018 2:58:02 PM]:process stopped!
+[6/21/2018 2:58:04 PM]:process started!
+[6/21/2018 2:58:04 PM]:Tracing route to thehegeo.com [42.117.6.234]
+[6/21/2018 2:58:04 PM]:over a maximum of 30 hops:
+[6/21/2018 2:58:06 PM]:  1    <1 ms    <1 ms     1 ms  192.168.100.1 
+[6/21/2018 2:58:07 PM]:  2     2 ms     2 ms     2 ms  static.vnpt.vn [14.177.160.1] 
+[6/21/2018 2:58:16 PM]:  3     *        2 ms     *     static.vnpt-hanoi.com.vn [123.25.27.97] 
+[6/21/2018 2:58:16 PM]:  4     2 ms     2 ms     2 ms  static.vnpt.vn [123.29.5.85] 
+[6/21/2018 2:58:17 PM]:  5    20 ms     3 ms     3 ms  static.vnpt.vn [113.171.33.81] 
+[6/21/2018 2:58:18 PM]:  6     3 ms     5 ms     3 ms  static.vnpt.vn [113.171.5.10] 
+[6/21/2018 2:58:19 PM]:  7     3 ms     2 ms     2 ms  static.vnpt.vn [123.29.16.74] 
+[6/21/2018 2:58:32 PM]:  8     *        *        *     Request timed out.
+[6/21/2018 2:58:44 PM]:  9     *        *        *     Request timed out.
+[6/21/2018 2:58:49 PM]: 10    25 ms    24 ms    24 ms  118.69.253.215 
+[6/21/2018 2:58:50 PM]: 11    25 ms    25 ms    24 ms  cache.google.com [42.119.253.170] 
+[6/21/2018 2:58:56 PM]: 12    23 ms    23 ms    24 ms  42.117.6.234 
+[6/21/2018 2:58:56 PM]:Trace complete.
+[6/21/2018 2:58:56 PM]:process stopped!
+[6/21/2018 2:58:56 PM]:process stopped!
+[6/21/2018 3:02:14 PM]:process stopped!
+[6/21/2018 3:02:15 PM]:process started!
+[6/21/2018 3:02:15 PM]:Tracing route to thehegeo.com [42.117.6.234]
+[6/21/2018 3:02:15 PM]:over a maximum of 30 hops:
+[6/21/2018 3:02:18 PM]:  1     1 ms     1 ms     1 ms  192.168.100.1 
+[6/21/2018 3:02:27 PM]:  2     4 ms     2 ms     2 ms  static.vnpt.vn [14.177.160.1] 
+[6/21/2018 3:02:45 PM]:  3     *        *        1 ms  static.vnpt-hanoi.com.vn [123.25.27.97] 
+[6/21/2018 3:02:45 PM]:  4     4 ms     3 ms     2 ms  static.vnpt.vn [123.29.5.85] 
+[6/21/2018 3:02:45 PM]:  5    12 ms     2 ms     2 ms  static.vnpt.vn [113.171.33.81] 
+[6/21/2018 3:02:45 PM]:  6     2 ms     3 ms     3 ms  static.vnpt.vn [113.171.5.10] 
+[6/21/2018 3:02:45 PM]:  7     2 ms     2 ms     2 ms  static.vnpt.vn [123.29.16.74] 
+[6/21/2018 3:02:45 PM]:  8     *        *        *     Request timed out.
+[6/21/2018 3:03:23 PM]:  9     *        *        *     Request timed out.
+[6/21/2018 3:03:23 PM]: 10    25 ms    24 ms    24 ms  118.69.253.215 
+[6/21/2018 3:03:23 PM]: 11     *        *      948 ms  cache.google.com [42.119.253.170] 
+[6/21/2018 3:03:23 PM]: 12    26 ms    24 ms    24 ms  42.117.6.234 
+[6/21/2018 3:03:23 PM]:Trace complete.
+[6/21/2018 3:03:34 PM]:process stopped!
+[6/21/2018 3:03:34 PM]:process stopped!
+[6/21/2018 3:11:12 PM]:process started!
+[6/21/2018 3:11:12 PM]:Tracing route to thehegeo.com [42.117.6.234]
+[6/21/2018 3:11:12 PM]:over a maximum of 30 hops:
+[6/21/2018 3:11:16 PM]:  1     2 ms     2 ms    <1 ms  192.168.100.1 
+[6/21/2018 3:11:21 PM]:  2     4 ms     2 ms     2 ms  static.vnpt.vn [14.177.160.1] 
+[6/21/2018 3:11:30 PM]:  3     *        2 ms     2 ms  static.vnpt-hanoi.com.vn [123.25.27.97] 
+[6/21/2018 3:11:36 PM]:  4    16 ms    44 ms     2 ms  static.vnpt.vn [123.29.5.85] 
+[6/21/2018 3:11:42 PM]:  5     2 ms     3 ms     3 ms  static.vnpt.vn [113.171.33.81] 
+[6/21/2018 3:11:47 PM]:  6     3 ms     2 ms     2 ms  static.vnpt.vn [113.171.5.10] 
+[6/21/2018 3:11:53 PM]:  7     3 ms     3 ms     2 ms  static.vnpt.vn [123.29.16.74] 
+[6/21/2018 3:12:05 PM]:  8     *        *        *     Request timed out.
+[6/21/2018 3:12:17 PM]:  9     *        *        *     Request timed out.
+[6/21/2018 3:12:22 PM]: 10    25 ms    26 ms    24 ms  118.69.253.215 
+[6/21/2018 3:12:29 PM]: 11     *     1133 ms  1217 ms  cache.google.com [42.119.253.170] 
+[6/21/2018 3:12:34 PM]: 12    24 ms    23 ms    23 ms  42.117.6.234 
+[6/21/2018 3:12:34 PM]:Trace complete.
+[6/21/2018 3:12:34 PM]:process stopped!
+[6/21/2018 3:16:57 PM]:process started!
+[6/21/2018 3:16:57 PM]:Tracing route to thehegeo.com [42.117.6.234]
+[6/21/2018 3:16:57 PM]:over a maximum of 30 hops:
+[6/21/2018 3:16:57 PM]:  1    <1 ms    <1 ms    <1 ms  192.168.100.1 
+[6/21/2018 3:16:58 PM]:  2     2 ms     2 ms     2 ms  static.vnpt.vn [14.177.160.1] 
+[6/21/2018 3:17:02 PM]:  3     2 ms     *        2 ms  static.vnpt-hanoi.com.vn [123.25.27.97] 
+[6/21/2018 3:17:03 PM]:  4     2 ms     3 ms     2 ms  static.vnpt.vn [123.29.5.85] 
+[6/21/2018 3:17:04 PM]:  5    28 ms     3 ms     7 ms  static.vnpt.vn [113.171.33.81] 
+[6/21/2018 3:17:06 PM]:  6     4 ms     3 ms     3 ms  static.vnpt.vn [113.171.5.10] 
+[6/21/2018 3:17:07 PM]:  7     2 ms     2 ms     6 ms  static.vnpt.vn [123.29.16.74] 
+[6/21/2018 3:17:19 PM]:  8     *        *        *     Request timed out.
+[6/21/2018 3:17:31 PM]:  9     *        *        *     Request timed out.
+[6/21/2018 3:17:36 PM]: 10    24 ms    24 ms    24 ms  118.69.253.215 
+[6/21/2018 3:17:37 PM]: 11    24 ms    25 ms    24 ms  cache.google.com [42.119.253.170] 
+[6/21/2018 3:17:43 PM]: 12    24 ms    24 ms    23 ms  42.117.6.234 
+[6/21/2018 3:17:43 PM]:Trace complete.
+[6/21/2018 3:17:44 PM]:process stopped!
+[6/21/2018 3:45:16 PM]:process started!
+[6/21/2018 3:45:16 PM]:Tracing route to thehegeo.com [42.117.6.234]
+[6/21/2018 3:45:16 PM]:over a maximum of 30 hops:
+[6/21/2018 3:45:20 PM]:  1    <1 ms     1 ms    <1 ms  192.168.100.1 
+[6/21/2018 3:45:25 PM]:  2     3 ms     2 ms     2 ms  static.vnpt.vn [14.177.160.1] 
+[6/21/2018 3:45:38 PM]:  3     *        *        *     Request timed out.
+[6/21/2018 3:45:42 PM]:  4     3 ms     2 ms     2 ms  static.vnpt.vn [123.29.5.85] 
+[6/21/2018 3:45:44 PM]:  5     7 ms     9 ms     2 ms  static.vnpt.vn [113.171.33.81] 
+[6/21/2018 3:45:45 PM]:  6     2 ms     4 ms     2 ms  static.vnpt.vn [113.171.5.10] 
+[6/21/2018 3:45:46 PM]:  7     3 ms     8 ms     3 ms  static.vnpt.vn [123.29.16.74] 
+[6/21/2018 3:48:53 PM]:process started!
+[6/21/2018 3:48:53 PM]:Tracing route to thehegeo.com [42.117.6.234]
+[6/21/2018 3:48:53 PM]:over a maximum of 30 hops:
+[6/21/2018 3:48:57 PM]:  1     1 ms     1 ms     2 ms  192.168.100.1 
+[6/21/2018 3:48:58 PM]:  2     3 ms     2 ms     2 ms  static.vnpt.vn [14.177.160.1] 
+[6/21/2018 3:49:06 PM]:  3     *        3 ms     *     static.vnpt-hanoi.com.vn [123.25.27.97] 
+[6/21/2018 3:49:06 PM]:  4     3 ms     3 ms     3 ms  static.vnpt.vn [123.29.5.85] 
+[6/21/2018 3:49:07 PM]:  5     3 ms     6 ms     3 ms  static.vnpt.vn [113.171.33.81] 
+[6/21/2018 3:49:08 PM]:  6     2 ms     2 ms     2 ms  static.vnpt.vn [113.171.5.10] 
+[6/21/2018 3:49:09 PM]:  7     2 ms     3 ms     3 ms  static.vnpt.vn [123.29.16.74] 
+[6/21/2018 3:49:22 PM]:  8     *        *        *     Request timed out.
+[6/21/2018 3:52:01 PM]:process started!
+[6/21/2018 3:52:01 PM]:Tracing route to thehegeo.com [42.117.6.234]
+[6/21/2018 3:52:01 PM]:over a maximum of 30 hops:
+[6/21/2018 3:52:05 PM]:  1     1 ms    <1 ms     1 ms  192.168.100.1 
+[6/21/2018 3:52:16 PM]:  2     3 ms     4 ms     3 ms  static.vnpt.vn [14.177.160.1] 
+[6/21/2018 3:52:20 PM]:  3     *        *        3 ms  static.vnpt-hanoi.com.vn [123.25.27.97] 
+[6/21/2018 3:52:26 PM]:  4     2 ms     2 ms     2 ms  static.vnpt.vn [123.29.5.85] 
+[6/21/2018 3:52:43 PM]:  5     4 ms     2 ms     3 ms  static.vnpt.vn [113.171.33.81] 
+[6/21/2018 3:52:43 PM]:  6     6 ms     2 ms     2 ms  static.vnpt.vn [113.171.5.10] 
+[6/21/2018 3:52:43 PM]:  7     2 ms     2 ms     3 ms  static.vnpt.vn [123.29.16.74] 
+[6/21/2018 3:53:06 PM]:  8     *        *        *     Request timed out.
+[6/21/2018 3:53:18 PM]:  9     *        *        *     Request timed out.
+[6/21/2018 3:53:19 PM]: 10    29 ms    24 ms    25 ms  118.69.253.215 
+[6/21/2018 3:53:47 PM]: 11     *        *        *     Request timed out.
+[6/21/2018 3:53:47 PM]: 12    24 ms    24 ms    24 ms  42.117.6.234 
+[6/21/2018 3:53:47 PM]:Trace complete.
+[6/21/2018 3:53:52 PM]:process stopped!
+[6/21/2018 3:57:57 PM]:process started!
+[6/21/2018 3:57:57 PM]:Tracing route to thehegeo.com [42.117.6.234]
+[6/21/2018 3:57:57 PM]:over a maximum of 30 hops:
+[6/21/2018 3:58:00 PM]:  1     1 ms     1 ms     1 ms  192.168.100.1 
+[6/21/2018 3:58:01 PM]:  2     2 ms     1 ms     2 ms  static.vnpt.vn [14.177.160.1] 
+[6/21/2018 3:58:10 PM]:  3     3 ms     3 ms     *     static.vnpt-hanoi.com.vn [123.25.27.97] 
+[6/21/2018 3:58:10 PM]:  4     2 ms     2 ms     2 ms  static.vnpt.vn [123.29.5.85] 
+[6/21/2018 3:58:10 PM]:  5     5 ms     2 ms     5 ms  static.vnpt.vn [113.171.33.81] 
+[6/21/2018 3:58:10 PM]:  6    10 ms     3 ms     2 ms  static.vnpt.vn [113.171.5.10] 
+[6/21/2018 3:58:10 PM]:  7     3 ms     3 ms     6 ms  static.vnpt.vn [123.29.16.74] 
+[6/21/2018 3:58:22 PM]:  8     *        *        *     Request timed out.
+[6/21/2018 3:58:34 PM]:  9     *        *        *     Request timed out.
+[6/21/2018 3:58:39 PM]: 10    25 ms    24 ms    24 ms  118.69.253.215 
+[6/21/2018 3:58:44 PM]: 11    25 ms    24 ms    24 ms  cache.google.com [42.119.253.170] 
+[6/21/2018 3:58:50 PM]: 12    23 ms    24 ms    23 ms  42.117.6.234 
+[6/21/2018 3:58:50 PM]:Trace complete.
+[6/21/2018 3:58:50 PM]:process stopped!
+[6/21/2018 4:05:47 PM]:process started!
+[6/21/2018 4:05:49 PM]:Tracing route to thehegeo.com [42.117.6.234]
+[6/21/2018 4:05:49 PM]:over a maximum of 30 hops:
+[6/21/2018 4:05:49 PM]:  1     1 ms     1 ms     1 ms  192.168.100.1 
+[6/21/2018 4:05:49 PM]:  2     2 ms     2 ms     2 ms  static.vnpt.vn [14.177.160.1] 
+[6/21/2018 4:05:54 PM]:  3     4 ms     5 ms     *     static.vnpt-hanoi.com.vn [123.25.27.97] 
+[6/21/2018 4:05:54 PM]:  4     9 ms     3 ms     2 ms  static.vnpt.vn [123.29.5.85] 
+[6/21/2018 4:05:55 PM]:  5     3 ms     2 ms     3 ms  static.vnpt.vn [113.171.33.81] 
+[6/21/2018 4:05:56 PM]:  6     2 ms     2 ms     3 ms  static.vnpt.vn [113.171.5.10] 
+[6/21/2018 4:05:57 PM]:  7     3 ms     2 ms     2 ms  static.vnpt.vn [123.29.16.74] 
+[6/21/2018 4:06:10 PM]:  8     *        *        *     Request timed out.
+[6/21/2018 4:06:22 PM]:  9     *        *        *     Request timed out.
+[6/21/2018 4:06:27 PM]: 10    24 ms    24 ms    25 ms  118.69.253.215 
+[6/21/2018 4:06:31 PM]: 11  1037 ms  1212 ms  1160 ms  cache.google.com [42.119.253.170] 
+[6/21/2018 4:06:36 PM]: 12    24 ms    23 ms    24 ms  42.117.6.234 
+[6/21/2018 4:06:36 PM]:Trace complete.
+[6/21/2018 4:06:37 PM]:process stopped!
+[6/21/2018 4:10:36 PM]:process started!
+[6/21/2018 4:10:36 PM]:Tracing route to thehegeo.com [42.117.6.234]
+[6/21/2018 4:10:36 PM]:over a maximum of 30 hops:
+[6/21/2018 4:10:40 PM]:  1     1 ms     1 ms    <1 ms  192.168.100.1 
+[6/21/2018 4:10:45 PM]:  2     6 ms     3 ms     2 ms  static.vnpt.vn [14.177.160.1] 
+[6/21/2018 4:10:50 PM]:  3     2 ms     2 ms     *     static.vnpt-hanoi.com.vn [123.25.27.97] 
+[6/21/2018 4:10:55 PM]:  4     2 ms     2 ms     4 ms  static.vnpt.vn [123.29.5.85] 
+[6/21/2018 4:10:56 PM]:  5    23 ms     2 ms     6 ms  static.vnpt.vn [113.171.33.81] 
+[6/21/2018 4:11:02 PM]:  6     3 ms     3 ms     3 ms  static.vnpt.vn [113.171.5.10] 
+[6/21/2018 4:11:03 PM]:  7     2 ms     2 ms     2 ms  static.vnpt.vn [123.29.16.74] 
+[6/21/2018 4:11:52 PM]:process started!
+[6/21/2018 4:11:52 PM]:Tracing route to thehegeo.com [42.117.6.234]
+[6/21/2018 4:11:52 PM]:over a maximum of 30 hops:
+[6/21/2018 4:11:54 PM]:  1     1 ms     1 ms    <1 ms  192.168.100.1 
+[6/21/2018 4:11:55 PM]:  2     2 ms     2 ms     3 ms  static.vnpt.vn [14.177.160.1] 
+[6/21/2018 4:12:08 PM]:  3     *        *        *     Request timed out.
+[6/21/2018 4:12:08 PM]:  4     3 ms     2 ms     2 ms  static.vnpt.vn [123.29.5.85] 
+[6/21/2018 4:12:09 PM]:  5     3 ms    14 ms     4 ms  static.vnpt.vn [113.171.33.81] 
+[6/21/2018 4:12:10 PM]:  6     3 ms     2 ms     1 ms  static.vnpt.vn [113.171.5.10] 
+[6/21/2018 4:12:11 PM]:  7     2 ms     2 ms     2 ms  static.vnpt.vn [123.29.16.74] 
+[6/21/2018 4:12:25 PM]:  8     *        *        *     Request timed out.
+[6/21/2018 4:12:36 PM]:  9     *        *        *     Request timed out.
+[6/21/2018 4:12:42 PM]: 10    25 ms    25 ms    25 ms  118.69.253.215 
+[6/21/2018 4:14:14 PM]:process started!
+[6/21/2018 4:14:14 PM]:Tracing route to thehegeo.com [42.117.6.234]
+[6/21/2018 4:14:14 PM]:over a maximum of 30 hops:
+[6/21/2018 4:14:17 PM]:  1     1 ms     1 ms    <1 ms  192.168.100.1 
+[6/21/2018 4:14:18 PM]:  2     3 ms     3 ms     2 ms  static.vnpt.vn [14.177.160.1] 
+[6/21/2018 4:14:23 PM]:  3     2 ms     2 ms     *     static.vnpt-hanoi.com.vn [123.25.27.97] 
+[6/21/2018 4:14:23 PM]:  4     3 ms     5 ms     3 ms  static.vnpt.vn [123.29.5.85] 
+[6/21/2018 4:14:24 PM]:  5    46 ms     2 ms    17 ms  static.vnpt.vn [113.171.33.81] 
+[6/21/2018 4:14:25 PM]:  6     7 ms     2 ms     2 ms  static.vnpt.vn [113.171.5.10] 
+[6/21/2018 4:14:26 PM]:  7     3 ms     2 ms     2 ms  static.vnpt.vn [123.29.16.74] 
+[6/21/2018 4:14:39 PM]:  8     *        *        *     Request timed out.
+[6/21/2018 4:14:51 PM]:  9     *        *        *     Request timed out.
+[6/21/2018 4:14:56 PM]: 10    24 ms    25 ms    25 ms  118.69.253.215 
+[6/21/2018 4:15:06 PM]: 11     *        *     1247 ms  cache.google.com [42.119.253.170] 
+[6/21/2018 4:15:10 PM]: 12    23 ms    25 ms    26 ms  42.117.6.234 
+[6/21/2018 4:15:10 PM]:Trace complete.
+[6/21/2018 4:15:11 PM]:process stopped!
+[6/21/2018 4:52:05 PM]:process started!
+[6/21/2018 4:52:05 PM]:Tracing route to thehegeo.com [42.117.6.234]
+[6/21/2018 4:52:05 PM]:over a maximum of 30 hops:
+[6/21/2018 4:52:05 PM]:  1     1 ms     1 ms     1 ms  192.168.100.1 
+[6/21/2018 4:52:05 PM]:  2     2 ms     2 ms     2 ms  static.vnpt.vn [14.177.160.1] 
+[6/21/2018 4:52:18 PM]:  3     2 ms     *        *     static.vnpt-hanoi.com.vn [123.25.27.97] 
+[6/21/2018 4:52:23 PM]:  4     2 ms     3 ms     2 ms  static.vnpt.vn [123.29.5.85] 
+[6/21/2018 4:52:28 PM]:  5    16 ms    15 ms     1 ms  static.vnpt.vn [113.171.33.81] 
+[6/21/2018 4:52:34 PM]:  6     2 ms     2 ms     2 ms  static.vnpt.vn [113.171.5.10] 
+[6/21/2018 4:52:39 PM]:  7     2 ms     2 ms     2 ms  static.vnpt.vn [123.29.16.74] 
+[6/21/2018 4:52:52 PM]:  8     *        *        *     Request timed out.
+[6/21/2018 4:53:04 PM]:  9     *        *        *     Request timed out.
+[6/21/2018 4:53:09 PM]: 10    25 ms    25 ms    24 ms  118.69.253.215 
+[6/21/2018 4:53:18 PM]: 11  1083 ms  1065 ms   839 ms  42.119.253.170 
+[6/21/2018 4:53:22 PM]: 12    24 ms    23 ms    23 ms  42.117.6.234 
+[6/21/2018 4:53:22 PM]:Trace complete.
+[6/21/2018 4:53:23 PM]:process stopped!

@@ -17,8 +17,8 @@ using WebProcessManager.Data;
 namespace WebProcessManager.Controllers
 {
     [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
-    [Route("connect/[controller]")]
-    public class TokenController : Controller
+    [ApiController]
+    public class TokenController : ControllerBase
     {
         private ApplicationDbContext _context;
         private readonly SignInManager<IdentityUser> _signInManager;
@@ -31,6 +31,8 @@ namespace WebProcessManager.Controllers
             _userManager = userManager;
             _configuration = configuration;
         }
+
+        [Route("connect/token")]
         [AllowAnonymous]
         [HttpPost]
         public async Task<object> RequestToken([FromBody] LoginDto loginData)
@@ -44,12 +46,6 @@ namespace WebProcessManager.Controllers
             }
 
             throw new ApplicationException("INVALID_LOGIN_ATTEMPT");
-        }
-
-        [HttpGet]
-        public async Task<IActionResult> Test()
-        {
-            return Ok("Ok");
         }
 
         private object GenerateJwtToken(string email, IdentityUser user)

@@ -1,0 +1,2 @@
+[6/21/2018 2:58:28 PM]:System.NullReferenceException: Object reference not set to an instance of an object.
+   at ProcessManagerCore.Models.Process.Start() in C:\Users\Admin\Documents\GitHub\ProcessManager\ProcessManager\Models\Process.cs:line 83

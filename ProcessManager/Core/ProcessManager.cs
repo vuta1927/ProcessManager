@@ -14,9 +14,9 @@ namespace ProcessManagerCore.Core
     {
         private static List<Models.Process> _processes;
         private static string filePath;
+
         public ProcessManager(string fileName)
         {
-
             var rootPath = Directory.GetCurrentDirectory();
             filePath = rootPath + "\\" + fileName;
 
@@ -24,6 +24,7 @@ namespace ProcessManagerCore.Core
             {
                 File.CreateText(filePath).Close();
             }
+
             using (var f = new StreamReader(filePath))
             {
                 var json = f.ReadToEnd();
@@ -31,7 +32,9 @@ namespace ProcessManagerCore.Core
                 if (_processes == null)
                 {
                     _processes = new List<Models.Process>();
-                };
+                }
+
+                ;
                 foreach (var p in _processes)
                 {
                     p.IsRunning = false;
@@ -39,26 +42,39 @@ namespace ProcessManagerCore.Core
             }
 
             Task.Run(() => LogHelper.Start());
+        }
 
+        public Models.Process Get(int id)
+        {
+            foreach (var p in _processes)
+            {
+                if (p.Id == id)
+                {
+                    return p;
+                }
+            }
+
+            return null;
         }
 
         public List<Models.Process> GetAll()
         {
             return _processes;
         }
-        public void RunAll()
+
+        public AppResponse RunAll()
         {
-            if (_processes == null || !_processes.Any()) return;
-            
+            if (_processes == null || !_processes.Any()) return new AppResponse(true, "there are no process!");
+
             foreach (var p in _processes)
             {
                 if (p.IsRunning || p.AutoRestart) continue;
-                Task.Run(()=>
-                {
-                    p.Start();
-                });
+                Task.Run(() => { p.Start(); });
             }
+
+            return new AppResponse(false, null);
         }
+
         public AppResponse Run(int id)
         {
             foreach (var p in _processes)
@@ -79,7 +95,7 @@ namespace ProcessManagerCore.Core
             p.AutoRestart = true;
         }
 
-        public void EndAll()
+        public AppResponse EndAll()
         {
             if (_processes.Any())
             {
@@ -92,17 +108,22 @@ namespace ProcessManagerCore.Core
                     catch (Exception e)
                     {
                         Console.WriteLine(e);
-                        LogHelper.Add(new LogMessage() { FileName = p.Id + ".error", Message = e.ToString() });
+                        LogHelper.Add(new LogMessage() {FileName = p.Id + ".error", Message = e.ToString()});
+                        return new AppResponse(true, e.ToString());
                     }
                 }
             }
+
+            return new AppResponse(false, null);
         }
+
         public AppResponse Add(int id, string application, string arguments, bool autoRestart)
         {
             if (_processes == null)
             {
                 _processes = new List<Models.Process>();
             }
+
             var process = new Process()
             {
                 StartInfo = new ProcessStartInfo
@@ -128,12 +149,40 @@ namespace ProcessManagerCore.Core
 
             _processes.Add(newProcess);
 
-            StoreProcess(newProcess);
+            ReloadProcessFile();
 
             return new AppResponse(false, "code: 200");
         }
 
-        public bool Stop(int id)
+        public AppResponse Sync(ProcessModels.ProcessForAdd processForSync)
+        {
+            var p = _processes.SingleOrDefault(x => x.Id == processForSync.Id);
+            if (p != null)
+                return new AppResponse(false, "exsit");
+
+            return Add(processForSync.Id, processForSync.Application, processForSync.Arguments,
+                processForSync.AutoRestart);
+        }
+
+        public AppResponse Update(int id, string application, string arguments, bool autoRestart, bool isRunning)
+        {
+            var process = _processes.SingleOrDefault(x => x.Id == id);
+            if (process == null) return new AppResponse(true, "process not found!");
+
+            if(process.IsRunning)
+                process.Stop();
+            
+            process.Application = application;
+            process.Arguments = arguments;
+            process.AutoRestart = autoRestart;
+            process.IsRunning = isRunning;
+
+            ReloadProcessFile();
+
+            return new AppResponse(false, "code: 200");
+        }
+
+        public AppResponse Stop(int id)
         {
             foreach (var p in _processes)
             {
@@ -142,20 +191,21 @@ namespace ProcessManagerCore.Core
                     try
                     {
                         p.Stop();
-                        return true;
+                        return new AppResponse(false, null);
                     }
                     catch (Exception e)
                     {
                         Console.WriteLine(e);
-                        LogHelper.Add(new LogMessage() { FileName = p.Id + ".error", Message = e.ToString() });
-                        return false;
+                        LogHelper.Add(new LogMessage() {FileName = p.Id + ".error", Message = e.ToString()});
+                        return new AppResponse(true, e.ToString());
                     }
                 }
             }
-            return false;
+
+            return new AppResponse(false, "process not found!");
         }
 
-        public bool Remove(int id)
+        public AppResponse Remove(int id)
         {
             foreach (var p in _processes)
             {
@@ -171,29 +221,32 @@ namespace ProcessManagerCore.Core
                     catch (Exception e)
                     {
                         Console.WriteLine(e);
-                        LogHelper.Add(new LogMessage(){ FileName = p.Id+".out", Message = e.ToString()});
-                        return false;
+                        LogHelper.Add(new LogMessage() {FileName = p.Id + ".out", Message = e.ToString()});
+                        return new AppResponse(true, e.ToString());
                     }
+
                     //rewrite database
-                    StoreProcess(p);
-                    return true;
+                    ReloadProcessFile();
+                    return new AppResponse(false, null);
                 }
             }
-            return false;
+
+            return new AppResponse(true, "process not found!");
         }
 
-        private void StoreProcess(Models.Process p)
+        private void ReloadProcessFile()
         {
-            var l = new List<ProcessModels.ProcessForAddToFile>
+            var l = new List<ProcessModels.ProcessForAddToFile>();
+            foreach (var p in _processes)
             {
-                new ProcessModels.ProcessForAddToFile()
+                l.Add(new ProcessModels.ProcessForAddToFile()
                 {
                     Id = p.Id,
                     Application = p.Application,
                     Arguments = p.Arguments,
                     AutoRestart = p.AutoRestart
-                }
-            };
+                });
+            }
 
             using (var file = File.CreateText(filePath))
             {

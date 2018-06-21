@@ -39,12 +39,47 @@ namespace WebProcessManager.Controllers
             var process = await _context.Processes
                 .Include(p => p.Container)
                 .FirstOrDefaultAsync(m => m.Id == id);
+
             if (process == null)
             {
                 return NotFound();
             }
 
-            return View(process);
+            var dataOutput = await _containerComunicate.GetLogsAsync(process.Id);
+            var ouput = "";
+            if (dataOutput != null)
+            {
+                for (var i = dataOutput.Length - 1; i >= 0; i--)
+                {
+                    ouput += dataOutput[i] + "\r\n";
+                }
+            }
+
+            var dataError = await _containerComunicate.GetErrorLogsAsync(process.Id);
+            var errors = "";
+            if (dataError != null)
+            {
+                for (var i = dataError.Length - 1; i >= 0; i--)
+                {
+                    errors += dataError[i] + "\r\n";
+                }
+            }
+            
+
+            var pForView = new ProcessModels.ProcessForView()
+            {
+                Id = process.Id,
+                IsRunning = process.IsRunning,
+                Application = process.Application,
+                AutoRestart = process.AutoRestart,
+                Arguments = process.Arguments,
+                Container = process.Container,
+                ContainerId = process.ContainerId,
+                Output = ouput,
+                Errors = errors
+            };
+
+            return View(pForView);
         }
 
         // GET: Processes/Create
@@ -67,8 +102,9 @@ namespace WebProcessManager.Controllers
             else
             {
                 process.IsRunning = true;
+                await _context.SaveChangesAsync();
             }
-            return View(nameof(Index));
+            return RedirectToAction(nameof(Index));
         }
         public async Task<IActionResult> Stop(int id)
         {
@@ -82,9 +118,45 @@ namespace WebProcessManager.Controllers
             }
             else
             {
-                process.IsRunning = true;
+                process.IsRunning = false;
+                await _context.SaveChangesAsync();
             }
-            return View(nameof(Index));
+            return RedirectToAction(nameof(Index));
+        }
+        public async Task<IActionResult> Sync(int id)
+        {
+            var process = _context.Processes.Include(x => x.Container).SingleOrDefault(x => x.Id == id);
+            if (process == null) return NotFound();
+
+            var result = await _containerComunicate.Sync(process);
+            if (result.IsError)
+            {
+                ViewData["error"] = result.Message;
+            }
+            else
+            {
+                process.IsRunning = false;
+                await _context.SaveChangesAsync();
+            }
+            return RedirectToAction(nameof(Index));
+        }
+
+        public async Task<IActionResult> GetLog(int id)
+        {
+            var process = _context.Processes.Include(x => x.Container).SingleOrDefault(x => x.Id == id);
+            if (process == null) return NotFound();
+
+            var result = await _containerComunicate.GetLogsAsync(id);
+            if (result == null)
+            {
+                ViewData["error"] = "No log";
+            }
+            else
+            {
+                process.IsRunning = false;
+                await _context.SaveChangesAsync();
+            }
+            return RedirectToAction(nameof(Index));
         }
 
         // POST: Processes/Create
@@ -97,8 +169,6 @@ namespace WebProcessManager.Controllers
             if (ModelState.IsValid)
             {
                 process.IsRunning = false;
-                _context.Add(process);
-                await _context.SaveChangesAsync();
                 var result = await _containerComunicate.CreateProcess(process);
                 if (result.IsError)
                 {
@@ -107,6 +177,7 @@ namespace WebProcessManager.Controllers
                 else
                 {
                     process.IsRunning = true;
+                    _context.Add(process);
                     await _context.SaveChangesAsync();
                 }
 
@@ -125,6 +196,7 @@ namespace WebProcessManager.Controllers
             }
 
             var process = await _context.Processes.FindAsync(id);
+
             if (process == null)
             {
                 return NotFound();
@@ -149,6 +221,13 @@ namespace WebProcessManager.Controllers
             {
                 try
                 {
+                    var result = await _containerComunicate.EditAsync(process);
+                    if (result.IsError)
+                    {
+                        ViewData["error"] = result.Message;
+                        return RedirectToAction(nameof(Index));
+                    }
+
                     _context.Update(process);
                     await _context.SaveChangesAsync();
                 }
@@ -193,6 +272,13 @@ namespace WebProcessManager.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
+            var result = await _containerComunicate.RemoveASync(id);
+            if (result.IsError)
+            {
+                ViewData["error"] = result.Message;
+                return RedirectToAction(nameof(Index));
+            }
+
             var process = await _context.Processes.FindAsync(id);
             _context.Processes.Remove(process);
             await _context.SaveChangesAsync();

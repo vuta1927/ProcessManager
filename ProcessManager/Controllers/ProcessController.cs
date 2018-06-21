@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using ProcessManagerCore.Core;
@@ -51,22 +52,46 @@ namespace ProcessManagerCore.Controllers
         }
 
         [HttpPost]
+        [Route("api/process/sync")]
+        public IActionResult Sync([FromBody] ProcessModels.ProcessForAdd p)
+        {
+            var result = Program.PManager.Sync(p);
+            if (result.Message.Equals("exsit"))
+            {
+                return Ok(result);
+            }
+
+            var b = Program.PManager.GetAll().SingleOrDefault(x => x.Id == p.Id);
+            b.OnStop += _serverCommunicate.ProcessOnStopHandler;
+            b.OnStart += _serverCommunicate.ProcessOnStartHandler;
+
+            return Ok(result);
+        }
+
+        [HttpPost]
         [Route("api/process/")]
         public IActionResult Add([FromBody] ProcessModels.ProcessForAdd p)
         {
-            return Ok(Program.PManager.Add(p.Id, p.Application, p.Arguments, p.AutoRestart));
+            var result = Program.PManager.Add(p.Id, p.Application, p.Arguments, p.AutoRestart);
+            var newP = Program.PManager.Get(p.Id);
+            newP.OnStart += _serverCommunicate.ProcessOnStartHandler;
+            newP.OnStop += _serverCommunicate.ProcessOnStopHandler;
+            return Ok(result);
+        }
+
+        [HttpPut]
+        [Route("api/process/")]
+        public IActionResult Update([FromBody] ProcessModels.ProcessForAdd p)
+        {
+            var result = Program.PManager.Update(p.Id, p.Application, p.Arguments, p.AutoRestart, p.IsRunning);
+            return Ok(result);
         }
 
         [HttpPost]
         [Route("api/process/run/{id}")]
         public IActionResult Run([FromRoute] int id)
         {
-            var result = Program.PManager.Run(id);
-            if (!result.IsError)
-            {
-                _serverCommunicate.
-            }
-            return Ok();
+            return Ok(Program.PManager.Run(id));
         }
         [HttpPost]
         [Route("api/process/offautorestart/{id}")]
@@ -104,10 +129,14 @@ namespace ProcessManagerCore.Controllers
         [Route("api/process/stopall")]
         public IActionResult StopAll()
         {
-            Program.PManager.EndAll();
-            return Ok();
+            return Ok(Program.PManager.EndAll());
         }
-
+        [HttpPost]
+        [Route("api/process/startall")]
+        public IActionResult StartAll()
+        {
+            return Ok(Program.PManager.RunAll());
+        }
         [HttpDelete]
         [Route("api/process/{id}")]
         public IActionResult Remove([FromRoute] int id)

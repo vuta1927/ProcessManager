@@ -6,6 +6,7 @@ using System.Net.Http;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 using WebProcessManager.Data;
 using WebProcessManager.Models;
@@ -168,10 +169,10 @@ namespace WebProcessManager.Core
                 }
 
                 var token = TokenRepository.AccessTokens[process.ContainerId];
-                var httpContent = new StringContent(JsonConvert.SerializeObject("{'Authorization': 'Bearer " + token + "'}"), Encoding.UTF8, "application/json");
+                client.DefaultRequestHeaders.Add("Authorization", "Bearer " + token);
                 try
                 {
-                    var result = await client.PostAsync(process.Container.Address + "/api/process/stop/" + process.Id, httpContent);
+                    var result = await client.PostAsync(process.Container.Address + "/api/process/stop/" + process.Id, null);
                     if (result.IsSuccessStatusCode)
                     {
                         var content = result.Content.ReadAsStringAsync().Result;
@@ -199,6 +200,271 @@ namespace WebProcessManager.Core
         public Task<AppResponse> RunAll(List<Process> procesList)
         {
             throw new NotImplementedException();
+        }
+
+        public async Task<AppResponse> EditAsync(Process process)
+        {
+            using (var client = new HttpClient())
+            {
+                if (!TokenRepository.AccessTokens.ContainsKey(process.ContainerId))
+                {
+                    return new AppResponse(true, "Code: 401");
+                }
+
+                var token = TokenRepository.AccessTokens[process.ContainerId];
+                client.DefaultRequestHeaders.Add("Authorization", "Bearer " + token);
+                try
+                {
+                    var p = new ProcessModels.ProcessForAdd()
+                    {
+                        Id = process.Id,
+                        Application = process.Application,
+                        IsRunning = process.IsRunning,
+                        Arguments = process.Arguments,
+                        AutoRestart = process.AutoRestart
+                    };
+
+                    var httpContent = new StringContent(
+                        JsonConvert.SerializeObject(p),
+                        Encoding.UTF8,
+                        "application/json");
+
+                    var cont = _context.Containers.SingleOrDefault(x => x.Id == process.ContainerId);
+                    if (cont == null)
+                    {
+                        return new AppResponse(true, "Container not found!");
+                    }
+                    var result = await client.PutAsync(cont.Address + "/api/process", httpContent);
+                    if (result.IsSuccessStatusCode)
+                    {
+                        var content = result.Content.ReadAsStringAsync().Result;
+                        return new AppResponse(false, content);
+                    }
+                    return new AppResponse(true, "Code: " + result.StatusCode);
+                }
+                catch (Exception e)
+                {
+                    return new AppResponse(true, e.ToString());
+                }
+            }
+        }
+
+        public async Task<AppResponse> RemoveASync(int id)
+        {
+            using (var client = new HttpClient())
+            {
+                var process = _context.Processes.Include(x=>x.Container).SingleOrDefault(x => x.Id == id);
+                if(process == null) return new AppResponse(true, "process not found!");
+
+                if (!TokenRepository.AccessTokens.ContainsKey(process.ContainerId))
+                {
+                    return new AppResponse(true, "Code: 401");
+                }
+
+                var token = TokenRepository.AccessTokens[process.ContainerId];
+                client.DefaultRequestHeaders.Add("Authorization", "Bearer " + token);
+                try
+                {
+                    var cont = _context.Containers.SingleOrDefault(x => x.Id == process.ContainerId);
+                    if (cont == null)
+                    {
+                        return new AppResponse(true, "Container not found!");
+                    }
+
+                    var result = await client.DeleteAsync(cont.Address + "/api/process/" + process.Id);
+                    if (result.IsSuccessStatusCode)
+                    {
+                        var content = result.Content.ReadAsStringAsync().Result;
+                        return new AppResponse(false, content);
+                    }
+                    return new AppResponse(true, "Code: " + result.StatusCode);
+                }
+                catch (Exception e)
+                {
+                    return new AppResponse(true, e.ToString());
+                }
+            }
+        }
+
+        public async Task<AppResponse> StopAllAsync(Container cont)
+        {
+            using (var client = new HttpClient())
+            {
+                if (!TokenRepository.AccessTokens.ContainsKey(cont.Id))
+                {
+                    return new AppResponse(true, "Code: 401");
+                }
+
+                var token = TokenRepository.AccessTokens[cont.Id];
+                client.DefaultRequestHeaders.Add("Authorization", "Bearer " + token);
+                try
+                {
+                    var result = await client.PostAsync(cont.Address + "/api/process/stopall", null);
+                    if (result.IsSuccessStatusCode)
+                    {
+                        var content = result.Content.ReadAsStringAsync().Result;
+                        return new AppResponse(false, content);
+                    }
+                    return new AppResponse(true, "Code: " + result.StatusCode);
+                }
+                catch (Exception e)
+                {
+                    return new AppResponse(true, e.ToString());
+                }
+            }
+        }
+
+        public async Task<AppResponse> StartAllAsync(Container cont)
+        {
+            using (var client = new HttpClient())
+            {
+                if (!TokenRepository.AccessTokens.ContainsKey(cont.Id))
+                {
+                    return new AppResponse(true, "Code: 401");
+                }
+
+                var token = TokenRepository.AccessTokens[cont.Id];
+                client.DefaultRequestHeaders.Add("Authorization", "Bearer " + token);
+                try
+                {
+                    var result = await client.PostAsync(cont.Address + "/api/process/startall", null);
+                    if (result.IsSuccessStatusCode)
+                    {
+                        var content = result.Content.ReadAsStringAsync().Result;
+                        return new AppResponse(false, content);
+                    }
+                    return new AppResponse(true, "Code: " + result.StatusCode);
+                }
+                catch (Exception e)
+                {
+                    return new AppResponse(true, e.ToString());
+                }
+            }
+        }
+
+        public async Task<AppResponse> Sync(Process process)
+        {
+            using (var client = new HttpClient())
+            {
+                if (!TokenRepository.AccessTokens.ContainsKey(process.ContainerId))
+                {
+                    return new AppResponse(true, "Code: 401");
+                }
+
+                var token = TokenRepository.AccessTokens[process.ContainerId];
+                client.DefaultRequestHeaders.Add("Authorization", "Bearer " + token);
+                try
+                {
+                    var p = new ProcessModels.ProcessForAdd()
+                    {
+                        Id = process.Id,
+                        Application = process.Application,
+                        IsRunning = process.IsRunning,
+                        Arguments = process.Arguments,
+                        AutoRestart = process.AutoRestart
+                    };
+
+                    var httpContent = new StringContent(
+                        JsonConvert.SerializeObject(p),
+                        Encoding.UTF8,
+                        "application/json");
+
+                    var cont = _context.Containers.SingleOrDefault(x => x.Id == process.ContainerId);
+                    if (cont == null)
+                    {
+                        return new AppResponse(true, "Container not found!");
+                    }
+                    var result = await client.PostAsync(cont.Address + "/api/process/sync", httpContent);
+                    if (result.IsSuccessStatusCode)
+                    {
+                        var content = result.Content.ReadAsStringAsync().Result;
+                        return new AppResponse(false, content);
+                    }
+                    return new AppResponse(true, "Code: " + result.StatusCode);
+                }
+                catch (Exception e)
+                {
+                    return new AppResponse(true, e.ToString());
+                }
+            }
+        }
+
+        public async Task<string[]> GetLogsAsync(int id)
+        {
+            using (var client = new HttpClient())
+            {
+                var process = _context.Processes.SingleOrDefault(x => x.Id == id);
+                if (process == null) return null;
+
+                if (!TokenRepository.AccessTokens.ContainsKey(process.ContainerId))
+                {
+                    return null;
+                }
+
+                var token = TokenRepository.AccessTokens[process.ContainerId];
+                client.DefaultRequestHeaders.Add("Authorization", "Bearer " + token);
+                try
+                {
+                    var cont = _context.Containers.SingleOrDefault(x => x.Id == process.ContainerId);
+                    if (cont == null)
+                    {
+                        return null;
+                    }
+
+                    var result = await client.GetAsync(cont.Address + "/api/process/log/" + id);
+                    if (result.IsSuccessStatusCode)
+                    {
+                        var json = result.Content.ReadAsStringAsync().Result;
+                        var data = JsonConvert.DeserializeObject<string[]>(json);
+                        return data;
+                    }
+                }
+                catch (Exception)
+                {
+                    return null;
+                }
+
+                return null;
+            }
+        }
+
+        public async Task<string[]> GetErrorLogsAsync(int id)
+        {
+            using (var client = new HttpClient())
+            {
+                var process = _context.Processes.SingleOrDefault(x => x.Id == id);
+                if (process == null) return null;
+
+                if (!TokenRepository.AccessTokens.ContainsKey(process.ContainerId))
+                {
+                    return null;
+                }
+
+                var token = TokenRepository.AccessTokens[process.ContainerId];
+                client.DefaultRequestHeaders.Add("Authorization", "Bearer " + token);
+                try
+                {
+                    var cont = _context.Containers.SingleOrDefault(x => x.Id == process.ContainerId);
+                    if (cont == null)
+                    {
+                        return null;
+                    }
+
+                    var result = await client.GetAsync(cont.Address + "/api/process/error/" + id);
+                    if (result.IsSuccessStatusCode)
+                    {
+                        var json = result.Content.ReadAsStringAsync().Result;
+                        var data = JsonConvert.DeserializeObject<string[]>(json);
+                        return data;
+                    }
+                }
+                catch (Exception)
+                {
+                    return null;
+                }
+
+                return null;
+            }
         }
     }
 }

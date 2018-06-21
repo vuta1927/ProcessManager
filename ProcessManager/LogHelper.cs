@@ -30,7 +30,15 @@ namespace ProcessManagerCore
                 }
 
                 var n = new string[] {"[" + DateTime.Now + "]:" + msg.Message};
-                File.AppendAllLines(filePath, n);
+                try
+                {
+                    File.AppendAllLines(filePath, n);
+                }
+                catch (Exception e)
+                {
+                    Add(msg);
+                }
+                
             }
         }
 

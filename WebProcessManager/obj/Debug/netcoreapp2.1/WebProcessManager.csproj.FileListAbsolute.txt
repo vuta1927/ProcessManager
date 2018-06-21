@@ -43,7 +43,6 @@ C:\Users\Admin\Documents\GitHub\ProcessManager\WebProcessManager\obj\Debug\netco
 C:\Users\Admin\Documents\GitHub\ProcessManager\WebProcessManager\obj\Debug\netcoreapp2.1\WebProcessManager.dll
 C:\Users\Admin\Documents\GitHub\ProcessManager\WebProcessManager\obj\Debug\netcoreapp2.1\WebProcessManager.pdb
 C:\Users\Admin\Documents\GitHub\ProcessManager\WebProcessManager\obj\Debug\netcoreapp2.1\WebProcessManager.csproj.CopyComplete
-C:\Users\Admin\Documents\GitHub\ProcessManager\WebProcessManager\obj\Debug\netcoreapp2.1\WebProcessManager.csprojAssemblyReference.cache
 D:\Projects\ProcessManager\WebProcessManager\bin\Debug\netcoreapp2.1\WebProcessManager.deps.json
 D:\Projects\ProcessManager\WebProcessManager\bin\Debug\netcoreapp2.1\WebProcessManager.runtimeconfig.json
 D:\Projects\ProcessManager\WebProcessManager\bin\Debug\netcoreapp2.1\WebProcessManager.runtimeconfig.dev.json
@@ -90,3 +89,4 @@ D:\Projects\ProcessManager\WebProcessManager\obj\Debug\netcoreapp2.1\WebProcessM
 D:\Projects\ProcessManager\WebProcessManager\obj\Debug\netcoreapp2.1\WebProcessManager.dll
 D:\Projects\ProcessManager\WebProcessManager\obj\Debug\netcoreapp2.1\WebProcessManager.pdb
 D:\Projects\ProcessManager\WebProcessManager\obj\Debug\netcoreapp2.1\WebProcessManager.csproj.CopyComplete
+C:\Users\Admin\Documents\GitHub\ProcessManager\WebProcessManager\obj\Debug\netcoreapp2.1\WebProcessManager.csprojAssemblyReference.cache

@@ -1,0 +1,572 @@
+[6/21/2018 11:46:42 AM]:process stopped!
+[6/21/2018 11:46:42 AM]:process started!
+[6/21/2018 11:46:42 AM]:Pinging 192.168.100.1 with 32 bytes of data:
+[6/21/2018 11:46:42 AM]:Reply from 192.168.100.1: bytes=32 time<1ms TTL=64
+[6/21/2018 11:46:42 AM]:Reply from 192.168.100.1: bytes=32 time=1ms TTL=64
+[6/21/2018 11:46:43 AM]:Reply from 192.168.100.1: bytes=32 time=3ms TTL=64
+[6/21/2018 11:46:44 AM]:Reply from 192.168.100.1: bytes=32 time=1ms TTL=64
+[6/21/2018 11:46:44 AM]:Ping statistics for 192.168.100.1:
+[6/21/2018 11:46:44 AM]:    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+[6/21/2018 11:46:44 AM]:Approximate round trip times in milli-seconds:
+[6/21/2018 11:46:44 AM]:    Minimum = 0ms, Maximum = 3ms, Average = 1ms
+[6/21/2018 11:46:47 AM]:process stopped!
+[6/21/2018 11:46:47 AM]:process stopped!
+[6/21/2018 12:46:00 PM]:process stopped!
+[6/21/2018 12:46:01 PM]:process stopped!
+[6/21/2018 12:46:01 PM]:process started!
+[6/21/2018 12:46:01 PM]:process started!
+[6/21/2018 12:46:01 PM]:Pinging 192.168.100.1 with 32 bytes of data:
+[6/21/2018 12:46:01 PM]:Reply from 192.168.100.1: bytes=32 time=1ms TTL=64
+[6/21/2018 12:46:01 PM]:Reply from 192.168.100.1: bytes=32 time<1ms TTL=64
+[6/21/2018 12:46:02 PM]:Reply from 192.168.100.1: bytes=32 time=1ms TTL=64
+[6/21/2018 12:46:03 PM]:Reply from 192.168.100.1: bytes=32 time=1ms TTL=64
+[6/21/2018 12:46:03 PM]:Ping statistics for 192.168.100.1:
+[6/21/2018 12:46:03 PM]:    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+[6/21/2018 12:46:03 PM]:Approximate round trip times in milli-seconds:
+[6/21/2018 12:46:03 PM]:    Minimum = 0ms, Maximum = 1ms, Average = 0ms
+[6/21/2018 12:46:03 PM]:process stopped!
+[6/21/2018 12:46:04 PM]:process stopped!
+[6/21/2018 12:46:04 PM]:process stopped!
+[6/21/2018 12:46:04 PM]:process stopped!
+[6/21/2018 2:47:15 PM]:process stopped!
+[6/21/2018 2:47:16 PM]:process started!
+[6/21/2018 2:47:16 PM]:Pinging 192.168.100.1 with 32 bytes of data:
+[6/21/2018 2:47:16 PM]:Reply from 192.168.100.1: bytes=32 time=1ms TTL=64
+[6/21/2018 2:47:16 PM]:Reply from 192.168.100.1: bytes=32 time<1ms TTL=64
+[6/21/2018 2:47:16 PM]:Reply from 192.168.100.1: bytes=32 time=2ms TTL=64
+[6/21/2018 2:47:17 PM]:Reply from 192.168.100.1: bytes=32 time=3ms TTL=64
+[6/21/2018 2:47:17 PM]:Ping statistics for 192.168.100.1:
+[6/21/2018 2:47:17 PM]:    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+[6/21/2018 2:47:17 PM]:Approximate round trip times in milli-seconds:
+[6/21/2018 2:47:17 PM]:    Minimum = 0ms, Maximum = 3ms, Average = 1ms
+[6/21/2018 2:47:20 PM]:process stopped!
+[6/21/2018 2:47:26 PM]:process stopped!
+[6/21/2018 2:54:13 PM]:process stopped!
+[6/21/2018 2:54:13 PM]:process started!
+[6/21/2018 2:54:13 PM]:Pinging 192.168.100.1 with 32 bytes of data:
+[6/21/2018 2:54:13 PM]:Reply from 192.168.100.1: bytes=32 time=1ms TTL=64
+[6/21/2018 2:54:13 PM]:Reply from 192.168.100.1: bytes=32 time=1ms TTL=64
+[6/21/2018 2:54:13 PM]:Reply from 192.168.100.1: bytes=32 time=1ms TTL=64
+[6/21/2018 2:54:13 PM]:Reply from 192.168.100.1: bytes=32 time=1ms TTL=64
+[6/21/2018 2:54:13 PM]:Ping statistics for 192.168.100.1:
+[6/21/2018 2:54:13 PM]:    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+[6/21/2018 2:54:13 PM]:Approximate round trip times in milli-seconds:
+[6/21/2018 2:54:13 PM]:    Minimum = 1ms, Maximum = 1ms, Average = 1ms
+[6/21/2018 2:54:14 PM]:process stopped!
+[6/21/2018 2:54:15 PM]:process stopped!
+[6/21/2018 2:58:01 PM]:process stopped!
+[6/21/2018 2:58:01 PM]:process started!
+[6/21/2018 2:58:02 PM]:Pinging 192.168.100.1 with 32 bytes of data:
+[6/21/2018 2:58:02 PM]:Reply from 192.168.100.1: bytes=32 time=1ms TTL=64
+[6/21/2018 2:58:02 PM]:Reply from 192.168.100.1: bytes=32 time=1ms TTL=64
+[6/21/2018 2:58:02 PM]:Reply from 192.168.100.1: bytes=32 time<1ms TTL=64
+[6/21/2018 2:58:02 PM]:Reply from 192.168.100.1: bytes=32 time=1ms TTL=64
+[6/21/2018 2:58:02 PM]:Ping statistics for 192.168.100.1:
+[6/21/2018 2:58:02 PM]:    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+[6/21/2018 2:58:02 PM]:Approximate round trip times in milli-seconds:
+[6/21/2018 2:58:02 PM]:    Minimum = 0ms, Maximum = 1ms, Average = 0ms
+[6/21/2018 2:58:02 PM]:process stopped!
+[6/21/2018 2:58:04 PM]:process stopped!
+[6/21/2018 2:58:23 PM]:process stopped!
+[6/21/2018 2:58:23 PM]:process stopped!
+[6/21/2018 2:58:23 PM]:process started!
+[6/21/2018 2:58:24 PM]:process started!
+[6/21/2018 2:58:24 PM]:Pinging 192.168.100.1 with 32 bytes of data:
+[6/21/2018 2:58:24 PM]:Reply from 192.168.100.1: bytes=32 time<1ms TTL=64
+[6/21/2018 2:58:24 PM]:Reply from 192.168.100.1: bytes=32 time<1ms TTL=64
+[6/21/2018 2:58:24 PM]:Reply from 192.168.100.1: bytes=32 time=1ms TTL=64
+[6/21/2018 2:58:24 PM]:Reply from 192.168.100.1: bytes=32 time=1ms TTL=64
+[6/21/2018 2:58:24 PM]:Ping statistics for 192.168.100.1:
+[6/21/2018 2:58:24 PM]:    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+[6/21/2018 2:58:24 PM]:Approximate round trip times in milli-seconds:
+[6/21/2018 2:58:24 PM]:    Minimum = 0ms, Maximum = 1ms, Average = 0ms
+[6/21/2018 2:58:26 PM]:process stopped!
+[6/21/2018 2:58:26 PM]:process stopped!
+[6/21/2018 2:58:26 PM]:process stopped!
+[6/21/2018 2:58:27 PM]:process stopped!
+[6/21/2018 2:58:27 PM]:process stopped!
+[6/21/2018 2:58:27 PM]:process started!
+[6/21/2018 2:58:27 PM]:process stopped!
+[6/21/2018 2:58:28 PM]:process started!
+[6/21/2018 3:02:13 PM]:process stopped!
+[6/21/2018 3:02:13 PM]:process started!
+[6/21/2018 3:02:13 PM]:Pinging 192.168.100.1 with 32 bytes of data:
+[6/21/2018 3:02:13 PM]:Reply from 192.168.100.1: bytes=32 time=1ms TTL=64
+[6/21/2018 3:02:14 PM]:Reply from 192.168.100.1: bytes=32 time=3ms TTL=64
+[6/21/2018 3:02:14 PM]:Reply from 192.168.100.1: bytes=32 time=4ms TTL=64
+[6/21/2018 3:02:14 PM]:Reply from 192.168.100.1: bytes=32 time=1ms TTL=64
+[6/21/2018 3:02:14 PM]:Ping statistics for 192.168.100.1:
+[6/21/2018 3:02:14 PM]:    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+[6/21/2018 3:02:14 PM]:Approximate round trip times in milli-seconds:
+[6/21/2018 3:02:14 PM]:    Minimum = 1ms, Maximum = 4ms, Average = 2ms
+[6/21/2018 3:02:14 PM]:process stopped!
+[6/21/2018 3:02:16 PM]:process stopped!
+[6/21/2018 3:03:23 PM]:process stopped!
+[6/21/2018 3:03:23 PM]:process stopped!
+[6/21/2018 3:03:35 PM]:process started!
+[6/21/2018 3:03:35 PM]:process started!
+[6/21/2018 3:03:41 PM]:Pinging 192.168.100.1 with 32 bytes of data:
+[6/21/2018 3:03:41 PM]:Reply from 192.168.100.1: bytes=32 time<1ms TTL=64
+[6/21/2018 3:03:42 PM]:Reply from 192.168.100.1: bytes=32 time<1ms TTL=64
+[6/21/2018 3:03:44 PM]:Reply from 192.168.100.1: bytes=32 time=1ms TTL=64
+[6/21/2018 3:03:44 PM]:Reply from 192.168.100.1: bytes=32 time=1ms TTL=64
+[6/21/2018 3:03:44 PM]:Ping statistics for 192.168.100.1:
+[6/21/2018 3:03:44 PM]:    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+[6/21/2018 3:03:44 PM]:Approximate round trip times in milli-seconds:
+[6/21/2018 3:03:44 PM]:    Minimum = 0ms, Maximum = 1ms, Average = 0ms
+[6/21/2018 3:11:11 PM]:process started!
+[6/21/2018 3:11:11 PM]:Pinging 192.168.100.1 with 32 bytes of data:
+[6/21/2018 3:11:11 PM]:Reply from 192.168.100.1: bytes=32 time=1ms TTL=64
+[6/21/2018 3:11:11 PM]:Reply from 192.168.100.1: bytes=32 time=1ms TTL=64
+[6/21/2018 3:11:11 PM]:Reply from 192.168.100.1: bytes=32 time<1ms TTL=64
+[6/21/2018 3:11:11 PM]:Reply from 192.168.100.1: bytes=32 time=1ms TTL=64
+[6/21/2018 3:11:11 PM]:Ping statistics for 192.168.100.1:
+[6/21/2018 3:11:11 PM]:    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+[6/21/2018 3:11:11 PM]:Approximate round trip times in milli-seconds:
+[6/21/2018 3:11:11 PM]:    Minimum = 0ms, Maximum = 1ms, Average = 0ms
+[6/21/2018 3:11:12 PM]:process stopped!
+[6/21/2018 3:16:52 PM]:process started!
+[6/21/2018 3:16:52 PM]:Pinging 192.168.100.1 with 32 bytes of data:
+[6/21/2018 3:16:52 PM]:Reply from 192.168.100.1: bytes=32 time=1ms TTL=64
+[6/21/2018 3:16:52 PM]:Reply from 192.168.100.1: bytes=32 time=1ms TTL=64
+[6/21/2018 3:16:52 PM]:Reply from 192.168.100.1: bytes=32 time=1ms TTL=64
+[6/21/2018 3:16:53 PM]:Reply from 192.168.100.1: bytes=32 time<1ms TTL=64
+[6/21/2018 3:16:53 PM]:Ping statistics for 192.168.100.1:
+[6/21/2018 3:16:53 PM]:    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+[6/21/2018 3:16:53 PM]:Approximate round trip times in milli-seconds:
+[6/21/2018 3:16:53 PM]:    Minimum = 0ms, Maximum = 1ms, Average = 0ms
+[6/21/2018 3:16:56 PM]:process stopped!
+[6/21/2018 3:18:04 PM]:process started!
+[6/21/2018 3:18:04 PM]:Pinging 192.168.100.1 with 32 bytes of data:
+[6/21/2018 3:18:04 PM]:Reply from 192.168.100.1: bytes=32 time=1ms TTL=64
+[6/21/2018 3:18:05 PM]:Reply from 192.168.100.1: bytes=32 time=1ms TTL=64
+[6/21/2018 3:18:06 PM]:Reply from 192.168.100.1: bytes=32 time=1ms TTL=64
+[6/21/2018 3:18:07 PM]:Reply from 192.168.100.1: bytes=32 time=1ms TTL=64
+[6/21/2018 3:18:07 PM]:Ping statistics for 192.168.100.1:
+[6/21/2018 3:18:07 PM]:    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+[6/21/2018 3:18:07 PM]:Approximate round trip times in milli-seconds:
+[6/21/2018 3:18:07 PM]:    Minimum = 1ms, Maximum = 1ms, Average = 1ms
+[6/21/2018 3:18:07 PM]:process stopped!
+[6/21/2018 3:18:08 PM]:process started!
+[6/21/2018 3:18:08 PM]:Pinging 192.168.100.1 with 32 bytes of data:
+[6/21/2018 3:18:08 PM]:Reply from 192.168.100.1: bytes=32 time=1ms TTL=64
+[6/21/2018 3:18:08 PM]:Reply from 192.168.100.1: bytes=32 time=1ms TTL=64
+[6/21/2018 3:18:09 PM]:Reply from 192.168.100.1: bytes=32 time=1ms TTL=64
+[6/21/2018 3:18:10 PM]:Reply from 192.168.100.1: bytes=32 time=1ms TTL=64
+[6/21/2018 3:18:10 PM]:Ping statistics for 192.168.100.1:
+[6/21/2018 3:18:10 PM]:    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+[6/21/2018 3:18:10 PM]:Approximate round trip times in milli-seconds:
+[6/21/2018 3:18:10 PM]:    Minimum = 1ms, Maximum = 1ms, Average = 1ms
+[6/21/2018 3:18:11 PM]:process stopped!
+[6/21/2018 3:18:11 PM]:process started!
+[6/21/2018 3:18:11 PM]:Pinging 192.168.100.1 with 32 bytes of data:
+[6/21/2018 3:18:11 PM]:Reply from 192.168.100.1: bytes=32 time=1ms TTL=64
+[6/21/2018 3:18:12 PM]:Reply from 192.168.100.1: bytes=32 time=1ms TTL=64
+[6/21/2018 3:18:13 PM]:Reply from 192.168.100.1: bytes=32 time=1ms TTL=64
+[6/21/2018 3:18:14 PM]:Reply from 192.168.100.1: bytes=32 time<1ms TTL=64
+[6/21/2018 3:18:14 PM]:Ping statistics for 192.168.100.1:
+[6/21/2018 3:18:14 PM]:    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+[6/21/2018 3:18:14 PM]:Approximate round trip times in milli-seconds:
+[6/21/2018 3:18:14 PM]:    Minimum = 0ms, Maximum = 1ms, Average = 0ms
+[6/21/2018 3:18:14 PM]:process stopped!
+[6/21/2018 3:18:15 PM]:process started!
+[6/21/2018 3:18:15 PM]:Pinging 192.168.100.1 with 32 bytes of data:
+[6/21/2018 3:18:15 PM]:Reply from 192.168.100.1: bytes=32 time=1ms TTL=64
+[6/21/2018 3:18:15 PM]:Reply from 192.168.100.1: bytes=32 time<1ms TTL=64
+[6/21/2018 3:18:16 PM]:Reply from 192.168.100.1: bytes=32 time=2ms TTL=64
+[6/21/2018 3:18:17 PM]:Reply from 192.168.100.1: bytes=32 time=1ms TTL=64
+[6/21/2018 3:18:17 PM]:Ping statistics for 192.168.100.1:
+[6/21/2018 3:18:17 PM]:    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+[6/21/2018 3:18:17 PM]:Approximate round trip times in milli-seconds:
+[6/21/2018 3:18:17 PM]:    Minimum = 0ms, Maximum = 2ms, Average = 1ms
+[6/21/2018 3:18:18 PM]:process stopped!
+[6/21/2018 3:18:18 PM]:process started!
+[6/21/2018 3:18:18 PM]:Pinging 192.168.100.1 with 32 bytes of data:
+[6/21/2018 3:18:18 PM]:Reply from 192.168.100.1: bytes=32 time=1ms TTL=64
+[6/21/2018 3:18:19 PM]:Reply from 192.168.100.1: bytes=32 time<1ms TTL=64
+[6/21/2018 3:18:20 PM]:Reply from 192.168.100.1: bytes=32 time=1ms TTL=64
+[6/21/2018 3:18:21 PM]:Reply from 192.168.100.1: bytes=32 time<1ms TTL=64
+[6/21/2018 3:18:21 PM]:Ping statistics for 192.168.100.1:
+[6/21/2018 3:18:21 PM]:    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+[6/21/2018 3:18:21 PM]:Approximate round trip times in milli-seconds:
+[6/21/2018 3:18:21 PM]:    Minimum = 0ms, Maximum = 1ms, Average = 0ms
+[6/21/2018 3:18:21 PM]:process stopped!
+[6/21/2018 3:18:21 PM]:process started!
+[6/21/2018 3:18:21 PM]:Pinging 192.168.100.1 with 32 bytes of data:
+[6/21/2018 3:18:21 PM]:Reply from 192.168.100.1: bytes=32 time=1ms TTL=64
+[6/21/2018 3:18:22 PM]:Reply from 192.168.100.1: bytes=32 time=2ms TTL=64
+[6/21/2018 3:18:23 PM]:Reply from 192.168.100.1: bytes=32 time=1ms TTL=64
+[6/21/2018 3:18:24 PM]:Reply from 192.168.100.1: bytes=32 time<1ms TTL=64
+[6/21/2018 3:18:24 PM]:Ping statistics for 192.168.100.1:
+[6/21/2018 3:18:24 PM]:    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+[6/21/2018 3:18:24 PM]:Approximate round trip times in milli-seconds:
+[6/21/2018 3:18:24 PM]:    Minimum = 0ms, Maximum = 2ms, Average = 1ms
+[6/21/2018 3:18:24 PM]:process stopped!
+[6/21/2018 3:18:25 PM]:process started!
+[6/21/2018 3:18:25 PM]:Pinging 192.168.100.1 with 32 bytes of data:
+[6/21/2018 3:18:25 PM]:Reply from 192.168.100.1: bytes=32 time=1ms TTL=64
+[6/21/2018 3:18:26 PM]:Reply from 192.168.100.1: bytes=32 time=1ms TTL=64
+[6/21/2018 3:18:27 PM]:Reply from 192.168.100.1: bytes=32 time=1ms TTL=64
+[6/21/2018 3:18:28 PM]:Reply from 192.168.100.1: bytes=32 time<1ms TTL=64
+[6/21/2018 3:18:28 PM]:Ping statistics for 192.168.100.1:
+[6/21/2018 3:18:28 PM]:    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+[6/21/2018 3:18:28 PM]:Approximate round trip times in milli-seconds:
+[6/21/2018 3:18:28 PM]:    Minimum = 0ms, Maximum = 1ms, Average = 0ms
+[6/21/2018 3:18:28 PM]:process stopped!
+[6/21/2018 3:18:28 PM]:process started!
+[6/21/2018 3:18:28 PM]:Pinging 192.168.100.1 with 32 bytes of data:
+[6/21/2018 3:18:28 PM]:Reply from 192.168.100.1: bytes=32 time=1ms TTL=64
+[6/21/2018 3:18:29 PM]:Reply from 192.168.100.1: bytes=32 time=1ms TTL=64
+[6/21/2018 3:18:30 PM]:Reply from 192.168.100.1: bytes=32 time=1ms TTL=64
+[6/21/2018 3:18:31 PM]:Reply from 192.168.100.1: bytes=32 time<1ms TTL=64
+[6/21/2018 3:18:31 PM]:Ping statistics for 192.168.100.1:
+[6/21/2018 3:18:31 PM]:    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+[6/21/2018 3:18:31 PM]:Approximate round trip times in milli-seconds:
+[6/21/2018 3:18:31 PM]:    Minimum = 0ms, Maximum = 1ms, Average = 0ms
+[6/21/2018 3:18:31 PM]:process stopped!
+[6/21/2018 3:18:31 PM]:process started!
+[6/21/2018 3:18:31 PM]:Pinging 192.168.100.1 with 32 bytes of data:
+[6/21/2018 3:18:31 PM]:Reply from 192.168.100.1: bytes=32 time=1ms TTL=64
+[6/21/2018 3:18:32 PM]:Reply from 192.168.100.1: bytes=32 time=1ms TTL=64
+[6/21/2018 3:18:33 PM]:Reply from 192.168.100.1: bytes=32 time=1ms TTL=64
+[6/21/2018 3:18:34 PM]:Reply from 192.168.100.1: bytes=32 time=1ms TTL=64
+[6/21/2018 3:18:34 PM]:Ping statistics for 192.168.100.1:
+[6/21/2018 3:18:34 PM]:    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+[6/21/2018 3:18:34 PM]:Approximate round trip times in milli-seconds:
+[6/21/2018 3:18:34 PM]:    Minimum = 1ms, Maximum = 1ms, Average = 1ms
+[6/21/2018 3:18:35 PM]:process stopped!
+[6/21/2018 3:18:35 PM]:process started!
+[6/21/2018 3:18:35 PM]:Pinging 192.168.100.1 with 32 bytes of data:
+[6/21/2018 3:18:35 PM]:Reply from 192.168.100.1: bytes=32 time<1ms TTL=64
+[6/21/2018 3:18:36 PM]:Reply from 192.168.100.1: bytes=32 time=2ms TTL=64
+[6/21/2018 3:18:37 PM]:Reply from 192.168.100.1: bytes=32 time=1ms TTL=64
+[6/21/2018 3:18:38 PM]:Reply from 192.168.100.1: bytes=32 time=1ms TTL=64
+[6/21/2018 3:18:38 PM]:Ping statistics for 192.168.100.1:
+[6/21/2018 3:18:38 PM]:    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+[6/21/2018 3:18:38 PM]:Approximate round trip times in milli-seconds:
+[6/21/2018 3:18:38 PM]:    Minimum = 0ms, Maximum = 2ms, Average = 1ms
+[6/21/2018 3:18:38 PM]:process stopped!
+[6/21/2018 3:18:39 PM]:process started!
+[6/21/2018 3:18:39 PM]:Pinging 192.168.100.1 with 32 bytes of data:
+[6/21/2018 3:18:39 PM]:Reply from 192.168.100.1: bytes=32 time=1ms TTL=64
+[6/21/2018 3:18:39 PM]:Reply from 192.168.100.1: bytes=32 time=1ms TTL=64
+[6/21/2018 3:18:40 PM]:Reply from 192.168.100.1: bytes=32 time=1ms TTL=64
+[6/21/2018 3:18:41 PM]:Reply from 192.168.100.1: bytes=32 time=1ms TTL=64
+[6/21/2018 3:18:41 PM]:Ping statistics for 192.168.100.1:
+[6/21/2018 3:18:41 PM]:    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+[6/21/2018 3:18:41 PM]:Approximate round trip times in milli-seconds:
+[6/21/2018 3:18:41 PM]:    Minimum = 1ms, Maximum = 1ms, Average = 1ms
+[6/21/2018 3:18:42 PM]:process stopped!
+[6/21/2018 3:18:42 PM]:process started!
+[6/21/2018 3:18:42 PM]:Pinging 192.168.100.1 with 32 bytes of data:
+[6/21/2018 3:18:42 PM]:Reply from 192.168.100.1: bytes=32 time=1ms TTL=64
+[6/21/2018 3:18:43 PM]:Reply from 192.168.100.1: bytes=32 time=1ms TTL=64
+[6/21/2018 3:18:44 PM]:Reply from 192.168.100.1: bytes=32 time<1ms TTL=64
+[6/21/2018 3:18:45 PM]:Reply from 192.168.100.1: bytes=32 time<1ms TTL=64
+[6/21/2018 3:18:45 PM]:Ping statistics for 192.168.100.1:
+[6/21/2018 3:18:45 PM]:    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+[6/21/2018 3:18:45 PM]:Approximate round trip times in milli-seconds:
+[6/21/2018 3:18:45 PM]:    Minimum = 0ms, Maximum = 1ms, Average = 0ms
+[6/21/2018 3:18:45 PM]:process stopped!
+[6/21/2018 3:18:45 PM]:process started!
+[6/21/2018 3:18:45 PM]:Pinging 192.168.100.1 with 32 bytes of data:
+[6/21/2018 3:18:45 PM]:Reply from 192.168.100.1: bytes=32 time=1ms TTL=64
+[6/21/2018 3:18:46 PM]:Reply from 192.168.100.1: bytes=32 time=1ms TTL=64
+[6/21/2018 3:18:47 PM]:Reply from 192.168.100.1: bytes=32 time=1ms TTL=64
+[6/21/2018 3:18:48 PM]:Reply from 192.168.100.1: bytes=32 time=1ms TTL=64
+[6/21/2018 3:18:48 PM]:Ping statistics for 192.168.100.1:
+[6/21/2018 3:18:48 PM]:    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+[6/21/2018 3:18:48 PM]:Approximate round trip times in milli-seconds:
+[6/21/2018 3:18:48 PM]:    Minimum = 1ms, Maximum = 1ms, Average = 1ms
+[6/21/2018 3:18:48 PM]:process stopped!
+[6/21/2018 3:18:49 PM]:process started!
+[6/21/2018 3:18:49 PM]:Pinging 192.168.100.1 with 32 bytes of data:
+[6/21/2018 3:18:49 PM]:Reply from 192.168.100.1: bytes=32 time<1ms TTL=64
+[6/21/2018 3:18:49 PM]:Reply from 192.168.100.1: bytes=32 time=1ms TTL=64
+[6/21/2018 3:18:50 PM]:Reply from 192.168.100.1: bytes=32 time=1ms TTL=64
+[6/21/2018 3:18:51 PM]:Reply from 192.168.100.1: bytes=32 time=1ms TTL=64
+[6/21/2018 3:18:52 PM]:Ping statistics for 192.168.100.1:
+[6/21/2018 3:18:52 PM]:    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+[6/21/2018 3:18:52 PM]:Approximate round trip times in milli-seconds:
+[6/21/2018 3:18:52 PM]:    Minimum = 0ms, Maximum = 1ms, Average = 0ms
+[6/21/2018 3:18:52 PM]:process stopped!
+[6/21/2018 3:18:52 PM]:process started!
+[6/21/2018 3:18:52 PM]:Pinging 192.168.100.1 with 32 bytes of data:
+[6/21/2018 3:18:52 PM]:Reply from 192.168.100.1: bytes=32 time=1ms TTL=64
+[6/21/2018 3:18:53 PM]:Reply from 192.168.100.1: bytes=32 time<1ms TTL=64
+[6/21/2018 3:18:54 PM]:Reply from 192.168.100.1: bytes=32 time=1ms TTL=64
+[6/21/2018 3:18:55 PM]:Reply from 192.168.100.1: bytes=32 time=1ms TTL=64
+[6/21/2018 3:18:55 PM]:Ping statistics for 192.168.100.1:
+[6/21/2018 3:18:55 PM]:    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+[6/21/2018 3:18:55 PM]:Approximate round trip times in milli-seconds:
+[6/21/2018 3:18:55 PM]:    Minimum = 0ms, Maximum = 1ms, Average = 0ms
+[6/21/2018 3:18:55 PM]:process stopped!
+[6/21/2018 3:18:56 PM]:process started!
+[6/21/2018 3:18:56 PM]:Pinging 192.168.100.1 with 32 bytes of data:
+[6/21/2018 3:18:56 PM]:Reply from 192.168.100.1: bytes=32 time=1ms TTL=64
+[6/21/2018 3:18:57 PM]:Reply from 192.168.100.1: bytes=32 time<1ms TTL=64
+[6/21/2018 3:18:58 PM]:Reply from 192.168.100.1: bytes=32 time=1ms TTL=64
+[6/21/2018 3:18:59 PM]:Reply from 192.168.100.1: bytes=32 time=1ms TTL=64
+[6/21/2018 3:18:59 PM]:Ping statistics for 192.168.100.1:
+[6/21/2018 3:18:59 PM]:    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+[6/21/2018 3:18:59 PM]:Approximate round trip times in milli-seconds:
+[6/21/2018 3:18:59 PM]:    Minimum = 0ms, Maximum = 1ms, Average = 0ms
+[6/21/2018 3:18:59 PM]:process stopped!
+[6/21/2018 3:19:00 PM]:process started!
+[6/21/2018 3:19:00 PM]:Pinging 192.168.100.1 with 32 bytes of data:
+[6/21/2018 3:19:00 PM]:Reply from 192.168.100.1: bytes=32 time=1ms TTL=64
+[6/21/2018 3:19:00 PM]:Reply from 192.168.100.1: bytes=32 time=1ms TTL=64
+[6/21/2018 3:19:01 PM]:Reply from 192.168.100.1: bytes=32 time=1ms TTL=64
+[6/21/2018 3:19:02 PM]:Reply from 192.168.100.1: bytes=32 time=1ms TTL=64
+[6/21/2018 3:19:02 PM]:Ping statistics for 192.168.100.1:
+[6/21/2018 3:19:02 PM]:    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+[6/21/2018 3:19:02 PM]:Approximate round trip times in milli-seconds:
+[6/21/2018 3:19:02 PM]:    Minimum = 1ms, Maximum = 1ms, Average = 1ms
+[6/21/2018 3:19:03 PM]:process stopped!
+[6/21/2018 3:19:03 PM]:process started!
+[6/21/2018 3:19:03 PM]:Pinging 192.168.100.1 with 32 bytes of data:
+[6/21/2018 3:19:03 PM]:Reply from 192.168.100.1: bytes=32 time=1ms TTL=64
+[6/21/2018 3:19:04 PM]:Reply from 192.168.100.1: bytes=32 time=1ms TTL=64
+[6/21/2018 3:19:05 PM]:Reply from 192.168.100.1: bytes=32 time=1ms TTL=64
+[6/21/2018 3:19:06 PM]:Reply from 192.168.100.1: bytes=32 time=1ms TTL=64
+[6/21/2018 3:19:06 PM]:Ping statistics for 192.168.100.1:
+[6/21/2018 3:19:06 PM]:    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+[6/21/2018 3:19:06 PM]:Approximate round trip times in milli-seconds:
+[6/21/2018 3:19:06 PM]:    Minimum = 1ms, Maximum = 1ms, Average = 1ms
+[6/21/2018 3:19:06 PM]:process stopped!
+[6/21/2018 3:19:07 PM]:process started!
+[6/21/2018 3:19:07 PM]:Pinging 192.168.100.1 with 32 bytes of data:
+[6/21/2018 3:19:07 PM]:Reply from 192.168.100.1: bytes=32 time<1ms TTL=64
+[6/21/2018 3:19:07 PM]:Reply from 192.168.100.1: bytes=32 time<1ms TTL=64
+[6/21/2018 3:19:08 PM]:Reply from 192.168.100.1: bytes=32 time=1ms TTL=64
+[6/21/2018 3:19:09 PM]:Reply from 192.168.100.1: bytes=32 time<1ms TTL=64
+[6/21/2018 3:19:09 PM]:Ping statistics for 192.168.100.1:
+[6/21/2018 3:19:09 PM]:    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+[6/21/2018 3:19:09 PM]:Approximate round trip times in milli-seconds:
+[6/21/2018 3:19:09 PM]:    Minimum = 0ms, Maximum = 1ms, Average = 0ms
+[6/21/2018 3:19:09 PM]:process stopped!
+[6/21/2018 3:19:10 PM]:process started!
+[6/21/2018 3:19:10 PM]:Pinging 192.168.100.1 with 32 bytes of data:
+[6/21/2018 3:19:10 PM]:Reply from 192.168.100.1: bytes=32 time=1ms TTL=64
+[6/21/2018 3:19:10 PM]:Reply from 192.168.100.1: bytes=32 time=1ms TTL=64
+[6/21/2018 3:19:11 PM]:Reply from 192.168.100.1: bytes=32 time=1ms TTL=64
+[6/21/2018 3:19:12 PM]:Reply from 192.168.100.1: bytes=32 time<1ms TTL=64
+[6/21/2018 3:19:12 PM]:Ping statistics for 192.168.100.1:
+[6/21/2018 3:19:12 PM]:    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+[6/21/2018 3:19:12 PM]:Approximate round trip times in milli-seconds:
+[6/21/2018 3:19:13 PM]:    Minimum = 0ms, Maximum = 1ms, Average = 0ms
+[6/21/2018 3:19:13 PM]:process stopped!
+[6/21/2018 3:19:13 PM]:process started!
+[6/21/2018 3:19:13 PM]:Pinging 192.168.100.1 with 32 bytes of data:
+[6/21/2018 3:19:13 PM]:Reply from 192.168.100.1: bytes=32 time=1ms TTL=64
+[6/21/2018 3:19:14 PM]:Reply from 192.168.100.1: bytes=32 time=1ms TTL=64
+[6/21/2018 3:19:15 PM]:Reply from 192.168.100.1: bytes=32 time<1ms TTL=64
+[6/21/2018 3:19:16 PM]:Reply from 192.168.100.1: bytes=32 time=1ms TTL=64
+[6/21/2018 3:19:16 PM]:Ping statistics for 192.168.100.1:
+[6/21/2018 3:19:16 PM]:    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+[6/21/2018 3:19:16 PM]:Approximate round trip times in milli-seconds:
+[6/21/2018 3:19:16 PM]:    Minimum = 0ms, Maximum = 1ms, Average = 0ms
+[6/21/2018 3:19:16 PM]:process stopped!
+[6/21/2018 3:19:16 PM]:process started!
+[6/21/2018 3:19:16 PM]:Pinging 192.168.100.1 with 32 bytes of data:
+[6/21/2018 3:19:16 PM]:Reply from 192.168.100.1: bytes=32 time=1ms TTL=64
+[6/21/2018 3:19:17 PM]:Reply from 192.168.100.1: bytes=32 time<1ms TTL=64
+[6/21/2018 3:19:18 PM]:Reply from 192.168.100.1: bytes=32 time<1ms TTL=64
+[6/21/2018 3:19:19 PM]:Reply from 192.168.100.1: bytes=32 time<1ms TTL=64
+[6/21/2018 3:19:19 PM]:Ping statistics for 192.168.100.1:
+[6/21/2018 3:19:19 PM]:    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+[6/21/2018 3:19:19 PM]:Approximate round trip times in milli-seconds:
+[6/21/2018 3:19:19 PM]:    Minimum = 0ms, Maximum = 1ms, Average = 0ms
+[6/21/2018 3:19:19 PM]:process stopped!
+[6/21/2018 3:19:20 PM]:process started!
+[6/21/2018 3:19:20 PM]:Pinging 192.168.100.1 with 32 bytes of data:
+[6/21/2018 3:19:20 PM]:Reply from 192.168.100.1: bytes=32 time<1ms TTL=64
+[6/21/2018 3:19:20 PM]:Reply from 192.168.100.1: bytes=32 time=1ms TTL=64
+[6/21/2018 3:19:21 PM]:Reply from 192.168.100.1: bytes=32 time=1ms TTL=64
+[6/21/2018 3:19:22 PM]:Reply from 192.168.100.1: bytes=32 time=1ms TTL=64
+[6/21/2018 3:19:22 PM]:Ping statistics for 192.168.100.1:
+[6/21/2018 3:19:22 PM]:    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+[6/21/2018 3:19:22 PM]:Approximate round trip times in milli-seconds:
+[6/21/2018 3:19:22 PM]:    Minimum = 0ms, Maximum = 1ms, Average = 0ms
+[6/21/2018 3:19:23 PM]:process stopped!
+[6/21/2018 3:19:23 PM]:process started!
+[6/21/2018 3:19:23 PM]:Pinging 192.168.100.1 with 32 bytes of data:
+[6/21/2018 3:19:23 PM]:Reply from 192.168.100.1: bytes=32 time=1ms TTL=64
+[6/21/2018 3:19:24 PM]:Reply from 192.168.100.1: bytes=32 time=1ms TTL=64
+[6/21/2018 3:19:25 PM]:Reply from 192.168.100.1: bytes=32 time=1ms TTL=64
+[6/21/2018 3:19:26 PM]:Reply from 192.168.100.1: bytes=32 time<1ms TTL=64
+[6/21/2018 3:19:26 PM]:Ping statistics for 192.168.100.1:
+[6/21/2018 3:19:26 PM]:    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+[6/21/2018 3:19:26 PM]:Approximate round trip times in milli-seconds:
+[6/21/2018 3:19:26 PM]:    Minimum = 0ms, Maximum = 1ms, Average = 0ms
+[6/21/2018 3:19:26 PM]:process stopped!
+[6/21/2018 3:19:26 PM]:process started!
+[6/21/2018 3:19:26 PM]:Pinging 192.168.100.1 with 32 bytes of data:
+[6/21/2018 3:19:26 PM]:Reply from 192.168.100.1: bytes=32 time<1ms TTL=64
+[6/21/2018 3:19:27 PM]:Reply from 192.168.100.1: bytes=32 time<1ms TTL=64
+[6/21/2018 3:19:28 PM]:Reply from 192.168.100.1: bytes=32 time=1ms TTL=64
+[6/21/2018 3:19:29 PM]:Reply from 192.168.100.1: bytes=32 time=1ms TTL=64
+[6/21/2018 3:19:29 PM]:Ping statistics for 192.168.100.1:
+[6/21/2018 3:19:29 PM]:    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+[6/21/2018 3:19:29 PM]:Approximate round trip times in milli-seconds:
+[6/21/2018 3:19:29 PM]:    Minimum = 0ms, Maximum = 1ms, Average = 0ms
+[6/21/2018 3:19:29 PM]:process stopped!
+[6/21/2018 3:19:29 PM]:process started!
+[6/21/2018 3:19:29 PM]:Pinging 192.168.100.1 with 32 bytes of data:
+[6/21/2018 3:19:29 PM]:Reply from 192.168.100.1: bytes=32 time=1ms TTL=64
+[6/21/2018 3:19:30 PM]:Reply from 192.168.100.1: bytes=32 time=1ms TTL=64
+[6/21/2018 3:19:31 PM]:Reply from 192.168.100.1: bytes=32 time=1ms TTL=64
+[6/21/2018 3:19:32 PM]:Reply from 192.168.100.1: bytes=32 time=1ms TTL=64
+[6/21/2018 3:19:32 PM]:Ping statistics for 192.168.100.1:
+[6/21/2018 3:19:32 PM]:    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+[6/21/2018 3:19:32 PM]:Approximate round trip times in milli-seconds:
+[6/21/2018 3:19:32 PM]:    Minimum = 1ms, Maximum = 1ms, Average = 1ms
+[6/21/2018 3:19:33 PM]:process stopped!
+[6/21/2018 3:19:33 PM]:process started!
+[6/21/2018 3:19:33 PM]:Pinging 192.168.100.1 with 32 bytes of data:
+[6/21/2018 3:19:33 PM]:Reply from 192.168.100.1: bytes=32 time<1ms TTL=64
+[6/21/2018 3:19:34 PM]:Reply from 192.168.100.1: bytes=32 time<1ms TTL=64
+[6/21/2018 3:19:35 PM]:Reply from 192.168.100.1: bytes=32 time=1ms TTL=64
+[6/21/2018 3:19:36 PM]:Reply from 192.168.100.1: bytes=32 time=1ms TTL=64
+[6/21/2018 3:19:36 PM]:Ping statistics for 192.168.100.1:
+[6/21/2018 3:19:36 PM]:    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+[6/21/2018 3:19:36 PM]:Approximate round trip times in milli-seconds:
+[6/21/2018 3:19:36 PM]:    Minimum = 0ms, Maximum = 1ms, Average = 0ms
+[6/21/2018 3:19:36 PM]:process stopped!
+[6/21/2018 3:19:36 PM]:process started!
+[6/21/2018 3:19:36 PM]:Pinging 192.168.100.1 with 32 bytes of data:
+[6/21/2018 3:19:36 PM]:Reply from 192.168.100.1: bytes=32 time=1ms TTL=64
+[6/21/2018 3:19:37 PM]:Reply from 192.168.100.1: bytes=32 time=1ms TTL=64
+[6/21/2018 3:19:38 PM]:Reply from 192.168.100.1: bytes=32 time<1ms TTL=64
+[6/21/2018 3:19:39 PM]:Reply from 192.168.100.1: bytes=32 time<1ms TTL=64
+[6/21/2018 3:19:39 PM]:Ping statistics for 192.168.100.1:
+[6/21/2018 3:19:39 PM]:    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+[6/21/2018 3:19:39 PM]:Approximate round trip times in milli-seconds:
+[6/21/2018 3:19:39 PM]:    Minimum = 0ms, Maximum = 1ms, Average = 0ms
+[6/21/2018 3:19:39 PM]:process stopped!
+[6/21/2018 3:19:40 PM]:process started!
+[6/21/2018 3:19:40 PM]:Pinging 192.168.100.1 with 32 bytes of data:
+[6/21/2018 3:19:40 PM]:Reply from 192.168.100.1: bytes=32 time=3ms TTL=64
+[6/21/2018 3:19:40 PM]:Reply from 192.168.100.1: bytes=32 time<1ms TTL=64
+[6/21/2018 3:19:41 PM]:process stopped!
+[6/21/2018 3:20:53 PM]:process started!
+[6/21/2018 3:20:53 PM]:Pinging 192.168.100.1 with 32 bytes of data:
+[6/21/2018 3:20:53 PM]:Reply from 192.168.100.1: bytes=32 time=2ms TTL=64
+[6/21/2018 3:20:54 PM]:Reply from 192.168.100.1: bytes=32 time=1ms TTL=64
+[6/21/2018 3:20:55 PM]:Reply from 192.168.100.1: bytes=32 time=1ms TTL=64
+[6/21/2018 3:20:56 PM]:Reply from 192.168.100.1: bytes=32 time=1ms TTL=64
+[6/21/2018 3:20:56 PM]:Ping statistics for 192.168.100.1:
+[6/21/2018 3:20:56 PM]:    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+[6/21/2018 3:20:56 PM]:Approximate round trip times in milli-seconds:
+[6/21/2018 3:20:56 PM]:    Minimum = 1ms, Maximum = 2ms, Average = 1ms
+[6/21/2018 3:20:56 PM]:process stopped!
+[6/21/2018 3:45:15 PM]:process started!
+[6/21/2018 3:45:15 PM]:Pinging 192.168.100.1 with 32 bytes of data:
+[6/21/2018 3:45:15 PM]:Reply from 192.168.100.1: bytes=32 time=1ms TTL=64
+[6/21/2018 3:45:15 PM]:Reply from 192.168.100.1: bytes=32 time=1ms TTL=64
+[6/21/2018 3:45:15 PM]:Reply from 192.168.100.1: bytes=32 time=1ms TTL=64
+[6/21/2018 3:45:15 PM]:Reply from 192.168.100.1: bytes=32 time<1ms TTL=64
+[6/21/2018 3:45:15 PM]:Ping statistics for 192.168.100.1:
+[6/21/2018 3:45:15 PM]:    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+[6/21/2018 3:45:15 PM]:Approximate round trip times in milli-seconds:
+[6/21/2018 3:45:15 PM]:    Minimum = 0ms, Maximum = 1ms, Average = 0ms
+[6/21/2018 3:45:16 PM]:process stopped!
+[6/21/2018 3:48:52 PM]:process started!
+[6/21/2018 3:48:52 PM]:Pinging 192.168.100.1 with 32 bytes of data:
+[6/21/2018 3:48:52 PM]:Reply from 192.168.100.1: bytes=32 time=1ms TTL=64
+[6/21/2018 3:48:52 PM]:Reply from 192.168.100.1: bytes=32 time=4ms TTL=64
+[6/21/2018 3:48:52 PM]:Reply from 192.168.100.1: bytes=32 time=1ms TTL=64
+[6/21/2018 3:48:53 PM]:Reply from 192.168.100.1: bytes=32 time=1ms TTL=64
+[6/21/2018 3:48:53 PM]:Ping statistics for 192.168.100.1:
+[6/21/2018 3:48:53 PM]:    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+[6/21/2018 3:48:53 PM]:Approximate round trip times in milli-seconds:
+[6/21/2018 3:48:53 PM]:    Minimum = 1ms, Maximum = 4ms, Average = 1ms
+[6/21/2018 3:48:54 PM]:process stopped!
+[6/21/2018 3:52:00 PM]:process started!
+[6/21/2018 3:52:01 PM]:Pinging 192.168.100.1 with 32 bytes of data:
+[6/21/2018 3:52:01 PM]:Reply from 192.168.100.1: bytes=32 time<1ms TTL=64
+[6/21/2018 3:52:01 PM]:Reply from 192.168.100.1: bytes=32 time=1ms TTL=64
+[6/21/2018 3:52:01 PM]:Reply from 192.168.100.1: bytes=32 time=1ms TTL=64
+[6/21/2018 3:52:01 PM]:Reply from 192.168.100.1: bytes=32 time=1ms TTL=64
+[6/21/2018 3:52:01 PM]:Ping statistics for 192.168.100.1:
+[6/21/2018 3:52:01 PM]:    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+[6/21/2018 3:52:01 PM]:Approximate round trip times in milli-seconds:
+[6/21/2018 3:52:01 PM]:    Minimum = 0ms, Maximum = 1ms, Average = 0ms
+[6/21/2018 3:52:04 PM]:process stopped!
+[6/21/2018 3:57:55 PM]:process started!
+[6/21/2018 3:57:55 PM]:Pinging 192.168.100.1 with 32 bytes of data:
+[6/21/2018 3:57:55 PM]:Reply from 192.168.100.1: bytes=32 time=1ms TTL=64
+[6/21/2018 3:57:56 PM]:Reply from 192.168.100.1: bytes=32 time=3ms TTL=64
+[6/21/2018 3:57:56 PM]:Reply from 192.168.100.1: bytes=32 time=2ms TTL=64
+[6/21/2018 3:57:56 PM]:Reply from 192.168.100.1: bytes=32 time=1ms TTL=64
+[6/21/2018 3:57:56 PM]:Ping statistics for 192.168.100.1:
+[6/21/2018 3:57:56 PM]:    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+[6/21/2018 3:57:56 PM]:Approximate round trip times in milli-seconds:
+[6/21/2018 3:57:56 PM]:    Minimum = 1ms, Maximum = 3ms, Average = 1ms
+[6/21/2018 3:57:57 PM]:process stopped!
+[6/21/2018 4:05:43 PM]:process started!
+[6/21/2018 4:05:43 PM]:Pinging 192.168.100.1 with 32 bytes of data:
+[6/21/2018 4:05:43 PM]:Reply from 192.168.100.1: bytes=32 time=1ms TTL=64
+[6/21/2018 4:05:43 PM]:Reply from 192.168.100.1: bytes=32 time<1ms TTL=64
+[6/21/2018 4:05:43 PM]:Reply from 192.168.100.1: bytes=32 time=1ms TTL=64
+[6/21/2018 4:05:43 PM]:Reply from 192.168.100.1: bytes=32 time=2ms TTL=64
+[6/21/2018 4:05:43 PM]:Ping statistics for 192.168.100.1:
+[6/21/2018 4:05:43 PM]:    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+[6/21/2018 4:05:43 PM]:Approximate round trip times in milli-seconds:
+[6/21/2018 4:05:44 PM]:    Minimum = 0ms, Maximum = 2ms, Average = 1ms
+[6/21/2018 4:05:48 PM]:process stopped!
+[6/21/2018 4:10:35 PM]:process started!
+[6/21/2018 4:10:35 PM]:Pinging 192.168.100.1 with 32 bytes of data:
+[6/21/2018 4:10:35 PM]:Reply from 192.168.100.1: bytes=32 time=1ms TTL=64
+[6/21/2018 4:10:35 PM]:Reply from 192.168.100.1: bytes=32 time<1ms TTL=64
+[6/21/2018 4:10:35 PM]:Reply from 192.168.100.1: bytes=32 time<1ms TTL=64
+[6/21/2018 4:10:35 PM]:Reply from 192.168.100.1: bytes=32 time=1ms TTL=64
+[6/21/2018 4:10:35 PM]:Ping statistics for 192.168.100.1:
+[6/21/2018 4:10:35 PM]:    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+[6/21/2018 4:10:35 PM]:Approximate round trip times in milli-seconds:
+[6/21/2018 4:10:35 PM]:    Minimum = 0ms, Maximum = 1ms, Average = 0ms
+[6/21/2018 4:10:36 PM]:process stopped!
+[6/21/2018 4:11:49 PM]:process started!
+[6/21/2018 4:11:49 PM]:Pinging 192.168.100.1 with 32 bytes of data:
+[6/21/2018 4:11:50 PM]:Reply from 192.168.100.1: bytes=32 time=1ms TTL=64
+[6/21/2018 4:11:50 PM]:Reply from 192.168.100.1: bytes=32 time<1ms TTL=64
+[6/21/2018 4:11:50 PM]:Reply from 192.168.100.1: bytes=32 time=1ms TTL=64
+[6/21/2018 4:11:50 PM]:Reply from 192.168.100.1: bytes=32 time<1ms TTL=64
+[6/21/2018 4:11:50 PM]:Ping statistics for 192.168.100.1:
+[6/21/2018 4:11:50 PM]:    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+[6/21/2018 4:11:50 PM]:Approximate round trip times in milli-seconds:
+[6/21/2018 4:11:50 PM]:    Minimum = 0ms, Maximum = 1ms, Average = 0ms
+[6/21/2018 4:11:51 PM]:process stopped!
+[6/21/2018 4:14:12 PM]:process started!
+[6/21/2018 4:14:12 PM]:Pinging 192.168.100.1 with 32 bytes of data:
+[6/21/2018 4:14:12 PM]:Reply from 192.168.100.1: bytes=32 time=1ms TTL=64
+[6/21/2018 4:14:13 PM]:Reply from 192.168.100.1: bytes=32 time<1ms TTL=64
+[6/21/2018 4:14:13 PM]:Reply from 192.168.100.1: bytes=32 time=1ms TTL=64
+[6/21/2018 4:14:13 PM]:Reply from 192.168.100.1: bytes=32 time<1ms TTL=64
+[6/21/2018 4:14:13 PM]:Ping statistics for 192.168.100.1:
+[6/21/2018 4:14:13 PM]:    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+[6/21/2018 4:14:13 PM]:Approximate round trip times in milli-seconds:
+[6/21/2018 4:14:13 PM]:    Minimum = 0ms, Maximum = 1ms, Average = 0ms
+[6/21/2018 4:14:14 PM]:process stopped!
+[6/21/2018 4:15:32 PM]:process started!
+[6/21/2018 4:15:32 PM]:Pinging 192.168.100.1 with 32 bytes of data:
+[6/21/2018 4:15:32 PM]:Reply from 192.168.100.1: bytes=32 time=1ms TTL=64
+[6/21/2018 4:15:32 PM]:Reply from 192.168.100.1: bytes=32 time=1ms TTL=64
+[6/21/2018 4:15:33 PM]:Reply from 192.168.100.1: bytes=32 time=1ms TTL=64
+[6/21/2018 4:15:34 PM]:Reply from 192.168.100.1: bytes=32 time=1ms TTL=64
+[6/21/2018 4:15:34 PM]:Ping statistics for 192.168.100.1:
+[6/21/2018 4:15:34 PM]:    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+[6/21/2018 4:15:34 PM]:Approximate round trip times in milli-seconds:
+[6/21/2018 4:15:34 PM]:    Minimum = 1ms, Maximum = 1ms, Average = 1ms
+[6/21/2018 4:15:35 PM]:process stopped!
+[6/21/2018 4:51:54 PM]:process started!
+[6/21/2018 4:51:54 PM]:Pinging 192.168.100.1 with 32 bytes of data:
+[6/21/2018 4:51:54 PM]:Reply from 192.168.100.1: bytes=32 time<1ms TTL=64
+[6/21/2018 4:51:54 PM]:Reply from 192.168.100.1: bytes=32 time=1ms TTL=64
+[6/21/2018 4:51:55 PM]:Reply from 192.168.100.1: bytes=32 time<1ms TTL=64
+[6/21/2018 4:51:56 PM]:Reply from 192.168.100.1: bytes=32 time<1ms TTL=64
+[6/21/2018 4:51:56 PM]:Ping statistics for 192.168.100.1:
+[6/21/2018 4:51:56 PM]:    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+[6/21/2018 4:51:56 PM]:Approximate round trip times in milli-seconds:
+[6/21/2018 4:51:56 PM]:    Minimum = 0ms, Maximum = 1ms, Average = 0ms
+[6/21/2018 4:52:02 PM]:process stopped!

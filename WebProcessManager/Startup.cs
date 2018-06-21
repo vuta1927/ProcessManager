@@ -52,6 +52,7 @@ namespace WebProcessManager
 
             services.AddTransient<IContainerComunicate, ContainerComunicate>();
             services.AddTransient<IDataSeeder, DataSeeder>();
+            services.AddTransient<ServerController>();
             services.AddTransient<TokenController>();
 
             services.AddAuthentication()

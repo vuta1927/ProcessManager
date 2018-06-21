@@ -7,36 +7,17 @@ namespace ProcessManagerCore.Models
     public class Process
     {
         public int Id { get; set; }
-
-        private bool _isRunning;
-        public bool IsRunning
-        {
-            get => _isRunning;
-            set
-            {
-                _isRunning = value;
-                if (!_isRunning)
-                {
-                    OrginProcess = null;
-                    if (AutoRestart)
-                    {
-                        Task.Run(()=>Start());
-                    }
-                }
-                OnStop?.Invoke(this, new EventArgs());
-            }
-        }
-
+        public bool IsRunning { get; set; }
         public bool AutoRestart { get; set; }
         public string Application { get; set; }
         public string Arguments { get; set; }
         public System.Diagnostics.Process OrginProcess { get; set; }
 
-        public delegate void ProcessStartHandler(object sender, EventArgs e);
+        public delegate void ProcessStartHandler(Process sender, EventArgs e);
 
         public event ProcessStartHandler OnStart;
 
-        public delegate void ProcessStopHandler(object sender, EventArgs e);
+        public delegate void ProcessStopHandler(Process sender, EventArgs e);
 
         public event ProcessStopHandler OnStop;
 
@@ -101,6 +82,7 @@ namespace ProcessManagerCore.Models
                 OrginProcess.EnableRaisingEvents = true;
                 //OrginProcess.WaitForExit();
                 OrginProcess.Exited += OrginProcessOnExited;
+
                 return new AppResponse(false,Id.ToString());
             }
             catch (Exception e)
@@ -115,6 +97,10 @@ namespace ProcessManagerCore.Models
             IsRunning = false;
             OrginProcess = null;
             OnStop?.Invoke(this, new EventArgs());
+            if (AutoRestart)
+            {
+                Task.Run(() => Start());
+            }
         }
     }
 }
