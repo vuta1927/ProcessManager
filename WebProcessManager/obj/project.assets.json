@@ -5788,7 +5788,7 @@
       ]
     },
     "Microsoft.CodeAnalysis.Analyzers/1.1.0": {
-      "sha512": "HS3iRWZKcUw/8eZ/08GXKY2Bn7xNzQPzf8gRPHGSowX7u7XXu9i9YEaBeBNKUXWfI7qjvT2zXtLUvbN0hds8vg==",
+      "sha512": "Ib1dT5QL804XseM2zLVX8dnoTUBOFfWHFmiv9muuy44cNdP1r+/AQh7UE24H3VBJ3qGBL0O+bQjgecDOM+09Bw==",
       "type": "package",
       "path": "microsoft.codeanalysis.analyzers/1.1.0",
       "files": [
@@ -9430,7 +9430,7 @@
       ]
     },
     "System.Linq.Queryable/4.0.1": {
-      "sha512": "Yn/WfYe9RoRfmSLvUt2JerP0BTGGykCZkQPgojaxgzF2N0oPo+/AhB8TXOpdCcNlrG3VRtsamtK2uzsp3cqRVw==",
+      "sha512": "Pl9y2rVvuyoE3fv9Zhu9K2rnpafWKcqhe4IecYFsJZMc6evEIUisr8aGZE/pzWsfzlo5Fd8/m/78h2wUtOaUMQ==",
       "type": "package",
       "path": "system.linq.queryable/4.0.1",
       "files": [
@@ -12230,11 +12230,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Projects\\ProcessManager\\WebProcessManager\\WebProcessManager.csproj",
+      "projectUniqueName": "C:\\Users\\Admin\\Documents\\GitHub\\ProcessManager\\WebProcessManager\\WebProcessManager.csproj",
       "projectName": "WebProcessManager",
-      "projectPath": "D:\\Projects\\ProcessManager\\WebProcessManager\\WebProcessManager.csproj",
+      "projectPath": "C:\\Users\\Admin\\Documents\\GitHub\\ProcessManager\\WebProcessManager\\WebProcessManager.csproj",
       "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "D:\\Projects\\ProcessManager\\WebProcessManager\\obj\\",
+      "outputPath": "C:\\Users\\Admin\\Documents\\GitHub\\ProcessManager\\WebProcessManager\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

@@ -31,5 +31,10 @@
             public string Output { get; set; }
             public string Errors { get; set; }
         }
+
+        public class ProcessForView2 : ProcessForAdd
+        {
+            public string ContainerName { get; set; }
+        }
     }
 }

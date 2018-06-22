@@ -50,6 +50,11 @@
                 <p class="form-control-static">@Html.ValueFor(model => model.Container.Name)</p>
             </div>
         </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <a class="btn btn-default btn-sm" asp-action="Edit" asp-controller="Processes" asp-route-id="@Model.Id"><span class="fa fa-edit"></span> Edit</a>
+            </div>
+        </div>
     </form>
     <hr />
     <h4>Logs</h4>

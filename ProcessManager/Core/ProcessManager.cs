@@ -213,9 +213,11 @@ namespace ProcessManagerCore.Core
                 {
                     try
                     {
-                        LogHelper.Stop();
+                        //LogHelper.Stop();
                         p.AutoRestart = false;
-                        p.Stop();
+                        if(p.IsRunning)
+                            p.Stop();
+
                         _processes.Remove(p);
                     }
                     catch (Exception e)
@@ -234,7 +236,7 @@ namespace ProcessManagerCore.Core
             return new AppResponse(true, "process not found!");
         }
 
-        private void ReloadProcessFile()
+        public void ReloadProcessFile()
         {
             var l = new List<ProcessModels.ProcessForAddToFile>();
             foreach (var p in _processes)

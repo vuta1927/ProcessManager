@@ -21,11 +21,58 @@ namespace WebProcessManager.Controllers
             _containerComunicate = containerComunicate;
         }
 
-        // GET: Processes
-        public async Task<IActionResult> Index()
+        public IActionResult Index()
         {
-            var applicationDbContext = _context.Processes;
-            return View(await applicationDbContext.ToListAsync());
+            return View();
+        }
+
+        public IActionResult GetProcesses([FromQuery]string orderby, int skip, int take)
+        {
+            var all = new List<Process>();
+            if (!string.IsNullOrEmpty(orderby))
+            {
+                if (orderby.Equals("application desc"))
+                {
+                    all = _context.Processes.Include(x => x.Container).OrderByDescending(x => x.Application).Skip(skip).Take(take).ToList();
+                }
+                if (orderby.Equals("application"))
+                {
+                    all = _context.Processes.Include(x => x.Container).OrderBy(x => x.Application).Skip(skip).Take(take).ToList();
+                }
+                if (orderby.Equals("arguments desc"))
+                {
+                    all = _context.Processes.Include(x => x.Container).OrderByDescending(x => x.Arguments).Skip(skip).Take(take).ToList();
+                }
+                if (orderby.Equals("arguments"))
+                {
+                    all = _context.Processes.Include(x => x.Container).OrderBy(x => x.Arguments).Skip(skip).Take(take).ToList();
+                }
+            }
+            else
+            {
+                all = _context.Processes.Include(x => x.Container).Skip(skip).Take(take).ToList();
+            }
+
+
+            var result = new DxProcessDataResponse()
+            {
+                Items = new List<ProcessModels.ProcessForView2>(),
+                TotalCount = _context.Processes.Count()
+            };
+            foreach (var p in all)
+            {
+                result.Items.Add(new ProcessModels.ProcessForView2()
+                {
+                    Id = p.Id,
+                    IsRunning = p.IsRunning,
+                    Application = p.Application,
+                    Arguments = p.Arguments,
+                    AutoRestart = p.AutoRestart,
+                    ContainerName = p.Container.Name
+                });
+            }
+
+            return Ok(result);
         }
 
         // GET: Processes/Details/5
@@ -64,7 +111,7 @@ namespace WebProcessManager.Controllers
                     errors += dataError[i] + "\r\n";
                 }
             }
-            
+
 
             var pForView = new ProcessModels.ProcessForView()
             {
@@ -88,7 +135,7 @@ namespace WebProcessManager.Controllers
             ViewData["ContainerId"] = new SelectList(_context.Containers, "Id", "Id");
             return View();
         }
-        
+
         public async Task<IActionResult> Start(int id)
         {
             var process = _context.Processes.Include(x => x.Container).SingleOrDefault(x => x.Id == id);
@@ -97,14 +144,13 @@ namespace WebProcessManager.Controllers
             var result = await _containerComunicate.StartAsync(process);
             if (result.IsError)
             {
-                ViewData["error"] = result.Message;
+                process.IsRunning = false;
+                return Ok(result.Message);
             }
-            else
-            {
-                process.IsRunning = true;
-                await _context.SaveChangesAsync();
-            }
-            return RedirectToAction(nameof(Index));
+            process.IsRunning = true;
+            await _context.SaveChangesAsync();
+
+            return Ok();
         }
         public async Task<IActionResult> Stop(int id)
         {
@@ -114,14 +160,12 @@ namespace WebProcessManager.Controllers
             var result = await _containerComunicate.StopAsync(process);
             if (result.IsError)
             {
-                ViewData["error"] = result.Message;
+                return Ok(result.Message);
             }
-            else
-            {
-                process.IsRunning = false;
-                await _context.SaveChangesAsync();
-            }
-            return RedirectToAction(nameof(Index));
+
+            process.IsRunning = false;
+            await _context.SaveChangesAsync();
+            return Ok();
         }
         public async Task<IActionResult> Sync(int id)
         {
@@ -131,14 +175,15 @@ namespace WebProcessManager.Controllers
             var result = await _containerComunicate.Sync(process);
             if (result.IsError)
             {
-                ViewData["error"] = result.Message;
+                return Ok(result.Message);
             }
             else
             {
                 process.IsRunning = false;
                 await _context.SaveChangesAsync();
             }
-            return RedirectToAction(nameof(Index));
+
+            return Ok();
         }
 
         public async Task<IActionResult> GetLog(int id)
@@ -169,16 +214,14 @@ namespace WebProcessManager.Controllers
             if (ModelState.IsValid)
             {
                 process.IsRunning = false;
+                _context.Add(process);
+                await _context.SaveChangesAsync();
+
                 var result = await _containerComunicate.CreateProcess(process);
+
                 if (result.IsError)
                 {
-                    ViewData["error"] = result.Message;
-                }
-                else
-                {
-                    process.IsRunning = true;
-                    _context.Add(process);
-                    await _context.SaveChangesAsync();
+                    
                 }
 
                 return RedirectToAction(nameof(Index));
@@ -289,5 +332,10 @@ namespace WebProcessManager.Controllers
         {
             return _context.Processes.Any(e => e.Id == id);
         }
+    }
+    public class DxProcessDataResponse
+    {
+        public List<ProcessModels.ProcessForView2> Items { get; set; }
+        public int TotalCount { get; set; }
     }
 }

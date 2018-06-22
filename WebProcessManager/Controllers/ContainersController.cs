@@ -25,6 +25,40 @@ namespace WebProcessManager.Controllers
             return View(await _context.Containers.ToListAsync());
         }
 
+        public IActionResult GetContainers([FromQuery]string orderby, int skip, int take = 12)
+        {
+            var all = new List<Container>();
+            if (!string.IsNullOrEmpty(orderby))
+            {
+                if (orderby.Equals("name"))
+                {
+                    all = _context.Containers.OrderBy(x => x.Name).Skip(skip).Take(take).ToList();
+                }
+                if (orderby.Equals("name desc"))
+                {
+                    all = _context.Containers.OrderByDescending(x => x.Name).Skip(skip).Take(take).ToList();
+                }
+                if (orderby.Equals("address"))
+                {
+                    all = _context.Containers.OrderBy(x => x.Address).Skip(skip).Take(take).ToList();
+                }
+
+                if (orderby.Equals("address desc"))
+                {
+                    all = _context.Containers.OrderByDescending(x => x.Address).Skip(skip).Take(take).ToList();
+                }
+            }
+            else
+            {
+                all = _context.Containers.Skip(skip).Take(take).ToList();
+            }
+
+            return Ok(new DxDataResponse()
+            {
+                Items = all,
+                TotalCount = _context.Containers.Count()
+            });
+        }
         // GET: Containers/Details/5
         public async Task<IActionResult> Details(int? id)
         {
@@ -149,5 +183,11 @@ namespace WebProcessManager.Controllers
         {
             return _context.Containers.Any(e => e.Id == id);
         }
+    }
+
+    public class DxDataResponse
+    {
+        public List<Container> Items { get; set; }
+        public int TotalCount { get; set; }
     }
 }

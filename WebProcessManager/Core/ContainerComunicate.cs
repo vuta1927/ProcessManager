@@ -98,8 +98,8 @@ namespace WebProcessManager.Core
                     var result = await client.PostAsync(process.Container.Address + "/api/process/run/" + process.Id, null);
                     if (result.IsSuccessStatusCode)
                     {
-                        var content = result.Content.ReadAsStringAsync().Result;
-                        return new AppResponse(false, content);
+                        var content = JsonConvert.DeserializeObject<AppResponse>(result.Content.ReadAsStringAsync().Result);
+                        return new AppResponse(content.IsError, content.Message);
                     }
                     return new AppResponse(true, "Code: " + result.StatusCode);
                 }
@@ -146,8 +146,8 @@ namespace WebProcessManager.Core
                     var result = await client.PostAsync(cont.Address + "/api/process", httpContent);
                     if (result.IsSuccessStatusCode)
                     {
-                        var content = result.Content.ReadAsStringAsync().Result;
-                        return new AppResponse(false, content);
+                        var content = JsonConvert.DeserializeObject<AppResponse>(result.Content.ReadAsStringAsync().Result);
+                        return new AppResponse(content.IsError, content.Message);
                     }
                     return new AppResponse(true, "Code: " + result.StatusCode);
                 }
@@ -175,8 +175,8 @@ namespace WebProcessManager.Core
                     var result = await client.PostAsync(process.Container.Address + "/api/process/stop/" + process.Id, null);
                     if (result.IsSuccessStatusCode)
                     {
-                        var content = result.Content.ReadAsStringAsync().Result;
-                        return new AppResponse(false, content);
+                        var content = JsonConvert.DeserializeObject<AppResponse>(result.Content.ReadAsStringAsync().Result);
+                        return new AppResponse(content.IsError, content.Message);
                     }
                     return new AppResponse(true, "Code: " + result.StatusCode);
                 }
@@ -237,8 +237,8 @@ namespace WebProcessManager.Core
                     var result = await client.PutAsync(cont.Address + "/api/process", httpContent);
                     if (result.IsSuccessStatusCode)
                     {
-                        var content = result.Content.ReadAsStringAsync().Result;
-                        return new AppResponse(false, content);
+                        var content = JsonConvert.DeserializeObject<AppResponse>(result.Content.ReadAsStringAsync().Result);
+                        return new AppResponse(content.IsError, content.Message);
                     }
                     return new AppResponse(true, "Code: " + result.StatusCode);
                 }
@@ -274,8 +274,8 @@ namespace WebProcessManager.Core
                     var result = await client.DeleteAsync(cont.Address + "/api/process/" + process.Id);
                     if (result.IsSuccessStatusCode)
                     {
-                        var content = result.Content.ReadAsStringAsync().Result;
-                        return new AppResponse(false, content);
+                        var content = JsonConvert.DeserializeObject<AppResponse>(result.Content.ReadAsStringAsync().Result);
+                        return new AppResponse(content.IsError, content.Message);
                     }
                     return new AppResponse(true, "Code: " + result.StatusCode);
                 }
@@ -302,8 +302,8 @@ namespace WebProcessManager.Core
                     var result = await client.PostAsync(cont.Address + "/api/process/stopall", null);
                     if (result.IsSuccessStatusCode)
                     {
-                        var content = result.Content.ReadAsStringAsync().Result;
-                        return new AppResponse(false, content);
+                        var content = JsonConvert.DeserializeObject<AppResponse>(result.Content.ReadAsStringAsync().Result);
+                        return new AppResponse(content.IsError, content.Message);
                     }
                     return new AppResponse(true, "Code: " + result.StatusCode);
                 }
@@ -330,8 +330,8 @@ namespace WebProcessManager.Core
                     var result = await client.PostAsync(cont.Address + "/api/process/startall", null);
                     if (result.IsSuccessStatusCode)
                     {
-                        var content = result.Content.ReadAsStringAsync().Result;
-                        return new AppResponse(false, content);
+                        var content = JsonConvert.DeserializeObject<AppResponse>(result.Content.ReadAsStringAsync().Result);
+                        return new AppResponse(content.IsError, content.Message);
                     }
                     return new AppResponse(true, "Code: " + result.StatusCode);
                 }
@@ -377,8 +377,8 @@ namespace WebProcessManager.Core
                     var result = await client.PostAsync(cont.Address + "/api/process/sync", httpContent);
                     if (result.IsSuccessStatusCode)
                     {
-                        var content = result.Content.ReadAsStringAsync().Result;
-                        return new AppResponse(false, content);
+                        var content = JsonConvert.DeserializeObject<AppResponse>(result.Content.ReadAsStringAsync().Result);
+                        return new AppResponse(content.IsError, content.Message);
                     }
                     return new AppResponse(true, "Code: " + result.StatusCode);
                 }

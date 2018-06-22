@@ -2,78 +2,271 @@
 @model IEnumerable<WebProcessManager.Models.Process>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Process";
+    ViewData["error"] = "";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+
 <h2>Processes</h2>
-
-<p>
-    <a asp-action="Create">Create New</a>
+<div>
+    <a class="btn btn-primary btn-sm" asp-action="Create"><span class="fa fa-plus-circle"></span> Create New</a>&nbsp;
+    <a class="btn btn-default btn-sm" onclick="refreshClicked()"><span class="fa fa-sync-alt"></span> Refresh</a>
+</div>
+<p style="color: red" id="error">
 </p>
-<p style="color: red">
-    @ViewData["error"]
-</p>
+<div style="overflow: auto">
+    <div id="gridContainer"></div>
+</div>
 
-<div id="gridContainer"></div>
-
-<table class="table">
-    <thead>
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.IsRunning)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.AutoRestart)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Application)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Arguments)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Container)
-        </th>
-        <th></th>
-    </tr>
-    </thead>
-    <tbody>
-    @foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.IsRunning)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.AutoRestart)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Application)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Arguments)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Container.Id)
-            </td>
-            <td>
-                <a asp-action="Start" asp-route-id="@item.Id">Start</a> |
-                <a asp-action="Stop" asp-route-id="@item.Id">Stop</a> |
-                <a asp-action="Sync" asp-route-id="@item.Id">Sync</a> |
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-    }
-    </tbody>
-</table>
 <script>
-    $(function() {
-        var processModel = '@JsonConvert.SerializeObject(Model)';
-        $("#gridContainer").dxDataGrid({
-            dataSource: processModel,
-            columns: ["Application", "Arguments", "IsRunning", "AutoRestart"]
+    function refreshClicked() {
+        $("#gridContainer").dxDataGrid('instance').refresh();
+    }
+    $(function () {
+        var orders = new DevExpress.data.CustomStore({
+            load: function (loadOptions) {
+                var deferred = $.Deferred(),
+                    args = {};
+
+                if (loadOptions.sort) {
+                    args.orderby = loadOptions.sort[0].selector;
+                    if (loadOptions.sort[0].desc)
+                        args.orderby += " desc";
+                }
+
+                args.skip = loadOptions.skip || 0;
+                args.take = loadOptions.take || 12;
+
+                $.ajax({
+                    url: "processes/GetProcesses",
+                    dataType: "json",
+                    data: args,
+                    success: function (result) {
+                        console.log(result);
+                        deferred.resolve(result.items, { totalCount: result.totalCount });
+                    },
+                    error: function () {
+                        deferred.reject("Data Loading Error");
+                    },
+                    timeout: 5000
+                });
+
+                return deferred.promise();
+            }
         });
+
+        $("#gridContainer").dxDataGrid({
+            dataSource: {
+                store: orders
+            },
+            showColumnLines: true,
+            showRowLines: true,
+            rowAlternationEnabled: false,
+            showBorders: true,
+            columnAutoWidth: true,
+            allowColumnResizing: true,
+            searchPanel: {
+                visible: true,
+                width: 240,
+                placeholder: "Search..."
+            },
+            headerFilter: {
+                visible: true
+            },
+            columnResizingMode: 'widget',
+            remoteOperations: {
+                sorting: true,
+                paging: true
+            },
+            paging: {
+                pageSize: 12
+            },
+            pager: {
+                showPageSizeSelector: true,
+                allowedPageSizes: [8, 12, 20]
+            },
+            columns: [
+                {
+                    dataField: "id",
+                    headerCellTemplate: $('<p style="color: black"><strong>Id</strong></p>'),
+                    width: 50,
+                    allowResizing: false
+                },
+                {
+                    width: 60,
+                    allowFiltering: false,
+                    allowSorting: false,
+                    allowResizing: false,
+                    cellTemplate: function(container, options) {
+                        container.append("<a id='link" + options.data.id + "' >Detail</a>");
+                        $("#link" + options.data.id).click(function() {
+                            var id = options.data.id;
+                            window.location.href = '@Url.Action("Details", "Processes")/' + id;
+                        }).css({cursor:"pointer"});
+                    }
+                },
+                {
+                    dataField: "application",
+                    headerCellTemplate: $('<p style="color: black"><strong>Application</strong></p>')
+                },
+                {
+                    dataField: "arguments",
+                    headerCellTemplate: $('<p style="color: black"><strong>Arguments</strong></p>')
+                },
+                {
+                    dataField: "isRunning",
+                    headerCellTemplate: $('<p style="color: black"><strong>Status</strong></p>'),
+                    width: "100",
+                    allowFiltering: false,
+                    allowSorting: false,
+                    cellTemplate: function (container, options) {
+                        if (options.value) {
+                            $("<div>")
+                                .append("<span class='badge runningSpan'>Running</span>")
+                                .appendTo(container);
+                            $(".runningSpan").css({ backgroundColor: "#468847" });
+                        }
+
+                    }
+                },
+                {
+                    dataField: "autoRestart",
+                    headerCellTemplate: $('<p style="color: black"><strong>Auto Restart</strong></p>'),
+                    width: "100",
+                    allowFiltering: false,
+                    allowSorting: false
+                },
+                {
+                    dataField: "containerName",
+                    headerCellTemplate: $('<p style="color: black"><strong>Container</strong></p>'),
+                    allowSorting: false
+                },
+                {
+                    allowFiltering: false,
+                    allowSorting: false,
+                    cellTemplate: function (container, options) {
+                        var isRunning = options.data.isRunning;
+                        if (isRunning) {
+                            container.append("<a class='btn btn-sm btn-default btnInGrid' id='btnStart" +
+                                    options.data.id + "' role='button' disabled='disabled'><span class='fa fa-play-circle'></span> Start</a> ")
+                                .append("<a class='btn btn-sm btn-default btnInGrid' id='btnStop" + options.data.id +"' role='button'><span class='fa fa-stop-circle'></span> Stop</a> ");
+                        } else {
+                            container.append("<a class='btn btn-sm btn-default btnInGrid' id='btnStart" +
+                                    options.data.id +
+                                    "' role='button'><span class='fa fa-play-circle'></span> Start</a> ")
+                                .append("<a class='btn btn-sm btn-default btnInGrid' id='btnStop" + options.data.id +"' role='button' disabled='disabled'><span class='fa fa-stop-circle'></span> Stop</a> ");
+                        }
+                        container.append("<a class='btn btn-sm btn-default btnInGrid' id='btnRestart" + options.data.id +"' role='button'><span class='fa fa-sync-alt'></span> Restart</a> ")
+                                .append("<a class='btn btn-sm btn-default btnInGrid' id='btnSync" + options.data.id + "'><span class='fa fa-exchange-alt'></span> Sync</a>")
+                            ;
+                        var rootUrl = window.location.host;
+                        $("#btnStart" + options.data.id).click(function () {
+                            var url = '@Url.Action("Start", "Processes")/' + options.data.id;
+                            $("#gridContainer").block({
+                                message: null,
+                                overlayCSS: { 
+                                backgroundColor: '#000', 
+                                opacity:         0, 
+                                cursor:          'wait' 
+                            }, });
+                            $.ajax({
+                                url: url
+                            }).done(function (data) {
+                                $("#gridContainer").unblock();
+                                if (data) {
+                                    alertify.alert("<p style='color: red'>"+data+"</p>");
+                                    return;
+                                }
+                                $("#gridContainer").dxDataGrid('instance').refresh();
+                                })
+                                .fail(function (error) {
+                                    $("#gridContainer").unblock();
+                                    alertify.alert(error.responseText);
+                                });
+                        });
+                        $("#btnStop" + options.data.id).click(function () {
+                            var url = '@Url.Action("Stop", "Processes")/' + options.data.id;
+                            $("#gridContainer").block({
+                                message: null,
+                                overlayCSS: {
+                                    backgroundColor: '#000',
+                                    opacity: 0,
+                                    cursor: 'wait'
+                                },
+                            });
+                            $.ajax({
+                                    url: url
+                                }).done(function (data) {
+                                    $("#gridContainer").unblock();
+                                    if (data) {
+                                        alertify.alert(data);
+                                        return;
+                                    }
+                                    $("#gridContainer").dxDataGrid('instance').refresh();
+                                })
+                                .fail(function (error) {
+                                    $("#gridContainer").unblock();
+                                    alertify.alert(error.responseText);
+                                });
+                        });
+                        $("#btnRestart").click(function () {
+                            var url = '@Url.Action("Start", "Processes")/' + options.data.id;
+                            $("#gridContainer").block({
+                                message: null,
+                                overlayCSS: {
+                                    backgroundColor: '#000',
+                                    opacity: 0,
+                                    cursor: 'wait'
+                                },
+                            });
+                            $.ajax({
+                                    url: url
+                                }).done(function (data) {
+                                    $("#gridContainer").unblock();
+                                    if (data) {
+                                        alertify.alert(data);
+                                        return;
+                                    }
+                                    $("#gridContainer").dxDataGrid('instance').refresh();
+                                })
+                                .fail(function (error) {
+                                    $("#gridContainer").unblock();
+                                    alertify.alert(error.responseText);
+                                });
+                        });
+                        $("#btnDetail" + options.data.id).click(function() {
+                            var id = options.data.id;
+                            window.location.href = '@Url.Action("Details", "Processes")/' + id;
+                        });
+                        $("#btnSync" + options.data.id).click(function () {
+                            var url = '@Url.Action("Sync", "Processes")/' + options.data.id;
+                            $("#gridContainer").block({
+                                message: null,
+                                overlayCSS: {
+                                    backgroundColor: '#000',
+                                    opacity: 0,
+                                    cursor: 'wait'
+                                },
+                            });
+                            $.ajax({
+                                    url: url
+                                }).done(function (data) {
+                                    $("#gridContainer").unblock();
+                                    if (data) {
+                                        alertify.alert(data);
+                                        return;
+                                    }
+                                    $("#gridContainer").dxDataGrid('instance').refresh();
+                                })
+                                .fail(function (error) {
+                                    $("#gridContainer").unblock();
+                                    alertify.alert(error.responseText);
+                                });
+                        });
+                    }
+                }
+            ]
+        }).dxDataGrid("instance");
     });
 </script>

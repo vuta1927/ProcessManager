@@ -73,7 +73,7 @@ namespace WebProcessManager.Controllers
         [ActionName("syncall")]
         public async Task<IActionResult> SyncAll([FromBody] List<ProcessModels.ProcessForSync> processes)
         {
-            var idToRemove = new List<int>();
+            var idToRemove = new Dictionary<int, int>();
             foreach (var process in processes)
             {
                 var p = _context.Processes.SingleOrDefault(x => x.Id == process.Id);
@@ -95,7 +95,7 @@ namespace WebProcessManager.Controllers
                     {
                         _context.Processes.Add(newP);
                         await _context.SaveChangesAsync();
-                        idToRemove.Add(process.Id);
+                        idToRemove.Add(process.Id, newP.Id);
                     }
                     catch (Exception ex)
                     {

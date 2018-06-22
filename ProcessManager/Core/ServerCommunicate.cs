@@ -120,8 +120,12 @@ namespace ProcessManagerCore.Core
                     {
                         var da = result.Content.ReadAsStringAsync().Result;
                         var response = JsonConvert.DeserializeObject<AppResponse>(da);
-                        var ids = JsonConvert.DeserializeObject<List<int>>(response.Message);
-                        RemoveProcesses(ids);
+                        if (response.IsError)
+                        {
+                            Task.Run(() => SyncProcess());
+                        }
+                        var ids = JsonConvert.DeserializeObject<Dictionary<int,int>>(response.Message);
+                        UpdateProcessId(ids);
 
                         LogHelper.Add(new LogMessage() { FileName = _configuration["mainLogFile"] + ".out", Message = "Success sync all process to server!"});
                     }
@@ -140,16 +144,18 @@ namespace ProcessManagerCore.Core
             }
         }
 
-        private void RemoveProcesses(List<int> ids)
+        private void UpdateProcessId(Dictionary<int, int> ids)
         {
             var all = Program.PManager.GetAll();
-            foreach (var id in ids)
+            foreach (var newid in ids)
             {
-                if (all.Any(x => x.Id == id))
+                var old = all.SingleOrDefault(x => x.Id == newid.Key);
+                if(old != null)
                 {
-                    Program.PManager.Remove(id);
-                }
+                    old.Id = newid.Value;
+                } 
             }
+            Program.PManager.ReloadProcessFile();
         }
 
         public void ProcessOnStopHandler(Process p, EventArgs ev)

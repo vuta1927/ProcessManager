@@ -75,3 +75,37 @@ Path 'isError', line 1, position 11.
    at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
    at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value)
    at ProcessManagerCore.Core.ServerCommunicate.SyncProcess() in C:\Users\Admin\Documents\GitHub\ProcessManager\ProcessManager\Core\ServerCommunicate.cs:line 122
+[6/22/2018 3:40:41 PM]:Falsed to send SyncProcess request to Server: NotFound
+[6/22/2018 4:19:53 PM]:Falsed to send SyncProcess request to Server: NotFound
+[6/22/2018 4:20:54 PM]:Falsed to send SyncProcess request to Server: NotFound
+[6/22/2018 4:22:02 PM]:Falsed to send SyncProcess request to Server: NotFound
+[6/22/2018 4:23:02 PM]:Falsed to send SyncProcess request to Server: NotFound
+[6/22/2018 4:25:51 PM]:Falsed to send SyncProcess request to Server: NotFound
+[6/22/2018 4:26:51 PM]:Falsed to send SyncProcess request to Server: NotFound
+[6/22/2018 4:27:51 PM]:Falsed to send SyncProcess request to Server: NotFound
+[6/22/2018 4:28:52 PM]:Falsed to send SyncProcess request to Server: NotFound
+[6/22/2018 4:29:52 PM]:Falsed to send SyncProcess request to Server: NotFound
+[6/22/2018 4:30:52 PM]:Falsed to send SyncProcess request to Server: NotFound
+[6/22/2018 4:31:53 PM]:Falsed to send SyncProcess request to Server: NotFound
+[6/22/2018 4:32:53 PM]:Falsed to send SyncProcess request to Server: NotFound
+[6/22/2018 4:33:54 PM]:Falsed to send SyncProcess request to Server: NotFound
+[6/22/2018 4:38:34 PM]:Falsed to send SyncProcess request to Server: NotFound
+[6/22/2018 4:39:34 PM]:Falsed to send SyncProcess request to Server: NotFound
+[6/22/2018 4:40:35 PM]:Falsed to send SyncProcess request to Server: NotFound
+[6/22/2018 4:41:36 PM]:Falsed to send SyncProcess request to Server: NotFound
+[6/22/2018 4:42:36 PM]:Falsed to send SyncProcess request to Server: NotFound
+[6/22/2018 4:43:36 PM]:Falsed to send SyncProcess request to Server: NotFound
+[6/22/2018 4:44:36 PM]:Falsed to send SyncProcess request to Server: NotFound
+[6/22/2018 4:45:37 PM]:Falsed to send SyncProcess request to Server: NotFound
+[6/22/2018 4:46:37 PM]:Falsed to send SyncProcess request to Server: NotFound
+[6/22/2018 4:47:38 PM]:Falsed to send SyncProcess request to Server: NotFound
+[6/22/2018 4:48:38 PM]:Falsed to send SyncProcess request to Server: NotFound
+[6/22/2018 4:49:39 PM]:Falsed to send SyncProcess request to Server: NotFound
+[6/22/2018 5:01:03 PM]:Falsed to send SyncProcess request to Server: NotFound
+[6/22/2018 5:02:05 PM]:Falsed to send SyncProcess request to Server: NotFound
+[6/22/2018 5:03:05 PM]:Falsed to send SyncProcess request to Server: NotFound
+[6/22/2018 5:04:05 PM]:Falsed to send SyncProcess request to Server: NotFound
+[6/22/2018 5:05:06 PM]:Falsed to send SyncProcess request to Server: NotFound
+[6/22/2018 5:06:12 PM]:Falsed to send SyncProcess request to Server: NotFound
+[6/22/2018 5:07:13 PM]:Falsed to send SyncProcess request to Server: NotFound
+[6/22/2018 5:08:13 PM]:Falsed to send SyncProcess request to Server: NotFound

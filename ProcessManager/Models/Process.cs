@@ -88,6 +88,7 @@ namespace ProcessManagerCore.Models
             catch (Exception e)
             {
                 LogHelper.Add(new LogMessage() { FileName = Id + ".error", Message = e.ToString() });
+                OnStop?.Invoke(this, new EventArgs());
                 return new AppResponse(true, e.ToString());
             }
         }

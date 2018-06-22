@@ -2,41 +2,131 @@
 
 @{
     ViewData["Title"] = "Index";
+    ViewData["error"] = "";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h2>Containers</h2>
 
-<p>
-    <a asp-action="Create">Create New</a>
+<div>
+    <a class="btn btn-primary btn-sm" asp-action="Create"><span class="fa fa-plus-circle"></span> Create New</a>&nbsp;
+</div>
+<p style="color: red">
+    @ViewData["error"]
 </p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Name)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Address)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Address)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+<div style="overflow: auto">
+    <div id="gridContainer"></div>
+</div>
+<script>
+    $(function () {
+        var orders = new DevExpress.data.CustomStore({
+            load: function (loadOptions) {
+                var deferred = $.Deferred(),
+                    args = {};
+
+                if (loadOptions.sort) {
+                    args.orderby = loadOptions.sort[0].selector;
+                    if (loadOptions.sort[0].desc)
+                        args.orderby += " desc";
+                }
+
+                args.skip = loadOptions.skip || 0;
+                args.take = loadOptions.take || 12;
+
+                $.ajax({
+                    url: "Containers/GetContainers",
+                    dataType: "json",
+                    data: args,
+                    success: function (result) {
+                        console.log(result);
+                        deferred.resolve(result.items, { totalCount: result.totalCount });
+                    },
+                    error: function () {
+                        deferred.reject("Data Loading Error");
+                    },
+                    timeout: 5000
+                });
+
+                return deferred.promise();
+            }
+        });
+
+            $("#gridContainer").dxDataGrid({
+                dataSource: {
+                    store: orders
+                },
+                showColumnLines: true,
+                showRowLines: true,
+                rowAlternationEnabled: false,
+                showBorders: true,
+                columnAutoWidth: true,
+                allowColumnResizing: true,
+                columnResizingMode: 'widget',
+                searchPanel: {
+                    visible: true,
+                    width: 240,
+                    placeholder: "Search..."
+                },
+                headerFilter: {
+                    visible: true
+                },
+                remoteOperations: {
+                    sorting: true,
+                    paging: true
+                },
+                paging: {
+                    pageSize: 12
+                },
+                pager: {
+                    showPageSizeSelector: true,
+                    allowedPageSizes: [8, 12, 20]
+                },
+                columns: [
+                    {
+                        dataField: "id",
+                        headerCellTemplate: $('<p style="color: black"><strong>Id</strong></p>'),
+                        width: 50,
+                        allowResizing: false
+                    },
+                    {
+                        width: 60,
+                        allowFiltering: false,
+                        allowSorting: false,
+                        allowResizing: false,
+                        cellTemplate: function(container, options) {
+                            container.append("<a id='link" + options.data.id + "' >Detail</a>");
+                            $("#link" + options.data.id).click(function() {
+                                var id = options.data.id;
+                                window.location.href = '@Url.Action("Details", "Containers")/' + id;
+                            }).css({cursor:"pointer"});
+                        }
+                    },
+                    {
+                        dataField: "name",
+                        headerCellTemplate: $('<p style="color: black"><strong>Name</strong></p>')
+                    },
+                    {
+                        dataField: "address",
+                        headerCellTemplate: $('<p style="color: black"><strong>Url Address</strong></p>')
+                    },
+                    {
+                        allowFiltering: false,
+                        allowSorting: false,
+                        cellTemplate: function (container, options) {
+                            container
+                                .append("<a class='btn btn-sm btn-default btnInGrid' id='btnEdit" + options.data.id + "' role='button'><span class='fa fa-edit'></span> Edit</a> ")
+                                .append("<a class='btn btn-sm btn-default btnInGrid' id='btnDelete" + options.data.id + "' role='button'><span class='fa fa-trash-alt'></span> Delete</a> ");
+                            $("#btnDelete" + options.data.id).click(function() {
+                                var id = options.data.id;
+                                window.location.href = '@Url.Action("Delete", "Containers")/' + id;
+                            });
+                            $("#btnEdit" + options.data.id).click(function() {
+                                var id = options.data.id;
+                                window.location.href = '@Url.Action("Edit", "Containers")/' + id;
+                            });
+                        }
+                    }
+                ]
+        }).dxDataGrid("instance");
+    });
+</script>
