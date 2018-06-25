@@ -158,7 +158,8 @@
                                 .append("<a class='btn btn-sm btn-default btnInGrid' id='btnStop" + options.data.id +"' role='button' disabled='disabled'><span class='fa fa-stop-circle'></span> Stop</a> ");
                         }
                         container.append("<a class='btn btn-sm btn-default btnInGrid' id='btnRestart" + options.data.id +"' role='button'><span class='fa fa-sync-alt'></span> Restart</a> ")
-                                .append("<a class='btn btn-sm btn-default btnInGrid' id='btnSync" + options.data.id + "'><span class='fa fa-exchange-alt'></span> Sync</a>")
+                                .append("<a class='btn btn-sm btn-default btnInGrid' id='btnRemove" + options.data.id + "'><span class='fa fa-trash-alt'></span> Remove</a>")
+                            .append("<a class='btn btn-sm btn-default btnInGrid' id='btnSync" + options.data.id + "'><span class='fa fa-exchange-alt'></span> Sync</a>")
                             ;
                         var rootUrl = window.location.host;
                         $("#btnStart" + options.data.id).click(function () {
@@ -187,6 +188,31 @@
                         });
                         $("#btnStop" + options.data.id).click(function () {
                             var url = '@Url.Action("Stop", "Processes")/' + options.data.id;
+                            $("#gridContainer").block({
+                                message: null,
+                                overlayCSS: {
+                                    backgroundColor: '#000',
+                                    opacity: 0,
+                                    cursor: 'wait'
+                                },
+                            });
+                            $.ajax({
+                                    url: url
+                                }).done(function (data) {
+                                    $("#gridContainer").unblock();
+                                    if (data) {
+                                        alertify.alert(data);
+                                        return;
+                                    }
+                                    $("#gridContainer").dxDataGrid('instance').refresh();
+                                })
+                                .fail(function (error) {
+                                    $("#gridContainer").unblock();
+                                    alertify.alert(error.responseText);
+                                });
+                        });
+                        $("#btnRemove" + options.data.id).click(function () {
+                            var url = '@Url.Action("Delete", "Processes")/' + options.data.id;
                             $("#gridContainer").block({
                                 message: null,
                                 overlayCSS: {

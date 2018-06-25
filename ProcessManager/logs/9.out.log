@@ -1,0 +1,31 @@
+[6/25/2018 2:52:38 PM]:process started!
+[6/25/2018 2:52:38 PM]:process started!
+[6/25/2018 2:52:38 PM]:Pinging 192.168.100.1 with 32 bytes of data:
+[6/25/2018 2:52:42 PM]:Request timed out.
+[6/25/2018 2:52:47 PM]:Request timed out.
+[6/25/2018 2:52:52 PM]:Request timed out.
+[6/25/2018 2:52:57 PM]:Request timed out.
+[6/25/2018 2:52:57 PM]:Ping statistics for 192.168.100.1:
+[6/25/2018 2:52:57 PM]:    Packets: Sent = 4, Received = 0, Lost = 4 (100% loss),
+[6/25/2018 2:52:57 PM]:process stopped!
+[6/25/2018 2:52:57 PM]:process stopped!
+[6/25/2018 2:56:40 PM]:process started!
+[6/25/2018 2:56:40 PM]:process started!
+[6/25/2018 2:56:40 PM]:Pinging 192.168.100.1 with 32 bytes of data:
+[6/25/2018 2:56:43 PM]:Request timed out.
+[6/25/2018 2:56:48 PM]:Request timed out.
+[6/25/2018 2:56:53 PM]:Request timed out.
+[6/25/2018 2:56:58 PM]:Request timed out.
+[6/25/2018 2:56:58 PM]:Ping statistics for 192.168.100.1:
+[6/25/2018 2:56:58 PM]:    Packets: Sent = 4, Received = 0, Lost = 4 (100% loss),
+[6/25/2018 2:56:58 PM]:process stopped!
+[6/25/2018 2:56:59 PM]:process stopped!
+[6/25/2018 8:06:33 PM]:process started!
+[6/25/2018 8:06:33 PM]:Pinging 192.168.100.1 with 32 bytes of data:
+[6/25/2018 8:06:36 PM]:Request timed out.
+[6/25/2018 8:06:41 PM]:Request timed out.
+[6/25/2018 8:06:46 PM]:Request timed out.
+[6/25/2018 8:06:51 PM]:Request timed out.
+[6/25/2018 8:06:51 PM]:Ping statistics for 192.168.100.1:
+[6/25/2018 8:06:51 PM]:    Packets: Sent = 4, Received = 0, Lost = 4 (100% loss),
+[6/25/2018 8:06:51 PM]:process stopped!

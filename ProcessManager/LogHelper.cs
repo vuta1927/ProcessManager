@@ -100,6 +100,7 @@ namespace ProcessManagerCore
                 //var jsonData = File.ReadAllText(filePath);
                 //result = JsonConvert.DeserializeObject<List<Report>>(jsonData) ?? new List<Report>();
                 var result = File.ReadAllLines(filePath);
+                //var r = File.ReadLines(filePath)
                 return result;
             }
 

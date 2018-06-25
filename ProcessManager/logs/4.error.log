@@ -1,5 +1,0 @@
-[6/21/2018 8:26:20 PM]:Process not found!
-[6/21/2018 9:16:56 PM]:Process not found!
-[6/22/2018 12:43:44 PM]:System.InvalidOperationException: An async read operation has already been started on the stream.
-   at System.Diagnostics.Process.BeginOutputReadLine()
-   at ProcessManagerCore.Models.Process.Start() in C:\Users\Admin\Documents\GitHub\ProcessManager\ProcessManager\Models\Process.cs:line 80
