@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
@@ -36,18 +37,22 @@ namespace ProcessManagerCore.Controllers
             return Ok(result);
         }
 
-        [HttpGet]
+        [HttpPost]
         [Route("api/process/log/{id}")]
-        public IActionResult GetLog([FromRoute] int id)
+        public IActionResult GetLog([FromRoute] int id, [FromBody] FormGetLog form)
         {
-            var result = LogHelper.GetLog(id + ".out");
+            if (form == null) return BadRequest();
+            var result = LogHelper.GetLog(id + ".out", form.From, form.To);
             return Ok(result);
         }
-        [HttpGet]
+        [HttpPost]
         [Route("api/process/error/{id}")]
-        public IActionResult GetErrorLog([FromRoute] int id)
+        public IActionResult GetErrorLog([FromRoute] int id, [FromBody] FormGetLog form)
         {
-            var result = LogHelper.GetLog(id + ".error");
+
+            if (form == null) return BadRequest();
+
+            var result = LogHelper.GetLog(id + ".error", form.From, form.To);
             return Ok(result);
         }
 
@@ -150,5 +155,11 @@ namespace ProcessManagerCore.Controllers
         {
             return Ok(Program.PManager.Stop(id));
         }
+    }
+
+    public class FormGetLog
+    {
+        public DateTime From { get; set; }
+        public DateTime To { get; set; }
     }
 }

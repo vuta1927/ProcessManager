@@ -92,23 +92,23 @@ namespace WebProcessManager.Controllers
                 return NotFound();
             }
 
-            var dataOutput = await _containerComunicate.GetLogsAsync(process.Id);
+            var dataOutput = await _containerComunicate.GetLogsAsync(process.Id, new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day - 1), DateTime.Now);
             var ouput = "";
             if (dataOutput != null)
             {
-                for (var i = dataOutput.Length - 1; i >= 0; i--)
+                for (var i = dataOutput.Count - 1; i >= 0; i--)
                 {
-                    ouput += dataOutput[i] + "\r\n";
+                    ouput += "[" + dataOutput[i].Time +"]:" + dataOutput[i].Message + "\r\n";
                 }
             }
 
-            var dataError = await _containerComunicate.GetErrorLogsAsync(process.Id);
+            var dataError = await _containerComunicate.GetErrorLogsAsync(process.Id, new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day - 1), DateTime.Now);
             var errors = "";
             if (dataError != null)
             {
-                for (var i = dataError.Length - 1; i >= 0; i--)
+                for (var i = dataError.Count - 1; i >= 0; i--)
                 {
-                    errors += dataError[i] + "\r\n";
+                    errors += "[" + dataError[i].Time + "]:" + dataError[i].Message + "\r\n";
                 }
             }
 
@@ -129,6 +129,56 @@ namespace WebProcessManager.Controllers
             return View(pForView);
         }
 
+        [HttpPost]
+        [ActionName("GetLog")]
+        public async Task<IActionResult> GetLog([FromRoute] int id, [FromBody] FormGetLog data)
+        {
+            var process = await _context.Processes
+                .Include(p => p.Container)
+                .FirstOrDefaultAsync(m => m.Id == id);
+
+            if (process == null)
+            {
+                return NotFound();
+            }
+
+            var dataOutput = await _containerComunicate.GetLogsAsync(process.Id, data.From, data.To);
+            var output = "";
+            if (dataOutput != null)
+            {
+                for (var i = dataOutput.Count - 1; i >= 0; i--)
+                {
+                    output += "[" + dataOutput[i].Time + "]:" + dataOutput[i].Message + "\r\n";
+                }
+            }
+
+            return Ok(output);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> GetError([FromRoute] int id, [FromBody] FormGetLog data)
+        {
+            var process = await _context.Processes
+                .Include(p => p.Container)
+                .FirstOrDefaultAsync(m => m.Id == id);
+
+            if (process == null)
+            {
+                return NotFound();
+            }
+
+            var dataOutput = await _containerComunicate.GetErrorLogsAsync(process.Id, data.From, data.To);
+            var output = "";
+            if (dataOutput != null)
+            {
+                for (var i = dataOutput.Count - 1; i >= 0; i--)
+                {
+                    output += "[" + dataOutput[i].Time + "]:" + dataOutput[i].Message + "\r\n";
+                }
+            }
+
+            return Ok(output);
+        }
         // GET: Processes/Create
         public IActionResult Create()
         {
@@ -186,12 +236,12 @@ namespace WebProcessManager.Controllers
             return Ok();
         }
 
-        public async Task<IActionResult> GetLog(int id)
+        public async Task<IActionResult> GetLog(int id, DateTime from, DateTime to)
         {
             var process = _context.Processes.Include(x => x.Container).SingleOrDefault(x => x.Id == id);
             if (process == null) return NotFound();
 
-            var result = await _containerComunicate.GetLogsAsync(id);
+            var result = await _containerComunicate.GetLogsAsync(id, from, to);
             if (result == null)
             {
                 ViewData["error"] = "No log";

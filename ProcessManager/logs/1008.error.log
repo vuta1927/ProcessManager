@@ -1,0 +1,1 @@
+{"Time":"2018-07-02T14:35:14.708923+07:00","Message":"System.InvalidOperationException: An async read operation has already been started on the stream.\r\n   at System.Diagnostics.Process.BeginOutputReadLine()\r\n   at ProcessManagerCore.Models.Process.Start() in D:\\Projects\\ProcessManager\\ProcessManager\\Models\\Process.cs:line 80"}

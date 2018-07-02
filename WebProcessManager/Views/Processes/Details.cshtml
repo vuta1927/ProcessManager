@@ -62,22 +62,214 @@
         <li role="presentation" class="active"><a href="#output" aria-controls="output" role="tab" data-toggle="tab">Output</a></li>
         <li role="presentation"><a href="#error" aria-controls="error" role="tab" data-toggle="tab">Error</a></li>
     </ul>
-    <div class="tab-content">
-        <div role="tabpanel" class="tab-pane active" id="output">
-            @Html.TextAreaFor(
+
+
+    <div id="logContainer">
+        <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active" id="output">
+                <div id="form-container-output" style="padding-bottom: 20px; padding-top: 10px">
+                    <div id="formOutput"></div>
+                    <br />
+                    <div id="output-textarea"></div>
+                </div>
+
+                @*@Html.TextAreaFor(
                 model => model.Output,
-                new { style = "width: 100%; height: 400px; overflow: auto; background-color: #000; color: #fff", @class = "form-control"}
-                )
+                new {style = "width: 100%; height: 400px; overflow: auto; background-color: #000; color: #fff", @class = "form-control"}
+                )*@
+            </div>
+            <div role="tabpanel" class="tab-pane" id="error">
+                <div id="form-container-error" style="padding-bottom: 20px; padding-top: 10px">
+                    <div id="formError"></div>
+                    <br />
+                    <div id="error-textarea"></div>
+                </div>
+            </div>
         </div>
-        <div role="tabpanel" class="tab-pane" id="error">
-            @Html.TextAreaFor(
-                model => model.Errors,
-                new { style = "width: 100%; height: 400px; overflow: auto; background-color: #000; color: #f23a3a", @class = "form-control" }
-                )
-        </div>
+        <div class="loadpanel"></div>
     </div>
 
 </div>
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
+@*<div>
+        <a asp-action="Index">Back to List</a>
+    </div>*@
+<script>
+    $(function () {
+        var outputData = "@Model.Output".replace(/&#xD;&#xA;/g, "\r\n\r\n");
+        var errorData = "@Model.Errors".replace(/&#xD;&#xA;/g, "\r\n\r\n");
+        var date = new Date(), y = date.getFullYear(), m = date.getMonth(), d = date.getDate();
+
+        var errorToDate = new Date();
+        var errorFromDate = new Date(y, m, d - 1);
+
+        var outputFromDate = new Date(y, m, d - 1);
+        var outputToDate = new Date();
+
+        var outputAreaBox = $('#output-textarea').dxTextArea({
+            value: outputData,
+            height: 400,
+            readOnly: true,
+            onValueChanged: function(e) {}
+        }).dxTextArea("instance");
+
+        var errorAreaBox = $('#error-textarea').dxTextArea({
+            value: errorData,
+            height: 400,
+            readOnly: true,
+            onValueChanged: function (e) {
+
+            }
+        }).dxTextArea("instance");
+
+        var loadPanel = $(".loadpanel").dxLoadPanel({
+            shadingColor: "rgba(0,0,0,0.4)",
+            position: { of: "#logContainer" },
+            visible: false,
+            showIndicator: true,
+            showPane: true,
+            shading: false,
+            closeOnOutsideClick: false,
+            onShown: function () {
+                //setTimeout(function () {
+                //    loadPanel.hide();
+                //}, 3000);
+            },
+            onHidden: function () {
+            }
+        }).dxLoadPanel("instance");
+
+        $("#formOutput").dxForm({
+            items: [
+                {
+                    itemType: "group",
+                    colCount: 4,
+                    items: [
+                        {
+                            dataField: "fromDate",
+                            template: function (data, itemElement) {
+                                itemElement.append("<div>")
+                                    .dxDateBox({
+                                        value: outputFromDate,
+                                        displayFormat: "dd/MM/yyyy hh:mm:ss",
+                                        type: 'datetime',
+                                        onValueChanged: function (e) {
+                                            outputFromDate = e.value;
+                                            console.log(e.value);
+                                        }
+                                    });
+                            }
+                        },
+                        {
+                            dataField: "toDate",
+                            template: function (data, itemElement) {
+                                itemElement.append("<div>")
+                                    .dxDateBox({
+                                        value: outputToDate,
+                                        displayFormat: "dd/MM/yyyy hh:mm:ss",
+                                        type: 'datetime',
+                                        onValueChanged: function (e) {
+                                            outputToDate = e.value;
+                                            console.log(e.value);
+                                        }
+                                    });
+                            }
+                        },
+                        {
+                            itemType: "button",
+                            alignment: "left",
+                            buttonOptions: {
+                                text: "Submit",
+                                onClick: function () {
+                                    loadPanel.show();
+                                    $.ajax({
+                                        type: 'POST',
+                                        url: 'http://' + window.location.host + '/processes/GetLog/' + @Model.Id,
+                                        data: JSON.stringify({ from: outputFromDate, to: outputToDate }),
+                                        contentType: "application/json",
+                                        success: function (result) {
+                                            loadPanel.hide();
+                                            outputAreaBox.option("value", result.replace(/&#xD;&#xA;/g, "\r\n\r\n"));
+                                        },
+                                        error: function () {
+                                            loadPanel.hide();
+                                            deferred.reject("Data Loading Error");
+                                        }
+                                    });
+                                }
+                            }
+                        }
+                    ]
+                }
+            ]
+        });
+
+        $("#formOutput").dxForm("instance");
+
+        $("#formError").dxForm({
+            items: [
+                {
+                    itemType: "group",
+                    colCount: 4,
+                    items: [
+                        {
+                            dataField: "fromDate",
+                            template: function (data, itemElement) {
+                                itemElement.append("<div>")
+                                    .dxDateBox({
+                                        value: errorFromDate,
+                                        displayFormat: "dd/MM/yyyy",
+                                        type: 'datetime',
+                                        onValueChanged: function (e) {
+                                            errorFromDate = e.value;
+                                        }
+                                    });
+                            }
+                        },
+                        {
+                            dataField: "toDate",
+                            template: function (data, itemElement) {
+                                itemElement.append("<div>")
+                                    .dxDateBox({
+                                        value: errorToDate,
+                                        displayFormat: "dd/MM/yyyy",
+                                        type: 'datetime',
+                                        onValueChanged: function (e) {
+                                            errorToDate = e.value;
+                                        }
+                                    });
+                            }
+                        },
+                        {
+                            itemType: "button",
+                            alignment: "left",
+                            buttonOptions: {
+                                text: "Submit",
+                                onClick: function () {
+                                    loadPanel.show();
+                                    $.ajax({
+                                        type: 'POST',
+                                        url: 'http://' + window.location.host + '/processes/GetError/' + @Model.Id,
+                                        data: JSON.stringify({ from: outputFromDate, to: outputToDate }),
+                                        contentType: "application/json",
+                                        success: function(result) {
+                                            loadPanel.hide();
+                                            errorAreaBox.option("value", result.replace(/&#xD;&#xA;/g, "\r\n\r\n"));
+                                        },
+                                        error: function () {
+                                            loadPanel.hide();
+                                            deferred.reject("Data Loading Error");
+                                        }
+                                    });
+                                }
+                            }
+                        }
+                    ]
+                }
+            ]
+        });
+
+        $("#formError").dxForm("instance");
+
+    });
+</script>
+

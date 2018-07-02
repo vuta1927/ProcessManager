@@ -1,31 +1,83 @@
-[6/25/2018 2:52:38 PM]:process started!
-[6/25/2018 2:52:38 PM]:process started!
-[6/25/2018 2:52:38 PM]:Pinging 192.168.100.1 with 32 bytes of data:
-[6/25/2018 2:52:42 PM]:Request timed out.
-[6/25/2018 2:52:47 PM]:Request timed out.
-[6/25/2018 2:52:52 PM]:Request timed out.
-[6/25/2018 2:52:57 PM]:Request timed out.
-[6/25/2018 2:52:57 PM]:Ping statistics for 192.168.100.1:
-[6/25/2018 2:52:57 PM]:    Packets: Sent = 4, Received = 0, Lost = 4 (100% loss),
-[6/25/2018 2:52:57 PM]:process stopped!
-[6/25/2018 2:52:57 PM]:process stopped!
-[6/25/2018 2:56:40 PM]:process started!
-[6/25/2018 2:56:40 PM]:process started!
-[6/25/2018 2:56:40 PM]:Pinging 192.168.100.1 with 32 bytes of data:
-[6/25/2018 2:56:43 PM]:Request timed out.
-[6/25/2018 2:56:48 PM]:Request timed out.
-[6/25/2018 2:56:53 PM]:Request timed out.
-[6/25/2018 2:56:58 PM]:Request timed out.
-[6/25/2018 2:56:58 PM]:Ping statistics for 192.168.100.1:
-[6/25/2018 2:56:58 PM]:    Packets: Sent = 4, Received = 0, Lost = 4 (100% loss),
-[6/25/2018 2:56:58 PM]:process stopped!
-[6/25/2018 2:56:59 PM]:process stopped!
-[6/25/2018 8:06:33 PM]:process started!
-[6/25/2018 8:06:33 PM]:Pinging 192.168.100.1 with 32 bytes of data:
-[6/25/2018 8:06:36 PM]:Request timed out.
-[6/25/2018 8:06:41 PM]:Request timed out.
-[6/25/2018 8:06:46 PM]:Request timed out.
-[6/25/2018 8:06:51 PM]:Request timed out.
-[6/25/2018 8:06:51 PM]:Ping statistics for 192.168.100.1:
-[6/25/2018 8:06:51 PM]:    Packets: Sent = 4, Received = 0, Lost = 4 (100% loss),
-[6/25/2018 8:06:51 PM]:process stopped!
+{"Time":"2018-06-28T14:24:07.1981158+07:00","Message":"process started!"}
+{"Time":"2018-06-28T14:24:07.2006394+07:00","Message":"Pinging 192.168.100.1 with 32 bytes of data:"}
+{"Time":"2018-06-28T14:24:10.8128974+07:00","Message":"Request timed out."}
+{"Time":"2018-06-28T14:24:15.813503+07:00","Message":"Request timed out."}
+{"Time":"2018-06-28T14:24:20.813602+07:00","Message":"Request timed out."}
+{"Time":"2018-06-28T14:24:25.8123358+07:00","Message":"Request timed out."}
+{"Time":"2018-06-28T14:24:25.8229776+07:00","Message":"Ping statistics for 192.168.100.1:"}
+{"Time":"2018-06-28T14:24:25.8257031+07:00","Message":"    Packets: Sent = 4, Received = 0, Lost = 4 (100% loss),"}
+{"Time":"2018-06-28T14:24:25.8954717+07:00","Message":"process stopped!"}
+{"Time":"2018-07-02T13:34:48.5295112+07:00","Message":"process started!"}
+{"Time":"2018-07-02T13:34:48.5369928+07:00","Message":"Pinging 192.168.100.1 with 32 bytes of data:"}
+{"Time":"2018-07-02T13:34:52.3161692+07:00","Message":"Request timed out."}
+{"Time":"2018-07-02T13:34:57.316275+07:00","Message":"Request timed out."}
+{"Time":"2018-07-02T13:35:02.8492167+07:00","Message":"Request timed out."}
+{"Time":"2018-07-02T13:35:08.3813774+07:00","Message":"Request timed out."}
+{"Time":"2018-07-02T13:35:08.4642143+07:00","Message":"Ping statistics for 192.168.100.1:"}
+{"Time":"2018-07-02T13:35:08.4665009+07:00","Message":"    Packets: Sent = 4, Received = 0, Lost = 4 (100% loss),"}
+{"Time":"2018-07-02T13:35:08.5736315+07:00","Message":"process stopped!"}
+{"Time":"2018-07-02T14:34:48.8188608+07:00","Message":"process started!"}
+{"Time":"2018-07-02T14:34:48.9115244+07:00","Message":"process started!"}
+{"Time":"2018-07-02T14:34:48.9147015+07:00","Message":"Pinging 192.168.100.1 with 32 bytes of data:"}
+{"Time":"2018-07-02T14:34:52.3159577+07:00","Message":"Request timed out."}
+{"Time":"2018-07-02T14:34:57.316265+07:00","Message":"Request timed out."}
+{"Time":"2018-07-02T14:35:02.3165428+07:00","Message":"Request timed out."}
+{"Time":"2018-07-02T14:35:07.3159152+07:00","Message":"Request timed out."}
+{"Time":"2018-07-02T14:35:07.3193728+07:00","Message":"Ping statistics for 192.168.100.1:"}
+{"Time":"2018-07-02T14:35:07.3336889+07:00","Message":"    Packets: Sent = 4, Received = 0, Lost = 4 (100% loss),"}
+{"Time":"2018-07-02T14:35:07.5064805+07:00","Message":"process stopped!"}
+{"Time":"2018-07-02T14:35:08.3548183+07:00","Message":"process stopped!"}
+{"Time":"2018-07-02T15:18:00.8729091+07:00","Message":"process started!"}
+{"Time":"2018-07-02T15:18:00.8863754+07:00","Message":"Pinging 192.168.100.1 with 32 bytes of data:"}
+{"Time":"2018-07-02T15:18:04.8162457+07:00","Message":"Request timed out."}
+{"Time":"2018-07-02T15:18:09.8164257+07:00","Message":"Request timed out."}
+{"Time":"2018-07-02T15:18:14.8181438+07:00","Message":"Request timed out."}
+{"Time":"2018-07-02T15:18:19.8161837+07:00","Message":"Request timed out."}
+{"Time":"2018-07-02T15:18:19.8344763+07:00","Message":"Ping statistics for 192.168.100.1:"}
+{"Time":"2018-07-02T15:18:19.8612165+07:00","Message":"    Packets: Sent = 4, Received = 0, Lost = 4 (100% loss),"}
+{"Time":"2018-07-02T15:18:40.0336609+07:00","Message":"process stopped!"}
+{"Time":"2018-07-02T15:24:10.131595+07:00","Message":"process started!"}
+{"Time":"2018-07-02T15:24:10.1591118+07:00","Message":"Pinging 192.168.100.1 with 32 bytes of data:"}
+{"Time":"2018-07-02T15:24:13.8157602+07:00","Message":"Request timed out."}
+{"Time":"2018-07-02T15:24:18.8158371+07:00","Message":"Request timed out."}
+{"Time":"2018-07-02T15:24:23.8157737+07:00","Message":"Request timed out."}
+{"Time":"2018-07-02T15:24:28.8157613+07:00","Message":"Request timed out."}
+{"Time":"2018-07-02T15:24:28.8208268+07:00","Message":"Ping statistics for 192.168.100.1:"}
+{"Time":"2018-07-02T15:24:28.8516135+07:00","Message":"    Packets: Sent = 4, Received = 0, Lost = 4 (100% loss),"}
+{"Time":"2018-07-02T15:24:29.6734843+07:00","Message":"process stopped!"}
+{"Time":"2018-07-02T15:30:59.3599999+07:00","Message":"process started!"}
+{"Time":"2018-07-02T15:30:59.3721656+07:00","Message":"Pinging 192.168.100.1 with 32 bytes of data:"}
+{"Time":"2018-07-02T15:31:03.316178+07:00","Message":"Request timed out."}
+{"Time":"2018-07-02T15:31:08.3162142+07:00","Message":"Request timed out."}
+{"Time":"2018-07-02T15:31:13.3204381+07:00","Message":"Request timed out."}
+{"Time":"2018-07-02T15:31:18.3209787+07:00","Message":"Request timed out."}
+{"Time":"2018-07-02T15:31:18.3972914+07:00","Message":"Ping statistics for 192.168.100.1:"}
+{"Time":"2018-07-02T15:31:18.4314869+07:00","Message":"    Packets: Sent = 4, Received = 0, Lost = 4 (100% loss),"}
+{"Time":"2018-07-02T15:31:18.6704817+07:00","Message":"process stopped!"}
+{"Time":"2018-07-02T15:49:02.3908378+07:00","Message":"process started!"}
+{"Time":"2018-07-02T15:49:02.4000574+07:00","Message":"Pinging 192.168.100.1 with 32 bytes of data:"}
+{"Time":"2018-07-02T15:49:05.8162509+07:00","Message":"Request timed out."}
+{"Time":"2018-07-02T15:49:10.8160811+07:00","Message":"Request timed out."}
+{"Time":"2018-07-02T15:49:15.8165062+07:00","Message":"Request timed out."}
+{"Time":"2018-07-02T15:49:20.8157431+07:00","Message":"Request timed out."}
+{"Time":"2018-07-02T15:49:20.8202535+07:00","Message":"Ping statistics for 192.168.100.1:"}
+{"Time":"2018-07-02T15:49:20.8344603+07:00","Message":"    Packets: Sent = 4, Received = 0, Lost = 4 (100% loss),"}
+{"Time":"2018-07-02T15:49:21.3496084+07:00","Message":"process stopped!"}
+{"Time":"2018-07-02T21:40:11.2851098+07:00","Message":"process started!"}
+{"Time":"2018-07-02T21:40:11.2875281+07:00","Message":"Pinging 192.168.100.1 with 32 bytes of data:"}
+{"Time":"2018-07-02T21:40:14.8160804+07:00","Message":"Request timed out."}
+{"Time":"2018-07-02T21:40:19.815643+07:00","Message":"Request timed out."}
+{"Time":"2018-07-02T21:40:24.8156855+07:00","Message":"Request timed out."}
+{"Time":"2018-07-02T21:40:29.815796+07:00","Message":"Request timed out."}
+{"Time":"2018-07-02T21:40:29.8190396+07:00","Message":"Ping statistics for 192.168.100.1:"}
+{"Time":"2018-07-02T21:40:29.8309383+07:00","Message":"    Packets: Sent = 4, Received = 0, Lost = 4 (100% loss),"}
+{"Time":"2018-07-02T21:40:30.358421+07:00","Message":"process stopped!"}
+{"Time":"2018-07-02T22:22:31.9352684+07:00","Message":"process started!"}
+{"Time":"2018-07-02T22:22:31.9387733+07:00","Message":"Pinging 192.168.100.1 with 32 bytes of data:"}
+{"Time":"2018-07-02T22:22:35.3161332+07:00","Message":"Request timed out."}
+{"Time":"2018-07-02T22:22:40.316231+07:00","Message":"Request timed out."}
+{"Time":"2018-07-02T22:22:45.3163007+07:00","Message":"Request timed out."}
+{"Time":"2018-07-02T22:22:50.3163123+07:00","Message":"Request timed out."}
+{"Time":"2018-07-02T22:22:50.3191059+07:00","Message":"Ping statistics for 192.168.100.1:"}
+{"Time":"2018-07-02T22:22:50.3321264+07:00","Message":"    Packets: Sent = 4, Received = 0, Lost = 4 (100% loss),"}
+{"Time":"2018-07-02T22:22:50.4790674+07:00","Message":"process stopped!"}

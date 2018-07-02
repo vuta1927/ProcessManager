@@ -66,7 +66,7 @@ using WebProcessManager.Models;
             WriteLiteral("\r\n<h2>Containers</h2>\r\n\r\n<div>\r\n    ");
             EndContext();
             BeginContext(211, 108, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "54fa9e720c8c4da1ad77f08112692d9b", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7c25cd874ffd4f14ad9855ccbac52022", async() => {
                 BeginContext(265, 50, true);
                 WriteLiteral("<span class=\"fa fa-plus-circle\"></span> Create New");
                 EndContext();

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using WebProcessManager.Models;
 
@@ -14,8 +15,8 @@ namespace WebProcessManager.Core
         Task<AppResponse> StopAsync(Process process);
         Task<AppResponse> EditAsync(Process process);
         Task<AppResponse> RemoveASync(int id);
-        Task<string[]> GetLogsAsync(int id);
-        Task<string[]> GetErrorLogsAsync(int id);
+        Task<List<Report>> GetLogsAsync(int id, DateTime from, DateTime to);
+        Task<List<Report>> GetErrorLogsAsync(int id, DateTime from, DateTime to);
         Task<AppResponse> StopAllAsync(Container cont);
         Task<AppResponse> StartAllAsync(Container cont);
         Task<AppResponse> SetAutoRestart(Process process);

@@ -389,7 +389,7 @@ namespace WebProcessManager.Core
             }
         }
 
-        public async Task<string[]> GetLogsAsync(int id)
+        public async Task<List<Report>> GetLogsAsync(int id, DateTime from, DateTime to)
         {
             using (var client = new HttpClient())
             {
@@ -411,11 +411,17 @@ namespace WebProcessManager.Core
                         return null;
                     }
 
-                    var result = await client.GetAsync(cont.Address + "/api/process/log/" + id);
+                    var p = new FormGetLog() {From = from, To = to};
+                    var httpContent = new StringContent(
+                        JsonConvert.SerializeObject(p),
+                        Encoding.UTF8,
+                        "application/json");
+
+                    var result = await client.PostAsync(cont.Address + "/api/process/log/" + id, httpContent);
                     if (result.IsSuccessStatusCode)
                     {
                         var json = result.Content.ReadAsStringAsync().Result;
-                        var data = JsonConvert.DeserializeObject<string[]>(json);
+                        var data = JsonConvert.DeserializeObject<List<Report>>(json);
                         return data;
                     }
                 }
@@ -428,7 +434,7 @@ namespace WebProcessManager.Core
             }
         }
 
-        public async Task<string[]> GetErrorLogsAsync(int id)
+        public async Task<List<Report>> GetErrorLogsAsync(int id, DateTime from, DateTime to)
         {
             using (var client = new HttpClient())
             {
@@ -450,11 +456,17 @@ namespace WebProcessManager.Core
                         return null;
                     }
 
-                    var result = await client.GetAsync(cont.Address + "/api/process/error/" + id);
+                    var p = new FormGetLog() { From = from, To = to };
+                    var httpContent = new StringContent(
+                        JsonConvert.SerializeObject(p),
+                        Encoding.UTF8,
+                        "application/json");
+
+                    var result = await client.PostAsync(cont.Address + "/api/process/error/" + id, httpContent);
                     if (result.IsSuccessStatusCode)
                     {
                         var json = result.Content.ReadAsStringAsync().Result;
-                        var data = JsonConvert.DeserializeObject<string[]>(json);
+                        var data = JsonConvert.DeserializeObject<List<Report>>(json);
                         return data;
                     }
                 }
@@ -466,5 +478,11 @@ namespace WebProcessManager.Core
                 return null;
             }
         }
+    }
+
+    public class FormGetLog
+    {
+        public DateTime From { get; set; }
+        public DateTime To { get; set; }
     }
 }

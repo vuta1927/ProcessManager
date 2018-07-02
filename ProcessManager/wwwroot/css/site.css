@@ -33,3 +33,19 @@
         display: none;
     }
 }
+
+#form-container-output {
+    margin: 10px 10px 30px;
+}
+#form-container-error {
+    margin: 10px 10px 30px;
+}
+
+.dx-texteditor-input {
+    background: black;
+    color: white;
+}
+
+.error-area {
+    background-color: black
+}
